@@ -46,6 +46,9 @@
     <ClCompile Include="EmployeePage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CheckOutScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminPage.h">
@@ -54,12 +57,18 @@
     <QtMoc Include="EmployeePage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="CheckOutScreen.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AdminPage.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="EmployeePage.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="CheckOutScreen.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

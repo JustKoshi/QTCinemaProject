@@ -8,6 +8,8 @@
 #include <QtSql>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QTimer>
+#include <QDateTime>
 
 class LoginScreen : public QMainWindow
 {
@@ -20,8 +22,9 @@ public:
 public slots:
     void on_pushButton_Login_clicked();
     void on_pushButton_Quit_clicked();
-	
+    void connect_to_QTimer();
 private:
+    QTimer *timer;
     Ui::LoginScreenClass ui;
     QSqlDatabase loginDatabase;
 };

@@ -6,17 +6,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>853</width>
-    <height>644</height>
+    <width>891</width>
+    <height>636</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>LoginScreen</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(207, 224, 255);</string>
+   <string notr="true">QMainWindow {
+	background-image: url(:/LoginScreen/background-login-screen.jpg);
+}
+</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item alignment="Qt::AlignHCenter">
      <widget class="QFrame" name="frame">
@@ -31,6 +37,14 @@
         <width>16777215</width>
         <height>100</height>
        </size>
+      </property>
+      <property name="font">
+       <font>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -51,7 +65,14 @@
           <font>
            <pointsize>16</pointsize>
            <bold>true</bold>
+           <kerning>true</kerning>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    color: white;
+    background-color: transparent;
+}</string>
          </property>
          <property name="text">
           <string>USERNAME:</string>
@@ -85,6 +106,9 @@ padding: 5px;
         <height>100</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -105,6 +129,12 @@ padding: 5px;
            <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+   color: white; 
+    background-color: transparent;
+}</string>
          </property>
          <property name="text">
           <string>PASSWORD:</string>
@@ -132,14 +162,17 @@ padding: 5px;
       <property name="minimumSize">
        <size>
         <width>600</width>
-        <height>40</height>
+        <height>50</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
         <width>700</width>
-        <height>50</height>
+        <height>60</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -159,7 +192,7 @@ padding: 5px;
          <property name="maximumSize">
           <size>
            <width>200</width>
-           <height>30</height>
+           <height>40</height>
           </size>
          </property>
          <property name="font">
@@ -174,12 +207,15 @@ padding: 5px;
 border-radius: 3px;
 background: rgb(46, 60, 255);
 color: white;
+border: 1px solid white;
 }
 QPushButton:hover{
 background: rgba(46, 60, 255, 200);
+border: 1px solid white;
 }
 QPushButton:pressed{
 background: rgba(46, 60, 255, 200);
+border: 1px solid white;
 }</string>
          </property>
          <property name="text">
@@ -192,7 +228,7 @@ background: rgba(46, 60, 255, 200);
          <property name="maximumSize">
           <size>
            <width>200</width>
-           <height>30</height>
+           <height>40</height>
           </size>
          </property>
          <property name="font">
@@ -207,12 +243,15 @@ background: rgba(46, 60, 255, 200);
 border-radius: 3px;
 background: rgb(46, 60, 255);
 color: white;
+border: 1px solid white;
 }
 QPushButton:hover{
 background: rgba(46, 60, 255, 200);
+border: 1px solid white;
 }
 QPushButton:pressed{
 background: rgba(46, 60, 255, 200);
+border: 1px solid white;
 }</string>
          </property>
          <property name="text">
@@ -233,13 +272,12 @@ background: rgba(46, 60, 255, 200);
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>853</width>
+     <width>891</width>
      <height>22</height>
     </rect>
    </property>

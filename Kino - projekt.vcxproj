@@ -91,10 +91,12 @@
   <ItemGroup>
     <QtRcc Include="LoginScreen.qrc" />
     <QtUic Include="AdminPage.ui" />
+    <QtUic Include="CheckOutScreen.ui" />
     <QtUic Include="EmployeePage.ui" />
     <QtUic Include="LoginScreen.ui" />
     <QtMoc Include="LoginScreen.h" />
     <ClCompile Include="AdminPage.cpp" />
+    <ClCompile Include="CheckOutScreen.cpp" />
     <ClCompile Include="EmployeePage.cpp" />
     <ClCompile Include="LoginScreen.cpp" />
     <ClCompile Include="main.cpp" />
@@ -104,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="EmployeePage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="CheckOutScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
