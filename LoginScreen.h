@@ -2,14 +2,12 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_LoginScreen.h"
-#include <qmessagebox.h>
 #include "AdminPage.h"
 #include "EmployeePage.h"
 #include <QtSql>
 #include <QSqlDatabase>
 #include <QSqlQuery>
-#include <QTimer>
-#include <QDateTime>
+
 
 class LoginScreen : public QMainWindow
 {
