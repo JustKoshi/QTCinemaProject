@@ -4,6 +4,8 @@ LoginScreen::LoginScreen(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
+	adminpage = new AdminPage();
+	employee_page = new EmployeePage();
 	loginDatabase = QSqlDatabase::addDatabase("QSQLITE");
 	loginDatabase.setDatabaseName("F:/Project Qt/Kino - projekt/login.db");
 	if (loginDatabase.open()) {
@@ -42,14 +44,14 @@ void LoginScreen::on_pushButton_Login_clicked() {
 	if (success_manager) {
 		QMessageBox::information(this, "Login", "Username and password is correct");
 		this->hide();
-		AdminPage* adminpage = new AdminPage();
 		adminpage->show();
+		employee_page->close();
 	}
 	else if(success_employee)
 	{
 		QMessageBox::information(this, "Login", "Username and password is correct");
 		this->hide();
-		EmployeePage* employee_page = new EmployeePage();
+		adminpage->close();
 		employee_page->show();
 	}
 	else

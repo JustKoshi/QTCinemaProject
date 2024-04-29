@@ -17,7 +17,7 @@ signals:
 
 public slots:
 
-	void on_PushButton_return_clicked();
+	void on_pushButton_return_clicked();
 	void connect_to_QCurrent_Time();
 private:
 	Ui::CheckOutScreenClass ui;
