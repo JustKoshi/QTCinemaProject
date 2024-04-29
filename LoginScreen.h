@@ -2,12 +2,12 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_LoginScreen.h"
-#include <qmessagebox.h>
 #include "AdminPage.h"
 #include "EmployeePage.h"
 #include <QtSql>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+
 
 class LoginScreen : public QMainWindow
 {
@@ -20,8 +20,9 @@ public:
 public slots:
     void on_pushButton_Login_clicked();
     void on_pushButton_Quit_clicked();
-	
+    void connect_to_QTimer();
 private:
+    QTimer *timer;
     Ui::LoginScreenClass ui;
     QSqlDatabase loginDatabase;
 };

@@ -13,8 +13,9 @@ LoginScreen::LoginScreen(QWidget *parent)
 		{
 		qDebug() << "Database not connected";
 	}
-	
-
+	timer = new QTimer(this);
+	connect(timer, SIGNAL(timeout()), this, SLOT(connect_to_QTimer()));
+	timer->start(1000);
 }
 
 void LoginScreen::on_pushButton_Login_clicked() {
@@ -66,6 +67,11 @@ void LoginScreen::on_pushButton_Quit_clicked() {
 	}
 }
 
+void LoginScreen::connect_to_QTimer() {
+	QTime time = QTime::currentTime(); 
+	QString time_text = time.toString("hh : mm : ss");
+	ui.label_Time->setText(time_text);
+}
 
 LoginScreen::~LoginScreen()
 {}

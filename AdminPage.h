@@ -2,6 +2,11 @@
 
 #include <QMainWindow>
 #include "ui_AdminPage.h"
+#include <QtSql>
+#include <QtGui>
+#include <QtCore>
+#include <QtWidgets>
+
 
 class AdminPage : public QMainWindow
 {
