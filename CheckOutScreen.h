@@ -12,6 +12,7 @@ class CheckOutScreen : public QMainWindow
 public:
 	CheckOutScreen(QWidget *parent = nullptr);
 	~CheckOutScreen();
+	void setName(QString name);
 signals:
 	void return_To_EmployeePage();
 
@@ -23,4 +24,6 @@ private:
 	Ui::CheckOutScreenClass ui;
 	QTimer* timer;
 	QTimer* current_time;
+	QString name;
+
 };

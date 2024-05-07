@@ -23,3 +23,8 @@ void CheckOutScreen::connect_to_QCurrent_Time() {
 	QString time_text = time.toString("hh : mm : ss");
 	ui.label_time_current->setText(time_text);
 }
+
+void CheckOutScreen::setName(QString newname) {
+	name = newname;
+	ui.label_name->setText(name);
+}

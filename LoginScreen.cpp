@@ -42,6 +42,7 @@ void LoginScreen::on_pushButton_Login_clicked() {
 		}
 	}
 	if (success_manager) {
+		adminpage->setName(username);
 		QMessageBox::information(this, "Login", "Username and password is correct");
 		this->hide();
 		adminpage->show();
@@ -49,6 +50,7 @@ void LoginScreen::on_pushButton_Login_clicked() {
 	}
 	else if(success_employee)
 	{
+		employee_page->setName(username);
 		QMessageBox::information(this, "Login", "Username and password is correct");
 		this->hide();
 		adminpage->close();
