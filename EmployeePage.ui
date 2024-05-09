@@ -32,22 +32,23 @@
      <string>Rozpocznij / zakończ prace</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label_name">
     <property name="geometry">
      <rect>
       <x>90</x>
       <y>20</y>
-      <width>231</width>
+      <width>351</width>
       <height>91</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>36</pointsize>
+      <family>Calibri</family>
+      <pointsize>24</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>Employee</string>
+     <string>Employee:</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_Time">
@@ -58,6 +59,11 @@
       <width>81</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+border: 1px solid rgb(255, 0, 0);
+}</string>
     </property>
     <property name="text">
      <string/>

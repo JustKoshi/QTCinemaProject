@@ -22,6 +22,8 @@ public slots:
     void on_pushButton_Quit_clicked();
     void connect_to_QTimer();
 private:
+    AdminPage* adminpage;
+    EmployeePage* employee_page;
     QTimer *timer;
     Ui::LoginScreenClass ui;
     QSqlDatabase loginDatabase;

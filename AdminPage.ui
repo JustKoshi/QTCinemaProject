@@ -14,22 +14,58 @@
    <string>AdminPage</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label_name">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>120</y>
-      <width>241</width>
-      <height>111</height>
+      <x>60</x>
+      <y>0</y>
+      <width>251</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>30</pointsize>
+      <pointsize>24</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>IT WORKS</string>
+     <string>Manger: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Time">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>10</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+border: 1px solid rgb(255, 0, 0);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_checkOut">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Rozpocznij / zakończ prace</string>
     </property>
    </widget>
   </widget>
