@@ -14,7 +14,8 @@ class AdminPage : public QMainWindow
 public:
 	AdminPage(QWidget *parent = nullptr);
 	~AdminPage();
-	void setName(QString name);
+	void setName(int name);
+	void setLoginDatabase(QSqlDatabase db);
 public slots:
 	void on_pushButton_checkOut_clicked();
 	void showEmployeePage();
@@ -24,5 +25,7 @@ private:
 	Ui::AdminPageClass ui;
 	CheckOutScreen* checkoutscreen;
 	QTimer* timer;
-	QString name;
+	int id;
+	QString label;
+	QSqlDatabase loginDatabase;
 };

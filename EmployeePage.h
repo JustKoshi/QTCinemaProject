@@ -13,7 +13,8 @@ class EmployeePage : public QMainWindow
 public:
 	EmployeePage(QWidget *parent = nullptr);
 	~EmployeePage();
-	void setName(QString name);
+	void setName(int name);
+	void setLoginDatabase(QSqlDatabase db);
 public slots:
 	void on_pushButton_checkOut_clicked();
 	void showEmployeePage();
@@ -22,5 +23,7 @@ private:
 	Ui::EmployeePageClass ui;
 	CheckOutScreen* checkoutscreen;
 	QTimer* timer;
-	QString name;
+	int id;
+	QString label;
+	QSqlDatabase loginDatabase;
 };

@@ -4,9 +4,7 @@
 #include "ui_LoginScreen.h"
 #include "AdminPage.h"
 #include "EmployeePage.h"
-#include <QtSql>
-#include <QSqlDatabase>
-#include <QSqlQuery>
+
 
 
 class LoginScreen : public QMainWindow
