@@ -41,7 +41,7 @@ void AdminPage::setName(int new_name) {
 		if (query.next()) {
 			QString name = query.value(0).toString();
 			QString surname = query.value(1).toString();
-			label = "Employe: " + name + " " + surname;
+			label = "Manager: " + name + " " + surname;
 			ui.label_name->setText(label);
 		}
 	}
