@@ -89,6 +89,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MovieManager.cpp" />
+    <QtRcc Include="CheckOutScreen.qrc" />
     <QtRcc Include="LoginScreen.qrc" />
     <QtUic Include="AdminPage.ui" />
     <QtUic Include="CheckOutScreen.ui" />
@@ -100,6 +102,7 @@
     <ClCompile Include="EmployeePage.cpp" />
     <ClCompile Include="LoginScreen.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="MovieManager.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminPage.h" />
@@ -109,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="CheckOutScreen.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="MovieManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

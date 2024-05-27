@@ -17,15 +17,15 @@
    <widget class="QLabel" name="label_name">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>10</x>
       <y>0</y>
-      <width>251</width>
+      <width>471</width>
       <height>61</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>24</pointsize>
+      <pointsize>18</pointsize>
      </font>
     </property>
     <property name="text">
@@ -68,16 +68,24 @@ border: 1px solid rgb(255, 0, 0);
      <string>Rozpocznij / zakończ prace</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>601</width>
-     <height>22</height>
-    </rect>
-   </property>
+   <widget class="QPushButton" name="pushButton_movieManager">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>140</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Zarządzanie filmami</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -87,7 +95,6 @@ border: 1px solid rgb(255, 0, 0);
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

@@ -115,7 +115,7 @@ border: 1px solid blue;
          </widget>
         </item>
         <item row="0" column="1" alignment="Qt::AlignHCenter">
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="pushButton_shift_end">
           <property name="minimumSize">
            <size>
             <width>200</width>
@@ -151,7 +151,7 @@ border: 1px solid blue;
          </widget>
         </item>
         <item row="0" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="pushButton_shift_start">
           <property name="minimumSize">
            <size>
             <width>200</width>

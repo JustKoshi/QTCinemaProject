@@ -6,6 +6,7 @@
 #include <QDateTime>
 #include <qmessagebox.h>
 #include "CheckOutScreen.h"
+#include "MovieManager.h"
 
 class AdminPage : public QMainWindow
 {
@@ -14,15 +15,23 @@ class AdminPage : public QMainWindow
 public:
 	AdminPage(QWidget *parent = nullptr);
 	~AdminPage();
-	void setName(QString name);
+	void setName(int name);
+	void setLoginDatabase(QSqlDatabase db);
+
 public slots:
+
 	void on_pushButton_checkOut_clicked();
+	void on_pushButton_movieManager_clicked();
 	void showEmployeePage();
 	void connect_to_QTimer();
 
 private:
 	Ui::AdminPageClass ui;
 	CheckOutScreen* checkoutscreen;
+	MovieManager* moviemanager;
 	QTimer* timer;
-	QString name;
+	int id;
+	QString label;
+	QSqlDatabase loginDatabase;
+	
 };

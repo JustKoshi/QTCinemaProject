@@ -6,8 +6,13 @@ LoginScreen::LoginScreen(QWidget *parent)
     ui.setupUi(this);
 	adminpage = new AdminPage();
 	employee_page = new EmployeePage();
+	adminpage->setLoginDatabase(loginDatabase);
+	employee_page->setLoginDatabase(loginDatabase);
+
 	loginDatabase = QSqlDatabase::addDatabase("QSQLITE");
-	loginDatabase.setDatabaseName("F:/Project Qt/Kino - projekt/login.db");
+	QString pathToDB = QDir(QCoreApplication::applicationDirPath()).filePath("login.db");
+	loginDatabase.setDatabaseName(pathToDB);
+
 	if (loginDatabase.open()) {
 		qDebug() << "Database connected";
 	}
@@ -27,7 +32,8 @@ void LoginScreen::on_pushButton_Login_clicked() {
 	bool success_employee = false;
 	QSqlQuery query;
 	QString stanowisko;
-	query.prepare("SELECT * FROM LoginData WHERE LOGIN = :username AND PASSWORD = :password");
+	int id;
+	query.prepare("SELECT * FROM LoginData WHERE login = :username AND password = :password");
 	query.bindValue(":username", username);
 	query.bindValue(":password", password);
 	if (query.exec()) {
@@ -35,14 +41,17 @@ void LoginScreen::on_pushButton_Login_clicked() {
 			stanowisko = query.value(3).toString();
 			if (stanowisko == "kierownik") {
 				success_manager = true;
+				id = query.value(0).toInt();
 			}
 			else if (stanowisko == "pracownik") {
 				success_employee = true;
+				id = query.value(0).toInt();
 			}
 		}
 	}
 	if (success_manager) {
-		adminpage->setName(username);
+
+		adminpage->setName(id);
 		QMessageBox::information(this, "Login", "Username and password is correct");
 		this->hide();
 		adminpage->show();
@@ -50,7 +59,8 @@ void LoginScreen::on_pushButton_Login_clicked() {
 	}
 	else if(success_employee)
 	{
-		employee_page->setName(username);
+
+		employee_page->setName(id);
 		QMessageBox::information(this, "Login", "Username and password is correct");
 		this->hide();
 		adminpage->close();
