@@ -33,7 +33,7 @@ void LoginScreen::on_pushButton_Login_clicked() {
 	QSqlQuery query;
 	QString stanowisko;
 	int id;
-	query.prepare("SELECT * FROM LoginData WHERE LOGIN = :username AND PASSWORD = :password");
+	query.prepare("SELECT * FROM LoginData WHERE login = :username AND password = :password");
 	query.bindValue(":username", username);
 	query.bindValue(":password", password);
 	if (query.exec()) {

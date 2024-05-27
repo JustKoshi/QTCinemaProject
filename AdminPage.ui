@@ -68,6 +68,24 @@ border: 1px solid rgb(255, 0, 0);
      <string>Rozpocznij / zakończ prace</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_movieManager">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>140</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Zarządzanie filmami</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">

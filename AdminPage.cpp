@@ -11,6 +11,7 @@ AdminPage::AdminPage(QWidget *parent)
 	checkoutscreen = new CheckOutScreen();
 	checkoutscreen->setLoginDatabase(loginDatabase);
 	connect(checkoutscreen, SIGNAL(return_To_EmployeePage()), this, SLOT(showEmployeePage()));
+	moviemanager = nullptr;
 }
 
 AdminPage::~AdminPage()
@@ -20,6 +21,14 @@ void AdminPage::on_pushButton_checkOut_clicked() {
 	this->hide();
 	checkoutscreen->setName(label);
 	checkoutscreen->show();
+}
+
+void AdminPage::on_pushButton_movieManager_clicked() {
+	this->hide();
+	moviemanager = new MovieManager();
+	moviemanager->GetDb(loginDatabase);
+	moviemanager->show();
+	connect(moviemanager, SIGNAL(return_To_AdminPage()), this, SLOT(showEmployeePage()));
 }
 
 void AdminPage::showEmployeePage() {
@@ -35,7 +44,7 @@ void AdminPage::connect_to_QTimer() {
 void AdminPage::setName(int new_name) {
 	id = new_name;
 	QSqlQuery query(loginDatabase);
-	query.prepare("SELECT Imie, Nazwisko FROM EmployeeData WHERE id_pracownika = :id");
+	query.prepare("SELECT name, surname FROM EmployeeData WHERE employee_id = :id");
 	query.bindValue(":id", id);
 	if (query.exec()) {
 		if (query.next()) {
@@ -46,7 +55,7 @@ void AdminPage::setName(int new_name) {
 		}
 	}
 	query.clear();
-	query.prepare("SELECT Etat_h FROM EmployeeData WHERE id_pracownika = :id");
+	query.prepare("SELECT shift_time FROM EmployeeData WHERE employee_id = :id");
 	query.bindValue(":id", id);
 	if (query.exec()) {
 		if (query.next()) {

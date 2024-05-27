@@ -11,7 +11,7 @@ EmployeePage::EmployeePage(QWidget *parent)
 	checkoutscreen = new CheckOutScreen();
 	checkoutscreen->setLoginDatabase(loginDatabase);
 	connect(checkoutscreen, SIGNAL(return_To_EmployeePage()), this, SLOT(showEmployeePage()));
-
+	
 	
 }
 
@@ -37,7 +37,7 @@ void EmployeePage::connect_to_QTimer() {
 void EmployeePage::setName(int new_name) {
 	id = new_name;
 	QSqlQuery query(loginDatabase);
-	query.prepare("SELECT Imie, Nazwisko FROM EmployeeData WHERE id_pracownika = :id");
+	query.prepare("SELECT name, surname FROM EmployeeData WHERE employee_id = :id");
 	query.bindValue(":id", id);
 	if (query.exec()) {
 		if (query.next()) {
@@ -48,7 +48,7 @@ void EmployeePage::setName(int new_name) {
 		}
 	}
 	query.clear();
-	query.prepare("SELECT Etat_h FROM EmployeeData WHERE id_pracownika = :id");
+	query.prepare("SELECT shift_time FROM EmployeeData WHERE empoyee_id = :id");
 	query.bindValue(":id", id);
 	if (query.exec()) {
 		if (query.next()) {

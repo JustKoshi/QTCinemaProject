@@ -35,6 +35,9 @@
     <ClCompile Include="LoginScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <QtRcc Include="CheckOutScreen.qrc">
+      <Filter>Header Files\Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -49,6 +52,9 @@
     <ClCompile Include="CheckOutScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MovieManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminPage.h">
@@ -60,6 +66,9 @@
     <QtMoc Include="CheckOutScreen.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="MovieManager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AdminPage.ui">
@@ -69,6 +78,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="CheckOutScreen.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="MovieManager.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
