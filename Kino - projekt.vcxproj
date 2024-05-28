@@ -90,8 +90,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MovieManager.cpp" />
+    <ClCompile Include="ProjectionScreen.cpp" />
+    <ClCompile Include="ScreeningManager.cpp" />
     <QtRcc Include="CheckOutScreen.qrc" />
     <QtRcc Include="LoginScreen.qrc" />
+    <QtRcc Include="ProjectionScreen.qrc" />
     <QtUic Include="AdminPage.ui" />
     <QtUic Include="CheckOutScreen.ui" />
     <QtUic Include="EmployeePage.ui" />
@@ -103,6 +106,8 @@
     <ClCompile Include="LoginScreen.cpp" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="MovieManager.ui" />
+    <QtUic Include="ProjectionScreen.ui" />
+    <QtUic Include="ScreeningManager.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminPage.h" />
@@ -115,6 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MovieManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="ProjectionScreen.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="ScreeningManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

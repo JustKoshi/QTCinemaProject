@@ -2,11 +2,9 @@
 
 #include <QMainWindow>
 #include "ui_AdminPage.h"
-#include <QTimer>
-#include <QDateTime>
-#include <qmessagebox.h>
 #include "CheckOutScreen.h"
 #include "MovieManager.h"
+#include "ScreeningManager.h"
 
 class AdminPage : public QMainWindow
 {
@@ -22,6 +20,7 @@ public slots:
 
 	void on_pushButton_checkOut_clicked();
 	void on_pushButton_movieManager_clicked();
+	void on_pushButton_screeningManager_clicked();
 	void showEmployeePage();
 	void connect_to_QTimer();
 
@@ -29,6 +28,7 @@ private:
 	Ui::AdminPageClass ui;
 	CheckOutScreen* checkoutscreen;
 	MovieManager* moviemanager;
+	ScreeningManager* screeningmanager;
 	QTimer* timer;
 	int id;
 	QString label;

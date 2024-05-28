@@ -12,10 +12,16 @@ AdminPage::AdminPage(QWidget *parent)
 	checkoutscreen->setLoginDatabase(loginDatabase);
 	connect(checkoutscreen, SIGNAL(return_To_EmployeePage()), this, SLOT(showEmployeePage()));
 	moviemanager = nullptr;
+	screeningmanager = nullptr;
 }
 
 AdminPage::~AdminPage()
-{}
+{
+delete checkoutscreen;
+delete moviemanager;
+delete screeningmanager;
+
+}
 
 void AdminPage::on_pushButton_checkOut_clicked() {
 	this->hide();
@@ -39,6 +45,14 @@ void AdminPage::connect_to_QTimer() {
 	QTime time = QTime::currentTime();
 	QString time_text = time.toString("hh : mm : ss");
 	ui.label_Time->setText(time_text);
+}
+
+void AdminPage::on_pushButton_screeningManager_clicked() {
+	this->hide();
+	screeningmanager = new ScreeningManager();
+	screeningmanager->getDb(loginDatabase);
+	screeningmanager->show();
+	connect(screeningmanager, SIGNAL(return_To_AdminPage()), this, SLOT(showEmployeePage()));
 }
 
 void AdminPage::setName(int new_name) {

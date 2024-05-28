@@ -88,4 +88,7 @@ void LoginScreen::connect_to_QTimer() {
 }
 
 LoginScreen::~LoginScreen()
-{}
+{
+	delete adminpage;
+	delete employee_page;
+}
