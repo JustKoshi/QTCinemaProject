@@ -16,7 +16,9 @@ EmployeePage::EmployeePage(QWidget *parent)
 }
 
 EmployeePage::~EmployeePage()
-{}
+{
+delete checkoutscreen;
+}
 
 void EmployeePage::on_pushButton_checkOut_clicked() {
 	this->hide();

@@ -38,6 +38,9 @@
     <QtRcc Include="CheckOutScreen.qrc">
       <Filter>Header Files\Resource Files</Filter>
     </QtRcc>
+    <QtRcc Include="ProjectionScreen.qrc">
+      <Filter>Header Files\Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -55,6 +58,12 @@
     <ClCompile Include="MovieManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ProjectionScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreeningManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminPage.h">
@@ -69,6 +78,12 @@
     <QtMoc Include="MovieManager.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="ProjectionScreen.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="ScreeningManager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AdminPage.ui">
@@ -81,6 +96,12 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="MovieManager.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ProjectionScreen.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ScreeningManager.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

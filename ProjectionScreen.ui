@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProjectionScreenClass</class>
+ <widget class="QWidget" name="ProjectionScreenClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1301</width>
+    <height>816</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ProjectionScreen</string>
+  </property>
+  <widget class="QPushButton" name="A1">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>240</y>
+     <width>81</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#A1
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#A1:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="A2">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>240</y>
+     <width>81</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#A2
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#A2:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>130</y>
+     <width>281</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout"/>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="ProjectionScreen.qrc"/>
+ </resources>
+ <connections/>
+</ui>

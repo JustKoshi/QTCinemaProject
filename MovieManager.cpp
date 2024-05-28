@@ -43,7 +43,7 @@ void MovieManager::on_pushButton_return_clicked() {
 void  MovieManager::on_pushButton_load_data_clicked() {
 	QSqlQuery query(loginDb);
 	int id = ui.spinBox_movie_id->value();
-	query.prepare("SELECT title, length, director, genre FROM Movies WHERE movie_id = :id");
+	query.prepare("SELECT title, length, director, genre, poster FROM Movies WHERE movie_id = :id");
 	query.bindValue(":id", id);
 	if (query.exec()) {
 
@@ -52,10 +52,27 @@ void  MovieManager::on_pushButton_load_data_clicked() {
 			int length = query.value(1).toInt();
 			QString director = query.value(2).toString();
 			QString genre = query.value(3).toString();
+			QByteArray bytes = query.value(4).toByteArray();
 			ui.lineEdit_title->setText(title);
 			ui.lineEdit_director->setText(director);
 			ui.lineEdit_genre->setText(genre);
 			ui.lineEdit_length->setText(QString::number(length));	
+
+			QPixmap posterPixmap;
+			if (!bytes.isEmpty()) {
+				posterPixmap.loadFromData(bytes);
+				if (!posterPixmap.isNull()) {
+					// Ustawienie obrazu w QLabel
+					ui.label_img->setPixmap(posterPixmap);
+					ui.label_img->show();
+				}
+				else {
+					QMessageBox::warning(this, "Error", "Failed to load image from database");
+				}
+			}
+			else {
+				QMessageBox::information(this, "Info", "No poster available for this movie");
+			}
 		}
 		else {
 			QMessageBox::critical(this, "Error", "Movie not found");
@@ -158,7 +175,7 @@ void MovieManager::on_pushButton_delete_movie_clicked() {
 	query.prepare("DELETE FROM Movies WHERE movie_id = :id");
 	query.bindValue(":id", ui.spinBox_movie_id->value());
 
-	QMessageBox::StandardButton reply = QMessageBox::question(this, "Delete", "Are you sure you want to delete this movie with id: " + ui.spinBox_movie_id->value(), QMessageBox::Yes | QMessageBox::No);
+	QMessageBox::StandardButton reply = QMessageBox::question(this, "Delete", "Are you sure you want to delete this movie with id: " + QString::number(ui.spinBox_movie_id->value()), QMessageBox::Yes | QMessageBox::No);
 	if (reply == QMessageBox::No) {
 		return;
 	}
