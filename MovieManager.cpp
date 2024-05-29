@@ -89,6 +89,10 @@ void MovieManager::on_pushButton_add_movie_clicked() {
 		QMessageBox::critical(this, "Error", "Fill all fields before insertion");
 		return;
 	}
+		else if (ui.lineEdit_length->text().toInt() <= 0) {
+		QMessageBox::critical(this, "Error", "Length must be greater than 0");
+		return;
+	}
 	else {
 		QSqlQuery query(loginDb);
 		QString title = ui.lineEdit_title->text();
@@ -131,6 +135,10 @@ void MovieManager::on_pushButton_add_movie_clicked() {
 void MovieManager::on_pushButton_update_movie_clicked() {
 	if (image.isNull() || ui.lineEdit_director->text().isEmpty() || ui.lineEdit_genre->text().isEmpty() || ui.lineEdit_length->text().isEmpty() || ui.lineEdit_title->text().isEmpty()) {
 		QMessageBox::critical(this, "Error", "Fill all fields before updating");
+		return;
+	}
+	else if (ui.lineEdit_length->text().toInt() <= 0) {
+		QMessageBox::critical(this, "Error", "Length must be greater than 0");
 		return;
 	}
 	else {

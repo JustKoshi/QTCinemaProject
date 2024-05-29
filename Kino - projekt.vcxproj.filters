@@ -64,6 +64,9 @@
     <ClCompile Include="ScreeningManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ScreeningSelection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminPage.h">
@@ -84,6 +87,9 @@
     <QtMoc Include="ScreeningManager.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="ScreeningSelection.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AdminPage.ui">
@@ -102,6 +108,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="ScreeningManager.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ScreeningSelection.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

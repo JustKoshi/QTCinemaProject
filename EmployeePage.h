@@ -6,6 +6,8 @@
 #include <QDateTime>
 #include <qmessagebox.h>
 #include "CheckOutScreen.h"
+#include "ScreeningSelection.h"
+
 class EmployeePage : public QMainWindow
 {
 	Q_OBJECT
@@ -15,10 +17,12 @@ public:
 	~EmployeePage();
 	void setName(int name);
 	void setLoginDatabase(QSqlDatabase db);
+	void setTodaysScreenings();
 public slots:
 	void on_pushButton_checkOut_clicked();
 	void showEmployeePage();
 	void connect_to_QTimer();
+	void on_pushButton_ticket_sale_clicked();
 private:
 	Ui::EmployeePageClass ui;
 	CheckOutScreen* checkoutscreen;
@@ -26,4 +30,5 @@ private:
 	int id;
 	QString label;
 	QSqlDatabase loginDatabase;
+	ScreeningSelection* screeningselection;
 };

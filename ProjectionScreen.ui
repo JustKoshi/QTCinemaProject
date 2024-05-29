@@ -6,24 +6,339 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1301</width>
-    <height>816</height>
+    <width>1230</width>
+    <height>710</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>ProjectionScreen</string>
   </property>
-  <widget class="QPushButton" name="A1">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>240</y>
-     <width>81</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">#A1
+  <layout class="QVBoxLayout" name="verticalLayout_6">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item alignment="Qt::AlignTop">
+        <widget class="QLabel" name="label">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>C</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QPushButton" name="D4">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#D4
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#D4:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="5">
+          <widget class="QPushButton" name="B5">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#B5
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#B5:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_2">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="4">
+          <widget class="QPushButton" name="B4">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#B4
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#B4:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="5">
+          <widget class="QPushButton" name="D5">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#D5
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#D5:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_5">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QPushButton" name="A3">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#A3
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#A3:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QPushButton" name="D3">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#D3
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#D3:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QPushButton" name="B1">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#B1
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#B1:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_3">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QPushButton" name="C3">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#C3
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#C3:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QPushButton" name="A1">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#A1
 {
 background-color:transparent;
 border-image: url(:/ProjectionScreen/Resource files/seat.png);
@@ -34,22 +349,241 @@ background-repeat: none;
 #A1:pressed{
 border-image: url(:/ProjectionScreen/Resource files/seat3.png);
 }</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="A2">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>240</y>
-     <width>81</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">#A2
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_10">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>D</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="5">
+          <widget class="QPushButton" name="C5">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#C5
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#C5:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="4">
+          <widget class="QPushButton" name="A4">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#A4
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#A4:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_4">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="4">
+          <widget class="QPushButton" name="C4">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#C4
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#C4:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>A</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QPushButton" name="B2">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#B2
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#B2:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <widget class="QPushButton" name="B3">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#B3
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#B3:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QPushButton" name="D2">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#D2
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#D2:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QPushButton" name="A2">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#A2
 {
 background-color:transparent;
 border-image: url(:/ProjectionScreen/Resource files/seat.png);
@@ -60,22 +594,209 @@ background-repeat: none;
 #A2:pressed{
 border-image: url(:/ProjectionScreen/Resource files/seat3.png);
 }</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QWidget" name="gridLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>130</y>
-     <width>281</width>
-     <height>211</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout"/>
-  </widget>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="D1">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#D1
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#D1:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QPushButton" name="C1">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#C1
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#C1:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="5" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_6">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="5">
+          <widget class="QPushButton" name="A5">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#A5
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#A5:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QPushButton" name="C2">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#C2
+{
+background-color:transparent;
+border-image: url(:/ProjectionScreen/Resource files/seat.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#C2:pressed{
+border-image: url(:/ProjectionScreen/Resource files/seat3.png);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item alignment="Qt::AlignBottom">
+        <widget class="QLabel" name="label_screen">
+         <property name="minimumSize">
+          <size>
+           <width>900</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>0</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+border: 3px solid black;
+
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Screen</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Cart</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QListWidget" name="listWidget"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_proceed">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Proceed</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
