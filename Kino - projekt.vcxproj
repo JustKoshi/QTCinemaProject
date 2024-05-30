@@ -38,12 +38,12 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>6.6.2_msvc2019_64</QtInstall>
-    <QtModules>designer;core;gui;opengl;qml;quickwidgets;sql;testlib;widgets;xml</QtModules>
+    <QtModules>core;gui;qml;testlib;widgets;opengl;printsupport;quickwidgets;sql;xml;designer</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>6.6.2_msvc2019_64</QtInstall>
-    <QtModules>designer;core;gui;opengl;qml;quickwidgets;sql;testlib;widgets;xml</QtModules>
+    <QtModules>core;gui;qml;testlib;widgets;opengl;printsupport;quickwidgets;sql;xml;designer</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">

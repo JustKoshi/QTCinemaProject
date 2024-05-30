@@ -4,6 +4,7 @@ SnackSales::SnackSales(QWidget *parent, QSqlDatabase db)
 	: QMainWindow(parent), loginDb(db)
 {
 	ui.setupUi(this);
+	sale_id = 0;
 	seats_ids = std::vector<QString>();
 	total_price = 0;
 	QListWidgetItem* item = new QListWidgetItem("Total price: " + QString::number(total_price) + " zl");
@@ -34,6 +35,8 @@ SnackSales::SnackSales(QWidget *parent, QSqlDatabase db)
 			ui.comboBox_candy->addItem(size);
 		}
 	}
+	ui.comboBox_payment->addItem("Cash");
+	ui.comboBox_payment->addItem("Card");
 }
 
 SnackSales::~SnackSales()
@@ -42,6 +45,7 @@ SnackSales::~SnackSales()
 void SnackSales::setSeats(std::vector<QString> seats)
 {
 	seats_ids = seats;
+	
 }
 
 void SnackSales::addItemsToWidgetList(const QStringList& items) {
@@ -287,7 +291,9 @@ void SnackSales::on_pushButton_remove_clicked() {
 }
 
 void SnackSales::on_pushButton_check_out_clicked() {
-	if (seats_ids.empty()&&snack_ids_and_amouts.empty()) {
+
+	
+	if ((seats_ids.empty())&&(snack_ids_and_amouts.empty())) {
 		QMessageBox::StandardButton reply = QMessageBox::question(this, "Warning", "No seats or snacks selected. Do you want to return?", QMessageBox::Yes | QMessageBox::No);
 		if (reply == QMessageBox::No) {
 			return;
@@ -297,4 +303,143 @@ void SnackSales::on_pushButton_check_out_clicked() {
 			this->close();
 		}
 	}
+	else {
+		QMessageBox::StandardButton reply = QMessageBox::question(this, "Warning", "Do you want to confirm purchase", QMessageBox::Yes | QMessageBox::No);
+		if (reply == QMessageBox::No) {
+			return;
+		}
+		confirm_sale();
+		emit return_to_employee_page();
+		this->close();
+	}
+}
+
+void SnackSales::confirm_sale() {
+	if (snack_ids_and_amouts.empty()&&seats_ids.empty()) {
+		return;
+	};
+	if(seats_ids.empty()){
+		QSqlQuery query(loginDb);
+		query.prepare("INSERT INTO Sales (total_price, sale_date, payment_method) VALUES (:total_price, datetime('now'), :payment_method)");
+		query.bindValue(":total_price", total_price);
+		query.bindValue(":payment_method", ui.comboBox_payment->currentText());
+		if (!query.exec()) {
+			QMessageBox::critical(this, "Error", "Query error");
+			qDebug() << query.lastError().text();
+			qDebug() << "1";
+			return;
+		}
+		query.prepare("SELECT MAX(sale_id) FROM Sales");
+		if (!query.exec()) {
+			QMessageBox::critical(this, "Error", "Query error");
+			qDebug() << query.lastError().text();
+			qDebug() << "2";
+			return;
+		}
+		if (query.next()) {
+			sale_id = query.value(0).toInt();
+		}
+		else {
+			QMessageBox::critical(this, "Error", "Failed to retrieve sale_id");
+			qDebug() << query.lastError().text();
+			qDebug() << "3";
+		};
+
+		for (std::pair<QString, int>& pair : snack_ids_and_amouts) {
+			query.prepare("INSERT INTO Snack_Sales (snack_id, quantity, sale_id) VALUES (:snack_id, :quantity, :sale_id)");
+			query.bindValue(":snack_id", pair.first);
+			query.bindValue(":quantity", pair.second);
+			query.bindValue(":sale_id", sale_id);
+			if (!query.exec()) {
+				QMessageBox::critical(this, "Error", "Query error");
+				qDebug() << query.lastError().text();
+				return;
+			}
+		}
+	}
+	else if (snack_ids_and_amouts.empty()) {
+		QSqlQuery query(loginDb);
+		query.prepare("INSERT INTO Sales (total_price, sale_date, payment_method) VALUES (:total_price, datetime('now'), :payment_method)");
+		query.bindValue(":total_price", total_price);
+		query.bindValue(":payment_method", ui.comboBox_payment->currentText());
+		if (!query.exec()) {
+			QMessageBox::critical(this, "Error", "Query error");
+			qDebug() << query.lastError().text();
+			qDebug() << "1";
+			return;
+		}
+		query.clear();
+		query.prepare("SELECT MAX(sale_id) FROM Sales");
+		if (!query.exec()) {
+			QMessageBox::critical(this, "Error", "Query error");
+			qDebug() << query.lastError().text();
+			qDebug() << "2";
+			return;
+		}
+		if (query.next()) {
+			sale_id = query.value(0).toInt();
+		}
+
+		for (QString& seat_id : seats_ids) {
+			query.prepare("INSERT INTO Seat_sales (screening_id, seat_id, sale_id) VALUES (:screening_id, :seat_id, :sale_id)");
+			query.bindValue(":screening_id", screening_id);
+			query.bindValue(":seat_id", seat_id);
+			query.bindValue(":sale_id", sale_id);
+			if (!query.exec()) {
+				QMessageBox::critical(this, "Error", "Query error");
+				qDebug() << query.lastError().text();
+				qDebug()<< "3";
+				return;
+			}
+		}
+	}
+	else {
+		QSqlQuery query(loginDb);
+		query.prepare("INSERT INTO Sales (total_price, sale_date, payment_method) VALUES (:total_price, datetime('now'), :payment_method)");
+		query.bindValue(":total_price", total_price);
+		query.bindValue(":payment_method", ui.comboBox_payment->currentText());
+		if (!query.exec()) {
+			QMessageBox::critical(this, "Error", "Query error");
+			qDebug() << query.lastError().text();
+			qDebug() << "1";
+			return;
+		}
+		query.clear();
+		query.prepare("SELECT MAX(sale_id) FROM Sales");
+		if (!query.exec()) {
+			QMessageBox::critical(this, "Error", "Query error");
+			qDebug() << query.lastError().text();
+			qDebug() << "2";
+			return;
+		}
+		if (query.next()) {
+			sale_id = query.value(0).toInt();
+		}
+
+		for (QString& seat_id : seats_ids) {
+			query.prepare("INSERT INTO Seat_sales (screening_id, seat_id, sale_id) VALUES (:screening_id, :seat_id, :sale_id)");
+			query.bindValue(":screening_id", screening_id);
+			query.bindValue(":seat_id", seat_id);
+			query.bindValue(":sale_id", sale_id);
+			if (!query.exec()) {
+				QMessageBox::critical(this, "Error", "Query error");
+				qDebug() << query.lastError().text();
+				qDebug() << "3";
+				return;
+			}
+		}
+
+		for (std::pair<QString, int>& pair : snack_ids_and_amouts) {
+			query.prepare("INSERT INTO Snack_Sales (snack_id, quantity, sale_id) VALUES (:snack_id, :quantity, :sale_id)");
+			query.bindValue(":snack_id", pair.first);
+			query.bindValue(":quantity", pair.second);
+			query.bindValue(":sale_id", sale_id);
+			if (!query.exec()) {
+				QMessageBox::critical(this, "Error", "Query error");
+				qDebug() << query.lastError().text();
+				return;
+			}
+		}
+	}	
+	
 }

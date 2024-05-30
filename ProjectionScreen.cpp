@@ -17,6 +17,7 @@ ProjectionScreen::ProjectionScreen(QWidget *parent, QString new_id, QSqlDatabase
 		hall_id = query.value(2).toString();
 		ui.label->setText(title + " " + date + " in hall: " + hall_id);
 	}
+
 	connect(ui.A1, SIGNAL(clicked()), this, SLOT(handle_button_click()));
 	connect(ui.A2, SIGNAL(clicked()), this, SLOT(handle_button_click()));
 	connect(ui.A3, SIGNAL(clicked()), this, SLOT(handle_button_click()));
@@ -43,6 +44,20 @@ ProjectionScreen::ProjectionScreen(QWidget *parent, QString new_id, QSqlDatabase
 	QListWidgetItem* item = new QListWidgetItem(price_text);
 	ui.listWidget_total->addItem(item);
 	ui.listWidget_total->update();
+	query.clear();
+	query.prepare("SELECT seat_id FROM Seat_sales WHERE screening_id = :id");
+	query.bindValue(":id", id);
+	if (!query.exec()) {
+		QMessageBox::critical(this, "Error", "Query error - blocked seats");
+	}
+	while (query.next()) {
+		QString seat_id = query.value(0).toString();
+		QPushButton* button = findChild<QPushButton*>(seat_id.mid(1));
+		button->setStyleSheet("border-image: url(:/ProjectionScreen/Resource files/seat2.png);");
+		button->setEnabled(false);
+	}
+
+	
 }
 
 ProjectionScreen::~ProjectionScreen()

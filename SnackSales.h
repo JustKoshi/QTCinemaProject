@@ -7,6 +7,11 @@
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <vector>
+#include <QTextDocument>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QFileDialog>
+#include <QTextStream>
 
 class SnackSales : public QMainWindow
 {
@@ -39,4 +44,7 @@ private:
 	QString screening_id;
 	double total_price;
 	std::vector<std::pair<QString, int>> snack_ids_and_amouts;
+	int sale_id;
+	//void generateReceipt();
+	void confirm_sale();
 };

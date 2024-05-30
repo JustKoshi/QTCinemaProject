@@ -52,15 +52,17 @@ void EmployeePage::setName(int new_name) {
 		}
 	}
 	query.clear();
-	query.prepare("SELECT shift_time FROM EmployeeData WHERE empoyee_id = :id");
+	query.prepare("SELECT shift_time FROM EmployeeData WHERE employee_id = :id");
 	query.bindValue(":id", id);
-	if (query.exec()) {
-		if (query.next()) {
+	if (!query.exec()) {
+	QMessageBox::critical(this, "Error", "Query error");
+	}
+	if (query.next()) {
 			int etat = query.value(0).toInt();
 			checkoutscreen->set_elapsed_shift_time(etat);
-		}
-
 	}
+	
+
 }
 
 void EmployeePage::on_pushButton_ticket_sale_clicked() {
