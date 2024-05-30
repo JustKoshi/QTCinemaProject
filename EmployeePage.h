@@ -23,6 +23,7 @@ public slots:
 	void showEmployeePage();
 	void connect_to_QTimer();
 	void on_pushButton_ticket_sale_clicked();
+	void on_pushButton_snack_sale_clicked();
 private:
 	Ui::EmployeePageClass ui;
 	CheckOutScreen* checkoutscreen;

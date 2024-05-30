@@ -30,4 +30,6 @@ private:
 	void createPage(const QString& title, const QPixmap& image);
 private slots:
 	void onButtonClicked(QString id);
+signals:
+	void return_to_employee_page();
 };

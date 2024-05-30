@@ -93,9 +93,11 @@
     <ClCompile Include="ProjectionScreen.cpp" />
     <ClCompile Include="ScreeningManager.cpp" />
     <ClCompile Include="ScreeningSelection.cpp" />
+    <ClCompile Include="SnackSales.cpp" />
     <QtRcc Include="CheckOutScreen.qrc" />
     <QtRcc Include="LoginScreen.qrc" />
     <QtRcc Include="ProjectionScreen.qrc" />
+    <QtRcc Include="SnackSales.qrc" />
     <QtUic Include="AdminPage.ui" />
     <QtUic Include="CheckOutScreen.ui" />
     <QtUic Include="EmployeePage.ui" />
@@ -110,6 +112,7 @@
     <QtUic Include="ProjectionScreen.ui" />
     <QtUic Include="ScreeningManager.ui" />
     <QtUic Include="ScreeningSelection.ui" />
+    <QtUic Include="SnackSales.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminPage.h" />
@@ -131,6 +134,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ScreeningSelection.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="SnackSales.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

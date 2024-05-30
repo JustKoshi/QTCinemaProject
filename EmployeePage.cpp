@@ -66,14 +66,20 @@ void EmployeePage::setName(int new_name) {
 void EmployeePage::on_pushButton_ticket_sale_clicked() {
 	screeningselection = new ScreeningSelection();
 	screeningselection->getDb(loginDatabase);
-	//connect(screeningselection, SIGNAL(return_To_EmployeePage()), this, SLOT(showEmployeePage()));
+	connect(screeningselection, &ScreeningSelection::return_to_employee_page, this, &EmployeePage::showEmployeePage);
 	screeningselection->show();
+	this->hide();
+}
+
+void EmployeePage::on_pushButton_snack_sale_clicked() {
+	SnackSales* snackSales = new SnackSales(nullptr, loginDatabase);
+	connect(snackSales, &SnackSales::return_to_employee_page, this, &EmployeePage::showEmployeePage);
+	snackSales->show();
 	this->hide();
 }
 
 void EmployeePage::setLoginDatabase(QSqlDatabase db) {
 	loginDatabase = db;
-
 }
 
 void EmployeePage::setTodaysScreenings() {
@@ -91,3 +97,5 @@ void EmployeePage::setTodaysScreenings() {
 	ui.tableView->setModel(model);
 	ui.tableView->show();
 }
+
+

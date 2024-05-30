@@ -49,6 +49,8 @@ ScreeningSelection::ScreeningSelection(QWidget *parent)
 		}
 
 	}
+	//set minim size of the window
+	this->setMinimumSize(800, 600);
 
 
 }
@@ -99,6 +101,7 @@ void ScreeningSelection::createPage(const QString& title, const QPixmap& image) 
 
 void ScreeningSelection::onButtonClicked(QString id) {
 	ProjectionScreen* projectionScreen = new ProjectionScreen(nullptr, id, this->loginDb);
+	connect(projectionScreen, &ProjectionScreen::return_to_employee_page, this, &ScreeningSelection::return_to_employee_page);
 	projectionScreen->show();
 	this->hide();
 }

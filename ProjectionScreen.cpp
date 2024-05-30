@@ -5,6 +5,7 @@ ProjectionScreen::ProjectionScreen(QWidget *parent, QString new_id, QSqlDatabase
 {
 	ui.setupUi(this);
 	QSqlQuery query(loginDb);
+	snacksalespage = nullptr;
 	query.prepare("SELECT title, date_start, hall_id FROM Screenings, Movies WHERE screening_id = :id AND Screenings.movie_id = Movies.movie_id");
 	query.bindValue(":id", id);
 	if (!query.exec()) {
@@ -37,11 +38,17 @@ ProjectionScreen::ProjectionScreen(QWidget *parent, QString new_id, QSqlDatabase
 	connect(ui.D4, SIGNAL(clicked()), this, SLOT(handle_button_click()));
 	connect(ui.D5, SIGNAL(clicked()), this, SLOT(handle_button_click()));
 	
-
+    total_price = 0.;
+	QString price_text = "Total price: " + QString::number(total_price) + " zl";
+	QListWidgetItem* item = new QListWidgetItem(price_text);
+	ui.listWidget_total->addItem(item);
+	ui.listWidget_total->update();
 }
 
 ProjectionScreen::~ProjectionScreen()
-{}
+{
+	delete snacksalespage;
+}
 
 void ProjectionScreen::handle_button_click() {
 	QPushButton* button = qobject_cast<QPushButton*>(sender());
@@ -50,7 +57,6 @@ void ProjectionScreen::handle_button_click() {
 		QSqlQuery query(loginDb);
 		query.prepare("SELECT price FROM Seats WHERE seat_id = :id");
 		query.bindValue(":id", seat_id);
-		qDebug() << seat_id;
 		if (!query.exec()) {
 			QMessageBox::critical(this, "Error", "Query error");
 		}
@@ -71,27 +77,44 @@ void ProjectionScreen::handle_button_click() {
 		
 			}
 			ui.listWidget->update();
+			total_price -= price.toDouble();
+			QString price_text = "Total price: " + QString::number(total_price) + " zl";
+			QListWidgetItem* item = new QListWidgetItem(price_text);
 			
+			ui.listWidget_total->clear();
+			ui.listWidget_total->addItem(item);
+			ui.listWidget_total->update();
+
+		    
 		}
 		else {
 			button->setStyleSheet("border-image: url(:/ProjectionScreen/Resource files/seat3.png);");
 			seats_ids.push_back(hall_id+button->objectName());
 			QListWidgetItem* item = new QListWidgetItem(ticket);
 			ui.listWidget->addItem(item);
+			total_price += price.toDouble();
 			ui.listWidget->update();
+			QString price_text = "Total price: " + QString::number(total_price) + " zl";
+			QListWidgetItem* item2 = new QListWidgetItem(price_text);
+			ui.listWidget_total->clear();
+			ui.listWidget_total->addItem(item2);
+			ui.listWidget_total->update();
+
 		}
 	}
 }
 
 void ProjectionScreen::on_pushButton_proceed_clicked() {
-	//if seats_ids is empty pop up a waring and ask if want to proceed
 	if (seats_ids.empty()) {
 		QMessageBox::StandardButton reply = QMessageBox::question(this, "Warning", "No seats selected. Do you want to proceed?", QMessageBox::Yes | QMessageBox::No);
 		if (reply == QMessageBox::No) {
 			return;
 		}
 		else {
-			;
+			snacksalespage = new SnackSales(nullptr, loginDb);
+			connect(snacksalespage, &SnackSales::return_to_employee_page, this, &ProjectionScreen::return_to_employee_page);
+			this->hide();
+			snacksalespage->show();
 		}
 	}
 	else {
@@ -100,7 +123,19 @@ void ProjectionScreen::on_pushButton_proceed_clicked() {
 			return;
 		}
 		else {
-			;
+			snacksalespage = new SnackSales(nullptr, loginDb);
+			snacksalespage->setTotalPrice(total_price);
+			snacksalespage->setSeats(seats_ids);
+			snacksalespage->setScreeningId(id);
+			connect(snacksalespage, &SnackSales::return_to_employee_page, this, &ProjectionScreen::return_to_employee_page);
+			QStringList items;
+			for (int i = 0; i < ui.listWidget->count(); i++) {
+				items << ui.listWidget->item(i)->text();
+			}
+			snacksalespage->addItemsToWidgetList(items);
+			this->hide();
+			snacksalespage->show();
 		}
 	}
 }
+

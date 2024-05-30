@@ -2,11 +2,7 @@
 
 #include <QWidget>
 #include "ui_ProjectionScreen.h"
-#include <QSqlError>
-#include <QSqlQuery>
-#include <QMessageBox>
-#include <QSqlDatabase>
-#include <vector>
+#include "SnackSales.h"
 
 class ProjectionScreen : public QWidget
 {
@@ -17,13 +13,16 @@ public:
 	~ProjectionScreen();
 public slots:
 	void on_pushButton_proceed_clicked();
-
+signals:
+	void return_to_employee_page();
 private:
 	Ui::ProjectionScreenClass ui;
 	QString id;
 	QSqlDatabase loginDb;
 	std::vector<QString> seats_ids;
 	QString hall_id;
+	SnackSales* snacksalespage;
+	double total_price;
 private slots:
 	void handle_button_click();
 };
