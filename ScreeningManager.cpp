@@ -47,7 +47,11 @@ ScreeningManager::ScreeningManager(QWidget *parent)
 }
 
 ScreeningManager::~ScreeningManager()
-{}
+{
+	for (QPushButton* button : findChildren<QPushButton*>()) {
+		delete button;
+	}
+}
 
 void ScreeningManager::onButtonClicked() {
 	QPushButton* button = qobject_cast<QPushButton*>(sender());

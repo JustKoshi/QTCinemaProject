@@ -38,12 +38,12 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>6.6.2_msvc2019_64</QtInstall>
-    <QtModules>designer;core;gui;opengl;qml;quickwidgets;sql;testlib;widgets;xml</QtModules>
+    <QtModules>core;gui;qml;testlib;widgets;opengl;printsupport;quickwidgets;sql;xml;designer</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>6.6.2_msvc2019_64</QtInstall>
-    <QtModules>designer;core;gui;opengl;qml;quickwidgets;sql;testlib;widgets;xml</QtModules>
+    <QtModules>core;gui;qml;testlib;widgets;opengl;printsupport;quickwidgets;sql;xml;designer</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -92,9 +92,12 @@
     <ClCompile Include="MovieManager.cpp" />
     <ClCompile Include="ProjectionScreen.cpp" />
     <ClCompile Include="ScreeningManager.cpp" />
+    <ClCompile Include="ScreeningSelection.cpp" />
+    <ClCompile Include="SnackSales.cpp" />
     <QtRcc Include="CheckOutScreen.qrc" />
     <QtRcc Include="LoginScreen.qrc" />
     <QtRcc Include="ProjectionScreen.qrc" />
+    <QtRcc Include="SnackSales.qrc" />
     <QtUic Include="AdminPage.ui" />
     <QtUic Include="CheckOutScreen.ui" />
     <QtUic Include="EmployeePage.ui" />
@@ -108,6 +111,8 @@
     <QtUic Include="MovieManager.ui" />
     <QtUic Include="ProjectionScreen.ui" />
     <QtUic Include="ScreeningManager.ui" />
+    <QtUic Include="ScreeningSelection.ui" />
+    <QtUic Include="SnackSales.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminPage.h" />
@@ -126,6 +131,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ScreeningManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="ScreeningSelection.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="SnackSales.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

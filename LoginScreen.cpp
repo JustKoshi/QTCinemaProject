@@ -8,7 +8,7 @@ LoginScreen::LoginScreen(QWidget *parent)
 	employee_page = new EmployeePage();
 	adminpage->setLoginDatabase(loginDatabase);
 	employee_page->setLoginDatabase(loginDatabase);
-
+	
 	loginDatabase = QSqlDatabase::addDatabase("QSQLITE");
 	QString pathToDB = QDir(QCoreApplication::applicationDirPath()).filePath("login.db");
 	loginDatabase.setDatabaseName(pathToDB);
@@ -20,6 +20,9 @@ LoginScreen::LoginScreen(QWidget *parent)
 		{
 		qDebug() << "Database not connected";
 	}
+
+	
+
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(connect_to_QTimer()));
 	timer->start(1000);
@@ -62,6 +65,7 @@ void LoginScreen::on_pushButton_Login_clicked() {
 
 		employee_page->setName(id);
 		QMessageBox::information(this, "Login", "Username and password is correct");
+		employee_page->setTodaysScreenings();
 		this->hide();
 		adminpage->close();
 		employee_page->show();

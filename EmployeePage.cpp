@@ -11,13 +11,15 @@ EmployeePage::EmployeePage(QWidget *parent)
 	checkoutscreen = new CheckOutScreen();
 	checkoutscreen->setLoginDatabase(loginDatabase);
 	connect(checkoutscreen, SIGNAL(return_To_EmployeePage()), this, SLOT(showEmployeePage()));
-	
+	screeningselection = nullptr;
 	
 }
 
 EmployeePage::~EmployeePage()
 {
 delete checkoutscreen;
+delete timer;
+delete screeningselection;
 }
 
 void EmployeePage::on_pushButton_checkOut_clicked() {
@@ -50,17 +52,52 @@ void EmployeePage::setName(int new_name) {
 		}
 	}
 	query.clear();
-	query.prepare("SELECT shift_time FROM EmployeeData WHERE empoyee_id = :id");
+	query.prepare("SELECT shift_time FROM EmployeeData WHERE employee_id = :id");
 	query.bindValue(":id", id);
-	if (query.exec()) {
-		if (query.next()) {
+	if (!query.exec()) {
+	QMessageBox::critical(this, "Error", "Query error");
+	}
+	if (query.next()) {
 			int etat = query.value(0).toInt();
 			checkoutscreen->set_elapsed_shift_time(etat);
-		}
-
 	}
+	
+
+}
+
+void EmployeePage::on_pushButton_ticket_sale_clicked() {
+	screeningselection = new ScreeningSelection();
+	screeningselection->getDb(loginDatabase);
+	connect(screeningselection, &ScreeningSelection::return_to_employee_page, this, &EmployeePage::showEmployeePage);
+	screeningselection->show();
+	this->hide();
+}
+
+void EmployeePage::on_pushButton_snack_sale_clicked() {
+	SnackSales* snackSales = new SnackSales(nullptr, loginDatabase);
+	connect(snackSales, &SnackSales::return_to_employee_page, this, &EmployeePage::showEmployeePage);
+	snackSales->show();
+	this->hide();
 }
 
 void EmployeePage::setLoginDatabase(QSqlDatabase db) {
 	loginDatabase = db;
 }
+
+void EmployeePage::setTodaysScreenings() {
+	QSqlQueryModel* model = new QSqlQueryModel();
+	QSqlQuery query(loginDatabase);
+	query.prepare("SELECT Screenings.screening_id, Movies.title , Screenings.hall_id, Screenings.date_start "
+		"FROM Screenings, Movies "
+		"WHERE Screenings.movie_id = Movies.movie_id "
+		"AND DATE(Screenings.date_start) = DATE('now') "
+		"ORDER BY TIME(Screenings.date_start) ASC");
+	if (!query.exec()) {
+		QMessageBox::critical(this, "Error", "Query error");
+	}
+	model->setQuery(query);
+	ui.tableView->setModel(model);
+	ui.tableView->show();
+}
+
+

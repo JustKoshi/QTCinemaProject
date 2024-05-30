@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/SnacksSales">
+        <file>Resource files/Snacks/candy.png</file>
+        <file>Resource files/Snacks/drink.png</file>
+        <file>Resource files/Snacks/nachos.png</file>
+        <file>Resource files/Snacks/popcorn.png</file>
+        <file>Resource files/Snacks/Slushy.png</file>
+    </qresource>
+</RCC>

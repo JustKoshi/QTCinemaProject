@@ -129,3 +129,4 @@ void CheckOutScreen::set_elapsed_shift_time(int time) {
 	QString time_text = elapsed_shift_time.toString("hh:mm:ss");
 	ui.label_shift_time->setText(time_text);
 }
+
