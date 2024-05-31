@@ -5,6 +5,7 @@
 #include "CheckOutScreen.h"
 #include "MovieManager.h"
 #include "ScreeningManager.h"
+#include "CancelReservation.h"
 
 class AdminPage : public QMainWindow
 {
@@ -21,6 +22,7 @@ public slots:
 	void on_pushButton_checkOut_clicked();
 	void on_pushButton_movieManager_clicked();
 	void on_pushButton_screeningManager_clicked();
+	void on_pushButton_cancel_reservation_clicked();
 	void showEmployeePage();
 	void connect_to_QTimer();
 

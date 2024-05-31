@@ -21,8 +21,16 @@ ScreeningSelection::ScreeningSelection(QWidget *parent)
 
 
 	QSqlQuery query(loginDb);
+
+	query.prepare(
+		"SELECT title, poster FROM Movies "
+		"WHERE movie_id IN ("
+		"    SELECT movie_id FROM Screenings "
+		"    WHERE DATE(date_start) = DATE('now') "
+		"    AND datetime(date_start) >= datetime('now', '-30 minutes')"
+		")"
+	);
 	
-	query.prepare("SELECT title, poster FROM Movies");
 	
 	if (!query.exec()) {
 		QMessageBox::critical(this, "Error", "Query error");
@@ -49,9 +57,33 @@ ScreeningSelection::ScreeningSelection(QWidget *parent)
 		}
 
 	}
-	//set minim size of the window
 	this->setMinimumSize(800, 600);
+	this->setStyleSheet(R"(
+		QWidget {
+			background-color: rgb(50,50,50);
+			font-size: 10pt;
+		}
+		QPushButton {
+			background-color: white; 
+			border: none; 
+			padding: 5px 10px; 
+			border-radius: 3px; 
+			color: black; 
+		}
 
+		QPushButton:hover {
+			background-color: #005F91;
+		}
+
+		QPushButton:pressed {
+			background-color: #003F5F; 
+		}
+		QGroupBox {
+			color: white;
+			font-size: 12pt;
+		}
+	)");
+	this->setMaximumWidth(800);
 
 }
 

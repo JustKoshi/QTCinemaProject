@@ -7,6 +7,9 @@
 #include <QSqlError>
 #include <QMessageBox>
 #include <QSqlQueryModel>
+#include <QFileDialog>
+#include <QCalendarWidget>
+#include <QScreen>
 
 
 class ScreeningManager : public QWidget
@@ -23,6 +26,7 @@ public slots:
 	void onButtonClicked();
 	void on_pushButton_add_screening_clicked();
 	void on_pushButton_delete_screening_clicked();
+	void on_pushButton_calendar_clicked();
 signals:
 		void return_To_AdminPage();
 private:

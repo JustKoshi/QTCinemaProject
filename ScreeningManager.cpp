@@ -5,15 +5,11 @@ ScreeningManager::ScreeningManager(QWidget *parent)
 {
 	
 	ui.setupUi(this);
+	ui.dateEdit->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 	connect(ui.pushButton_return, SIGNAL(clicked()), this, SLOT(on_pushButton_return_clicked()));
 	ui.dateEdit->setDate(QDate::currentDate());
 	QSqlQuery query(loginDb);
 	
-	query.prepare("DELETE FROM Screenings WHERE DATE(date_start) < DATE('now')");
-	if (!query.exec()) {
-		QMessageBox::critical(this, "Error", "Query error");
-	}
-
 	query.prepare("SELECT title FROM Movies");
 	if (!query.exec()) {
 		QMessageBox::critical(this, "Error", "Query error");
@@ -41,7 +37,26 @@ ScreeningManager::ScreeningManager(QWidget *parent)
 	connect(ui.pushButton_15_00, SIGNAL(clicked()), this, SLOT(onButtonClicked()));
 	connect(ui.pushButton_18_00, SIGNAL(clicked()), this, SLOT(onButtonClicked()));
 	connect(ui.pushButton_21_00, SIGNAL(clicked()), this, SLOT(onButtonClicked()));
-
+	
+	QList<QPushButton*> buttons = findChildren<QPushButton*>();
+	
+	for (QPushButton* button : findChildren<QPushButton*>()) {
+		if(button->objectName() == "pushButton_calendar")
+			continue;
+		button->setStyleSheet("QPushButton {"
+			"background-color: none;"
+			"border: 1px solid #8f8f91;"
+			"border-radius: 6px;"
+			"padding: 6px;"
+			"}"
+			"QPushButton:hover {"
+			"background-color: #b8b8b8;"
+			"}"
+			"QPushButton:pressed {"
+			"background-color: #d0d0d0;"
+			"}");
+	}
+	this->setMinimumSize(830, 630);
 
 
 }
@@ -57,9 +72,34 @@ void ScreeningManager::onButtonClicked() {
 	QPushButton* button = qobject_cast<QPushButton*>(sender());
 	if (button) {
 		for (QPushButton* otherButton : findChildren<QPushButton*>()) {
-			otherButton->setStyleSheet("");
+			if (otherButton->objectName() == "pushButton_calendar")
+				continue;
+			otherButton->setStyleSheet("QPushButton {"
+				"background-color: none;"
+				"border: 1px solid #8f8f91;"
+				"border-radius: 6px;"
+				"padding: 6px;"
+				"}"
+				"QPushButton:hover {"
+				"background-color: #b8b8b8;"
+				"}"
+				"QPushButton:pressed {"
+				"background-color: #d0d0d0;"
+				"}");
 		}
-		button->setStyleSheet("background-color: green;");
+		button->setStyleSheet("QPushButton {"
+			"background-color: green;"
+			"border: none;"
+			"border-radius: 6px;"
+			"padding: 6px;"
+			"color: white;"
+			"}"
+			"QPushButton:hover {"
+			"background-color: #008000;"
+			"}"
+			"QPushButton:pressed {"
+			"background-color: #006400;"
+			"}");
 		time = button->text();
 		
 	}
@@ -77,7 +117,7 @@ void ScreeningManager::on_pushButton_add_screening_clicked() {
 		return;
 	}
 	QSqlQuery query(loginDb);
-	//check if there is already screening at this time and hall
+	
 	query.prepare("SELECT * FROM Screenings WHERE hall_id = :hall_id AND date_start = :date_start");
 	query.bindValue(":hall_id", ui.comboBox_hall->currentText());
 	query.bindValue(":date_start", ui.dateEdit->date().toString("yyyy-MM-dd") + " " + time);
@@ -117,6 +157,7 @@ void ScreeningManager::on_pushButton_add_screening_clicked() {
 	}
 	model->setQuery(query);
 	ui.screening_table->setModel(model);
+	ui.screening_table->resizeColumnsToContents();
 	ui.screening_table->show();
 }
 
@@ -151,6 +192,7 @@ void ScreeningManager::on_pushButton_delete_screening_clicked() {
 	}
 	model->setQuery(query);
 	ui.screening_table->setModel(model);
+	ui.screening_table->resizeColumnsToContents();
 	ui.screening_table->show();
 	query.prepare("SELECT screening_id FROM Screenings");
 	while (query.next()) {
@@ -174,6 +216,7 @@ void ScreeningManager::getDb(QSqlDatabase db)
 	}
 	model->setQuery(query);
 	ui.screening_table->setModel(model);
+	ui.screening_table->resizeColumnsToContents();
 	ui.screening_table->show();
 }
 
@@ -181,4 +224,34 @@ void ScreeningManager::getDb(QSqlDatabase db)
 void ScreeningManager::on_pushButton_return_clicked() {
 	this->close();
 	emit return_To_AdminPage();
+}
+
+void ScreeningManager::on_pushButton_calendar_clicked() {
+	QCalendarWidget* calendar = new QCalendarWidget();
+	calendar->setMinimumDate(QDate::currentDate());
+	calendar->setSelectedDate(QDate::currentDate());
+	calendar->setWindowFlags(Qt::Window);
+	calendar->setStyleSheet("background-color: white; \
+                             font-size: 12px; \
+                             border: 1px solid #ccc; \
+                             color: #333;");
+	calendar->resize(400, 300); 
+
+	QVBoxLayout* layout = new QVBoxLayout;
+	layout->addWidget(calendar);
+
+	QWidget* window = new QWidget();
+	window->setWindowFlags(Qt::Window | Qt::FramelessWindowHint); 
+	window->setLayout(layout);
+	window->resize(400, 300); 
+	QRect screenGeometry = QGuiApplication::primaryScreen()->geometry();
+	int x = (screenGeometry.width() - window->width()) / 2;
+	int y = (screenGeometry.height() - window->height()) / 2;
+	window->move(x, y);
+	connect(calendar, &QCalendarWidget::selectionChanged, this, [this, calendar, window]() {
+		ui.dateEdit->setDate(calendar->selectedDate());
+		window->close();
+		});
+
+	window->show();
 }

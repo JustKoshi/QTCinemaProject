@@ -89,6 +89,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CancelReservation.cpp" />
     <ClCompile Include="MovieManager.cpp" />
     <ClCompile Include="ProjectionScreen.cpp" />
     <ClCompile Include="ScreeningManager.cpp" />
@@ -99,6 +100,7 @@
     <QtRcc Include="ProjectionScreen.qrc" />
     <QtRcc Include="SnackSales.qrc" />
     <QtUic Include="AdminPage.ui" />
+    <QtUic Include="CancelReservation.ui" />
     <QtUic Include="CheckOutScreen.ui" />
     <QtUic Include="EmployeePage.ui" />
     <QtUic Include="LoginScreen.ui" />
@@ -137,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="SnackSales.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="CancelReservation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

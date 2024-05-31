@@ -97,11 +97,7 @@ void SnackSales::on_pushButton_add_candy_clicked() {
 	QListWidgetItem* list_item = new QListWidgetItem(item);
 	ui.listWidget->addItem(list_item);
 	ui.listWidget->update();
-	ui.listWidget_total->clear();
-	QListWidgetItem* item_total = new QListWidgetItem("Total price: " + QString::number(total_price) + " zl");
-	ui.listWidget_total->addItem(item_total);
-	ui.listWidget_total->update();
-
+	update_total_price();
 }
 
 void SnackSales::on_pushButton_add_nachos_clicked() {
@@ -133,10 +129,7 @@ void SnackSales::on_pushButton_add_nachos_clicked() {
 	QListWidgetItem* list_item = new QListWidgetItem(item);
 	ui.listWidget->addItem(list_item);
 	ui.listWidget->update();
-	ui.listWidget_total->clear();
-	QListWidgetItem* item_total = new QListWidgetItem("Total price: " + QString::number(total_price) + " zl");
-	ui.listWidget_total->addItem(item_total);
-	ui.listWidget_total->update();
+	update_total_price();
 }
 
 void SnackSales::on_pushButton_add_popcorn_clicked() {
@@ -168,10 +161,7 @@ void SnackSales::on_pushButton_add_popcorn_clicked() {
 	QListWidgetItem* list_item = new QListWidgetItem(item);
 	ui.listWidget->addItem(list_item);
 	ui.listWidget->update();
-	ui.listWidget_total->clear();
-	QListWidgetItem* item_total = new QListWidgetItem("Total price: " + QString::number(total_price) + " zl");
-	ui.listWidget_total->addItem(item_total);
-	ui.listWidget_total->update();
+	update_total_price();
 }
 
 void SnackSales::on_pushButton_add_slushy_clicked() {
@@ -203,10 +193,7 @@ void SnackSales::on_pushButton_add_slushy_clicked() {
 	QListWidgetItem* list_item = new QListWidgetItem(item);
 	ui.listWidget->addItem(list_item);
 	ui.listWidget->update();
-	ui.listWidget_total->clear();
-	QListWidgetItem* item_total = new QListWidgetItem("Total price: " + QString::number(total_price) + " zl");
-	ui.listWidget_total->addItem(item_total);
-	ui.listWidget_total->update();
+	update_total_price();
 }
 
 void SnackSales::on_pushButton_add_soda_clicked() {
@@ -238,10 +225,7 @@ void SnackSales::on_pushButton_add_soda_clicked() {
 	QListWidgetItem* list_item = new QListWidgetItem(item);
 	ui.listWidget->addItem(list_item);
 	ui.listWidget->update();
-	ui.listWidget_total->clear();
-	QListWidgetItem* item_total = new QListWidgetItem("Total price: " + QString::number(total_price) + " zl");
-	ui.listWidget_total->addItem(item_total);
-	ui.listWidget_total->update();
+	update_total_price();
 
 }
 
@@ -259,13 +243,17 @@ void SnackSales::on_pushButton_remove_clicked() {
 	QString snack_name = item_text.left(item_text.indexOf("-") - 1);
 	QString size = item_text.section(" - ", 1, 1);
 	QString price = item_text.mid(item_text.lastIndexOf("-") + 2, item_text.lastIndexOf("z") - item_text.lastIndexOf("-") - 3);
-	qDebug()<< snack_name << " " << size << " " << price;
-	total_price -= price.toDouble();
 	QListWidgetItem* item_total = new QListWidgetItem("Total price: " + QString::number(total_price) + " zl");
-	ui.listWidget_total->clear();
-	ui.listWidget_total->addItem(item_total);
-	ui.listWidget_total->update();
+
 	delete item;
+	if (ui.listWidget->count() == 0) {
+		total_price = 0.0;
+	}
+	else
+	{
+		total_price = total_price - price.toDouble();
+	}
+	update_total_price();
 	ui.listWidget->update();
 	QSqlQuery query(loginDb);
 	query.prepare("SELECT snack_id FROM Snacks WHERE snack_name = :snack_name AND size = :size");
@@ -278,16 +266,16 @@ void SnackSales::on_pushButton_remove_clicked() {
 	}
 	query.next();
 	QString snack_id = query.value(0).toString();
-	for (std::pair<QString, int>& pair : snack_ids_and_amouts) {
+		for (std::pair<QString, int>& pair : snack_ids_and_amouts) {
 		if (pair.first == snack_id) {
-			pair.second--;
-			if (pair.second == 0) {
-				snack_ids_and_amouts.erase(std::remove(snack_ids_and_amouts.begin(), snack_ids_and_amouts.end(), pair), snack_ids_and_amouts.end());
-			}
+				pair.second--;
+				if (pair.second == 0) {
+					snack_ids_and_amouts.erase(std::remove(snack_ids_and_amouts.begin(), snack_ids_and_amouts.end(), pair), snack_ids_and_amouts.end());
+				}
 			break;
+			}
 		}
-	}
-
+	
 }
 
 void SnackSales::on_pushButton_check_out_clicked() {
@@ -442,4 +430,11 @@ void SnackSales::confirm_sale() {
 		}
 	}	
 	
+}
+
+void SnackSales::update_total_price() {
+	ui.listWidget_total->clear();
+	QListWidgetItem* item = new QListWidgetItem("Total price: " + QString::number(total_price, 'f', 2) + " zl");
+	ui.listWidget_total->addItem(item);
+	ui.listWidget_total->update();
 }

@@ -34,19 +34,19 @@ void LoginScreen::on_pushButton_Login_clicked() {
 	bool success_manager = false;
 	bool success_employee = false;
 	QSqlQuery query;
-	QString stanowisko;
+	int stanowisko;
 	int id;
 	query.prepare("SELECT * FROM LoginData WHERE login = :username AND password = :password");
 	query.bindValue(":username", username);
 	query.bindValue(":password", password);
 	if (query.exec()) {
 		if (query.next()) {
-			stanowisko = query.value(3).toString();
-			if (stanowisko == "kierownik") {
+			stanowisko = query.value(3).toInt();
+			if (stanowisko == 2) {
 				success_manager = true;
 				id = query.value(0).toInt();
 			}
-			else if (stanowisko == "pracownik") {
+			else if (stanowisko == 1) {
 				success_employee = true;
 				id = query.value(0).toInt();
 			}
@@ -96,3 +96,4 @@ LoginScreen::~LoginScreen()
 	delete adminpage;
 	delete employee_page;
 }
+
