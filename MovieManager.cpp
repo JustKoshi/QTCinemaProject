@@ -89,9 +89,9 @@ void MovieManager::on_pushButton_add_movie_clicked() {
 		QMessageBox::critical(this, "Error", "Fill all fields before insertion");
 		return;
 	}
-		else if (ui.lineEdit_length->text().toInt() <= 0) {
-		QMessageBox::critical(this, "Error", "Length must be greater than 0");
-		return;
+	else if (ui.lineEdit_length->text().toInt() <= 0||ui.lineEdit_length->text().toInt()>=180) {
+	QMessageBox::critical(this, "Error", "Length must between 1 and 180");
+	return;
 	}
 	else {
 		QSqlQuery query(loginDb);
@@ -115,7 +115,6 @@ void MovieManager::on_pushButton_add_movie_clicked() {
 			QMessageBox::information(this, "Success", "Movie added");
 		}
 		else {
-			//write to console error message
 			qDebug() << query.lastError().text();
 			QMessageBox::critical(this, "Error", "Movie not added");
 		}

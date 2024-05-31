@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>612</width>
-    <height>722</height>
+    <width>563</width>
+    <height>830</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>900</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>SnackSales</string>
@@ -34,6 +40,18 @@
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QGroupBox" name="groupBox_2">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>160</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="title">
          <string>Popcorn</string>
         </property>
@@ -66,10 +84,35 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_6">
            <item>
-            <widget class="QComboBox" name="comboBox_popcorn"/>
+            <widget class="QComboBox" name="comboBox_popcorn">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>25</height>
+              </size>
+             </property>
+            </widget>
            </item>
-           <item>
+           <item alignment="Qt::AlignVCenter">
             <widget class="QPushButton" name="pushButton_add_popcorn">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>20</height>
+              </size>
+             </property>
              <property name="text">
               <string>Add</string>
              </property>
@@ -82,6 +125,18 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
       </item>
       <item>
        <widget class="QGroupBox" name="groupBox_3">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>160</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="title">
          <string>Soda</string>
         </property>
@@ -113,10 +168,35 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_5">
            <item>
-            <widget class="QComboBox" name="comboBox_soda"/>
+            <widget class="QComboBox" name="comboBox_soda">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>25</height>
+              </size>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QPushButton" name="pushButton_add_soda">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>25</height>
+              </size>
+             </property>
              <property name="text">
               <string>Add</string>
              </property>
@@ -129,6 +209,18 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
       </item>
       <item>
        <widget class="QGroupBox" name="groupBox_4">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>160</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="title">
          <string>Nachos</string>
         </property>
@@ -160,10 +252,35 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
-            <widget class="QComboBox" name="comboBox_nachos"/>
+            <widget class="QComboBox" name="comboBox_nachos">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>25</height>
+              </size>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QPushButton" name="pushButton_add_nachos">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>25</height>
+              </size>
+             </property>
              <property name="text">
               <string>Add</string>
              </property>
@@ -176,6 +293,18 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
       </item>
       <item>
        <widget class="QGroupBox" name="groupBox_5">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>160</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="title">
          <string>Slushy</string>
         </property>
@@ -207,10 +336,35 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_7">
            <item>
-            <widget class="QComboBox" name="comboBox_slushy"/>
+            <widget class="QComboBox" name="comboBox_slushy">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>25</height>
+              </size>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QPushButton" name="pushButton_add_slushy">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>25</height>
+              </size>
+             </property>
              <property name="text">
               <string>Add</string>
              </property>
@@ -223,6 +377,18 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
       </item>
       <item>
        <widget class="QGroupBox" name="groupBox_6">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>160</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="title">
          <string>Candies</string>
         </property>
@@ -254,10 +420,35 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_8">
            <item>
-            <widget class="QComboBox" name="comboBox_candy"/>
+            <widget class="QComboBox" name="comboBox_candy">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>25</height>
+              </size>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QPushButton" name="pushButton_add_candy">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>25</height>
+              </size>
+             </property>
              <property name="text">
               <string>Add</string>
              </property>
@@ -366,14 +557,6 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
      </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

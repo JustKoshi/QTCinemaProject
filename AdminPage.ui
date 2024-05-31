@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>601</width>
-    <height>404</height>
+    <width>616</width>
+    <height>426</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -161,6 +161,16 @@ border: 1px solid rgb(255, 0, 0);
     </property>
     <property name="text">
      <string>Cancel Reservation</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>-420</x>
+      <y>570</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
     </property>
    </widget>
   </widget>

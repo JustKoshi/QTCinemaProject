@@ -96,3 +96,4 @@ LoginScreen::~LoginScreen()
 	delete adminpage;
 	delete employee_page;
 }
+

@@ -35,7 +35,6 @@ public slots:
 
  signals:
 	void return_to_employee_page();
-
 	
 private:
 	Ui::SnackSalesClass ui;
@@ -47,4 +46,5 @@ private:
 	int sale_id;
 	//void generateReceipt();
 	void confirm_sale();
+	void update_total_price();
 };

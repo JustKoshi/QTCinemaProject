@@ -8,6 +8,5 @@ int main(int argc, char *argv[])
     LoginScreen w;
     ProjectionScreen p;
     w.show();
-    //p.show();
     return a.exec();
 }

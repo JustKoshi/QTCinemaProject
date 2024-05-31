@@ -41,7 +41,20 @@ ScreeningManager::ScreeningManager(QWidget *parent)
 	connect(ui.pushButton_15_00, SIGNAL(clicked()), this, SLOT(onButtonClicked()));
 	connect(ui.pushButton_18_00, SIGNAL(clicked()), this, SLOT(onButtonClicked()));
 	connect(ui.pushButton_21_00, SIGNAL(clicked()), this, SLOT(onButtonClicked()));
-
+	for (QPushButton* button : findChildren<QPushButton*>()) {
+		button->setStyleSheet("QPushButton {"
+			"background-color: none;"
+			"border: 1px solid #8f8f91;"
+			"border-radius: 6px;"
+			"padding: 6px;"
+			"}"
+			"QPushButton:hover {"
+			"background-color: #b8b8b8;"
+			"}"
+			"QPushButton:pressed {"
+			"background-color: #d0d0d0;"
+			"}");
+	}
 
 
 }
@@ -57,9 +70,32 @@ void ScreeningManager::onButtonClicked() {
 	QPushButton* button = qobject_cast<QPushButton*>(sender());
 	if (button) {
 		for (QPushButton* otherButton : findChildren<QPushButton*>()) {
-			otherButton->setStyleSheet("");
+			otherButton->setStyleSheet("QPushButton {"
+				"background-color: none;"
+				"border: 1px solid #8f8f91;"
+				"border-radius: 6px;"
+				"padding: 6px;"
+				"}"
+				"QPushButton:hover {"
+				"background-color: #b8b8b8;"
+				"}"
+				"QPushButton:pressed {"
+				"background-color: #d0d0d0;"
+				"}");
 		}
-		button->setStyleSheet("background-color: green;");
+		button->setStyleSheet("QPushButton {"
+			"background-color: green;"
+			"border: none;"
+			"border-radius: 6px;"
+			"padding: 6px;"
+			"color: white;"
+			"}"
+			"QPushButton:hover {"
+			"background-color: #008000;"
+			"}"
+			"QPushButton:pressed {"
+			"background-color: #006400;"
+			"}");
 		time = button->text();
 		
 	}

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>645</width>
-    <height>454</height>
+    <height>455</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -93,9 +93,9 @@ border: 1px solid rgb(255, 0, 0);
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>365</x>
+      <x>225</x>
       <y>40</y>
-      <width>271</width>
+      <width>411</width>
       <height>411</height>
      </rect>
     </property>
@@ -130,7 +130,7 @@ border: 1px solid rgb(255, 0, 0);
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>360</y>
+      <y>310</y>
       <width>151</width>
       <height>41</height>
      </rect>
@@ -148,24 +148,6 @@ border: 1px solid rgb(255, 0, 0);
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>310</y>
-      <width>151</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Raports</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_current_deals">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
       <y>260</y>
       <width>151</width>
       <height>41</height>
@@ -177,7 +159,7 @@ border: 1px solid rgb(255, 0, 0);
      </font>
     </property>
     <property name="text">
-     <string>Current deals</string>
+     <string>Raports</string>
     </property>
    </widget>
   </widget>
