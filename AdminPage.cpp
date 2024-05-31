@@ -83,3 +83,10 @@ void AdminPage::setName(int new_name) {
 void AdminPage::setLoginDatabase(QSqlDatabase db) {
 	loginDatabase = db;
 }
+
+void AdminPage::on_pushButton_cancel_reservation_clicked() {
+	this->hide();
+	CancelReservation* cancelreservation = new CancelReservation(nullptr, loginDatabase, id);
+	cancelreservation->show();
+	connect(cancelreservation, SIGNAL(return_To_AdminPage()), this, SLOT(showEmployeePage()));
+}

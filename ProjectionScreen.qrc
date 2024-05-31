@@ -3,5 +3,6 @@
         <file>Resource files/seat.png</file>
         <file>Resource files/seat2.png</file>
         <file>Resource files/seat3.png</file>
+        <file>Resource files/icons/calendar.png</file>
     </qresource>
 </RCC>

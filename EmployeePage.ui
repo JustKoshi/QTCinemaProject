@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>645</width>
-    <height>455</height>
+    <width>650</width>
+    <height>513</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,8 +20,8 @@
    <widget class="QPushButton" name="pushButton_checkOut">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>110</y>
+      <x>20</x>
+      <y>130</y>
       <width>151</width>
       <height>41</height>
      </rect>
@@ -75,8 +75,8 @@ border: 1px solid rgb(255, 0, 0);
    <widget class="QPushButton" name="pushButton_ticket_sale">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>160</y>
+      <x>20</x>
+      <y>180</y>
       <width>151</width>
       <height>41</height>
      </rect>
@@ -96,7 +96,7 @@ border: 1px solid rgb(255, 0, 0);
       <x>225</x>
       <y>40</y>
       <width>411</width>
-      <height>411</height>
+      <height>471</height>
      </rect>
     </property>
     <property name="title">
@@ -111,8 +111,8 @@ border: 1px solid rgb(255, 0, 0);
    <widget class="QPushButton" name="pushButton_snack_sale">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>210</y>
+      <x>20</x>
+      <y>230</y>
       <width>151</width>
       <height>41</height>
      </rect>
@@ -129,8 +129,8 @@ border: 1px solid rgb(255, 0, 0);
    <widget class="QPushButton" name="pushButton_account_settings">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>310</y>
+      <x>20</x>
+      <y>430</y>
       <width>151</width>
       <height>41</height>
      </rect>
@@ -147,8 +147,8 @@ border: 1px solid rgb(255, 0, 0);
    <widget class="QPushButton" name="pushButton_raports">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>260</y>
+      <x>20</x>
+      <y>380</y>
       <width>151</width>
       <height>41</height>
      </rect>
@@ -160,6 +160,60 @@ border: 1px solid rgb(255, 0, 0);
     </property>
     <property name="text">
      <string>Raports</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_raports_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>330</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Current Deals</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_cancel_reservation">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>280</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Cancel Reservation</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_screeningManager_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>470</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Log Out</string>
     </property>
    </widget>
   </widget>

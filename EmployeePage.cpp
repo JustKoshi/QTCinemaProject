@@ -97,7 +97,15 @@ void EmployeePage::setTodaysScreenings() {
 	}
 	model->setQuery(query);
 	ui.tableView->setModel(model);
+	ui.tableView->resizeColumnsToContents();
 	ui.tableView->show();
+}
+
+void EmployeePage::on_pushButton_cancel_reservation_clicked() {
+	CancelReservation* cancelReservation = new CancelReservation(nullptr, loginDatabase, id);
+	connect(cancelReservation, &CancelReservation::return_to_employee_page, this, &EmployeePage::showEmployeePage);
+	cancelReservation->show();
+	this->hide();
 }
 
 

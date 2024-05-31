@@ -6,7 +6,34 @@ MovieManager::MovieManager(QWidget *parent)
 	ui.setupUi(this);
 	ui.label_img->setAlignment(Qt::AlignCenter);
 	connect(ui.pushButton_return, SIGNAL(clicked()), this, SLOT(on_pushButton_return_clicked()));
-	
+	for (QPushButton* button : findChildren<QPushButton*>()) {
+		button->setStyleSheet("QPushButton {"
+			"background-color: none;"
+			"border: 1px solid #8f8f91;"
+			"color:white;"
+			"border-radius: 6px;"
+			"padding: 6px;"
+			"}"
+			"QPushButton:hover {"
+			"background-color: #b8b8b8;"
+			"}"
+			"QPushButton:pressed {"
+			"background-color: #d0d0d0;"
+			"}");
+	}
+	ui.spinBox_movie_id->setStyleSheet("QSpinBox {"
+			"background-color: none;"
+			"border: 1px solid #8f8f91;"
+			"color:rgb(40,40,40);"
+			"border-radius: 6px;"
+			"padding: 6px;"
+			"}"
+			"QSpinBox:hover {"
+			"background-color: #b8b8b8;"
+			"}"
+			"QSpinBox:pressed {"
+			"background-color: #d0d0d0;"
+			"}");
 }
 
 MovieManager::~MovieManager()
@@ -22,6 +49,7 @@ void MovieManager::GetDb(QSqlDatabase db) {
 	}
 	model->setQuery(query);
 	ui.movie_table->setModel(model);
+	ui.movie_table->resizeColumnsToContents();
 	ui.movie_table->show();
 
 
