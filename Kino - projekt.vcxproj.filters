@@ -76,6 +76,12 @@
     <ClCompile Include="CancelReservation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AccountSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RaportPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminPage.h">
@@ -103,6 +109,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="CancelReservation.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="RaportPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -134,5 +143,13 @@
     <QtUic Include="CancelReservation.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="RaportPage.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AccountSetting.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

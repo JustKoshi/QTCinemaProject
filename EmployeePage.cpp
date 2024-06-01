@@ -108,4 +108,24 @@ void EmployeePage::on_pushButton_cancel_reservation_clicked() {
 	this->hide();
 }
 
+void EmployeePage::on_pushButton_logout_clicked() {
+	this->hide();
+	emit return_To_loginPage();
+}
 
+void EmployeePage::on_pushButton_account_settings_clicked() {
+	QMessageBox msgBox;
+	msgBox.setWindowTitle("Change login or password");
+	msgBox.setText("Do you want to change login or password?");
+	QPushButton* loginButton = msgBox.addButton(tr("Login"), QMessageBox::ActionRole);
+	QPushButton* passwordButton = msgBox.addButton(tr("Password"), QMessageBox::ActionRole);
+	msgBox.addButton(QMessageBox::Cancel);
+	msgBox.exec();
+
+	if (msgBox.clickedButton() == loginButton) {
+		changeLogin(loginDatabase, id);
+	}
+	else if (msgBox.clickedButton() == passwordButton) {
+		changePassword(loginDatabase, id);
+	}
+}

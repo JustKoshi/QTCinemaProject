@@ -19,6 +19,8 @@ public slots:
     void on_pushButton_Login_clicked();
     void on_pushButton_Quit_clicked();
     void connect_to_QTimer();
+    void showLoginPage();
+ 
 private:
     AdminPage* adminpage;
     EmployeePage* employee_page;

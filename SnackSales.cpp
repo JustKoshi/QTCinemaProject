@@ -429,7 +429,7 @@ void SnackSales::confirm_sale() {
 			}
 		}
 	}	
-	
+	generateReceipt();
 }
 
 void SnackSales::update_total_price() {
@@ -437,4 +437,105 @@ void SnackSales::update_total_price() {
 	QListWidgetItem* item = new QListWidgetItem("Total price: " + QString::number(total_price, 'f', 2) + " zl");
 	ui.listWidget_total->addItem(item);
 	ui.listWidget_total->update();
+}
+
+void SnackSales::generateReceipt() {
+	QString cinema_name = "QTCinema";
+	QString cinema_address = "ul. Stawki 14, 00-215 Warszawa";
+	QSqlQuery query(loginDb);
+	QString title = "";
+	QString screening_date = "";
+	QString screening_time = "";
+	QString hall_id;
+	if (!seats_ids.empty()) {
+		query.prepare("SELECT title, date_start, hall_id FROM Screenings, Movies WHERE screening_id = :screening_id");
+		query.bindValue(":screening_id", screening_id);
+		if (!query.exec()) {
+			QMessageBox::critical(this, "Error", "Query error");
+			qDebug() << query.lastError().text();
+			return;
+		}
+		query.next();
+		title = query.value(0).toString();
+		screening_date = query.value(1).toString();
+		screening_date = screening_date.left(screening_date.indexOf(" "));
+		screening_time = query.value(1).toString();
+		screening_time = screening_time.mid(screening_time.indexOf(" ") + 1);
+		hall_id = query.value(2).toString();
+	}
+	QString id = QString::number(sale_id);
+	QString desktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
+	QString receiptsPath = desktopPath + "/Receipts";
+	QDir dir;
+	if (!dir.exists(receiptsPath)) {
+		dir.mkdir(receiptsPath);
+	}
+	QString fileName = receiptsPath + "/" + "Receipt" + id + ".pdf";
+	QPrinter writer(QPrinter::PrinterResolution);
+	writer.setOutputFormat(QPrinter::PdfFormat);
+	writer.setOutputFileName(fileName);
+	writer.setPageSize(QPageSize(QPageSize::A5));
+	writer.setPageMargins(QMarginsF(5, 5, 5, 5));
+	QPainter painter(&writer);
+	painter.setPen(Qt::black);
+	painter.setFont(QFont("Arial", 12));
+	int y = 5;
+	painter.drawText(100, y, "-----------------------------------------------------");
+	y += 20;
+	painter.drawText(100, y, "Cinema: " + cinema_name);
+	y+=20;
+	painter.drawText(100, y, "Address: " + cinema_address);
+	
+	if (!seats_ids.empty()) {
+
+		y += 20;
+		painter.drawText(100, y, "-----------------------------------------------------");
+		y += 20;
+		painter.drawText(100, y, "Movie title: " + title);
+		y += 20;
+		painter.drawText(100, y, "Hall id:  " + hall_id);
+		y += 20;
+		painter.drawText(100, y, "Screening date: " + screening_date);
+		y += 20;
+		painter.drawText(100, y, "Screening time: " + screening_time);
+		y += 20;
+		painter.drawText(100, y, "-----------------------------------------------------");
+		y += 20;
+		painter.drawText(100, y, "Seats:");
+	    y += 20;
+		for (int i = 0; i < ui.listWidget->count(); i++) {
+			QListWidgetItem* item = ui.listWidget->item(i);
+			QString item_text = item->text();
+			if (item_text.contains("Ticket for seat")) {
+				painter.drawText(100, y, item_text);
+				y += 20;
+
+			}
+		}
+	}
+	else{ 
+	y += 20;
+	
+	}
+	if (!snack_ids_and_amouts.empty()) {
+		painter.drawText(100, y, "-----------------------------------------------------");
+		y += 20;
+		painter.drawText(100, y, "Snacks:");
+		y += 20;
+		for (int i = 0; i < ui.listWidget->count(); i++) {
+			QListWidgetItem* item = ui.listWidget->item(i);
+			QString item_text = item->text();
+			if (!item_text.contains("Ticket for seat")) {
+				painter.drawText(100, y, item_text);
+				y += 20;
+			}
+		}
+	}
+	painter.drawText(100, y, "-----------------------------------------------------");
+	y += 20;
+	painter.drawText(100, y, "Total price: " + QString::number(total_price, 'f', 2) + " zl");
+	painter.end();
+	QMessageBox::information(this, "Info", "Receipt generated successfully");
+
+
 }

@@ -198,7 +198,7 @@ border: 1px solid rgb(255, 0, 0);
      <string>Cancel Reservation</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_screeningManager_3">
+   <widget class="QPushButton" name="pushButton_logout">
     <property name="geometry">
      <rect>
       <x>20</x>
