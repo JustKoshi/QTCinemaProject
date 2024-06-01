@@ -7,6 +7,7 @@
 #include "ScreeningManager.h"
 #include "CancelReservation.h"
 #include "AccountSetting.h"
+#include "ReportPage.h"
 
 class AdminPage : public QMainWindow
 {
@@ -28,6 +29,7 @@ public slots:
 	void connect_to_QTimer();
 	void on_pushButton_logout_clicked();
 	void on_pushButton_account_settings_clicked();
+	void on_pushButton_reports_clicked();
 signals:
 	void return_To_loginPage();
 private:

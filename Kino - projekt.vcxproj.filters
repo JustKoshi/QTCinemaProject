@@ -79,7 +79,7 @@
     <ClCompile Include="AccountSettings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RaportPage.cpp">
+    <ClCompile Include="ReportPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -111,7 +111,7 @@
     <QtMoc Include="CancelReservation.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="RaportPage.h">
+    <QtMoc Include="ReportPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -143,7 +143,7 @@
     <QtUic Include="CancelReservation.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtUic Include="RaportPage.ui">
+    <QtUic Include="ReportPage.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

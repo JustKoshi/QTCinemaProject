@@ -113,3 +113,9 @@ void AdminPage::on_pushButton_account_settings_clicked() {
 		changePassword(loginDatabase, id);
 	}
 }
+
+void AdminPage::on_pushButton_reports_clicked() {
+	ReportPage* reportpage = new ReportPage();
+	reportpage->show();
+	connect(reportpage, &ReportPage::return_To_AdminPage, this, &AdminPage::showEmployeePage);
+}

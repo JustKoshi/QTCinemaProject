@@ -173,7 +173,7 @@ border: 1px solid rgb(255, 0, 0);
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_Cancel_Reservation_2">
+   <widget class="QPushButton" name="pushButton_raports">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -191,7 +191,7 @@ border: 1px solid rgb(255, 0, 0);
      <string>Deals Manager</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_screeningManager_2">
+   <widget class="QPushButton" name="pushButton_reports">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -206,7 +206,7 @@ border: 1px solid rgb(255, 0, 0);
      </font>
     </property>
     <property name="text">
-     <string>Raports</string>
+     <string>Reports</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_logout">

@@ -7,11 +7,9 @@
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <vector>
-#include <QTextDocument>
 #include <QPrinter>
-#include <QPrintDialog>
 #include <QFileDialog>
-#include <QTextStream>
+
 #include <QPdfWriter>
 #include <QPainter>
 #include <QStandardPaths>

@@ -38,12 +38,12 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>6.6.2_msvc2019_64</QtInstall>
-    <QtModules>core;gui;qml;testlib;widgets;opengl;printsupport;quickwidgets;sql;xml;designer</QtModules>
+    <QtModules>core;gui;qml;testlib;widgets;opengl;printsupport;quickwidgets;sql;xml;charts;designer</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>6.6.2_msvc2019_64</QtInstall>
-    <QtModules>core;gui;qml;testlib;widgets;opengl;printsupport;quickwidgets;sql;xml;designer</QtModules>
+    <QtModules>core;gui;qml;testlib;widgets;opengl;printsupport;quickwidgets;sql;xml;charts;designer</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -93,7 +93,7 @@
     <ClCompile Include="CancelReservation.cpp" />
     <ClCompile Include="MovieManager.cpp" />
     <ClCompile Include="ProjectionScreen.cpp" />
-    <ClCompile Include="RaportPage.cpp" />
+    <ClCompile Include="ReportPage.cpp" />
     <ClCompile Include="ScreeningManager.cpp" />
     <ClCompile Include="ScreeningSelection.cpp" />
     <ClCompile Include="SnackSales.cpp" />
@@ -114,7 +114,7 @@
     <ClCompile Include="main.cpp" />
     <QtUic Include="MovieManager.ui" />
     <QtUic Include="ProjectionScreen.ui" />
-    <QtUic Include="RaportPage.ui" />
+    <QtUic Include="ReportPage.ui" />
     <QtUic Include="ScreeningManager.ui" />
     <QtUic Include="ScreeningSelection.ui" />
     <QtUic Include="SnackSales.ui" />
@@ -148,7 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AccountSetting.h" />
-    <QtMoc Include="RaportPage.h" />
+    <QtMoc Include="ReportPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
