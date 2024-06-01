@@ -11,6 +11,8 @@ ReportPage::ReportPage(QWidget *parent, QSqlDatabase db)
 	ui.comboBox->addItem("This Month");
 	ui.comboBox->addItem("This Week");
 	ui.comboBox->addItem("Today");
+	ui.comboBox_chart->addItem("Piechart");
+	ui.comboBox_chart->addItem("Barchart");
 }
 
 ReportPage::~ReportPage()
@@ -38,7 +40,6 @@ void ReportPage::on_pushButton_seat_sales_clicked() {
 	QChart *chart = new QChart();
 	chart->setTitle("Seat Sales");
 	chart->setAnimationOptions(QChart::SeriesAnimations);
-	QPieSeries *series = new QPieSeries();
 	QSqlQuery query(db);
 	if (ui.comboBox->currentText() == "This Year") {
 		if (!query.exec("SELECT title, COUNT(*) \
@@ -89,13 +90,46 @@ void ReportPage::on_pushButton_seat_sales_clicked() {
 			qDebug() << query.lastError();
 		}
 	}
-	while (query.next()) {
-		QPieSlice* slice = series->append(query.value(0).toString(), query.value(1).toInt());
-		slice->setColor(QColor(rand() % 256, rand() % 256, rand() % 256));
-		slice->setLabel(QString("%1: %2").arg(slice->label()).arg(slice->value()));
+	QPieSeries* series = new QPieSeries();
+	QBarSeries* barSeries = new QBarSeries();
+	if (ui.comboBox_chart->currentText() == "Piechart") {
+		while (query.next()) {
+			QPieSlice* slice = series->append(query.value(0).toString(), query.value(1).toInt());
+			slice->setColor(QColor(rand() % 256, rand() % 256, rand() % 256));
+			slice->setLabel(QString("%1: %2").arg(slice->label()).arg(slice->value()));
 
+		}
+		chart->addSeries(series);
 	}
-	chart->addSeries(series);
+	else {
+		while (query.next()) {
+			QBarSet* set = new QBarSet(query.value(0).toString());
+			set->setColor(QColor(rand() % 256, rand() % 256, rand() % 256));
+			*set << query.value(1).toInt();
+			set->setLabel(QString("%1: %2").arg(set->label()).arg(set->at(0)));
+			QBarSet* spacer = new QBarSet("");
+			barSeries->append(spacer);
+			barSeries->append(set);
+
+
+
+		}
+		QStringList categories;
+		categories << "";
+		chart->addSeries(barSeries);
+		QBarCategoryAxis* axis = new QBarCategoryAxis();
+		axis->setGridLineVisible(false);
+		axis->append(categories);
+		chart->createDefaultAxes(); 
+		chart->setAxisX(axis, barSeries); 
+
+		foreach(QLegendMarker * marker, chart->legend()->markers()) {
+			if (marker->label().isEmpty()) {
+				marker->setVisible(false);
+			}
+		}
+	}
+
 	QChartView *chartView = new QChartView(chart);
 	chartView->setRenderHint(QPainter::Antialiasing);
 	chartView->setParent(ui.groupBox_chart);
@@ -122,7 +156,6 @@ void ReportPage::on_pushButton_snack_sales_clicked() {
 	QChart *chart = new QChart();
 	chart->setTitle("Snack Sales");
 	chart->setAnimationOptions(QChart::SeriesAnimations);
-	QPieSeries *series = new QPieSeries();
 	QSqlQuery query(db);
 	if (ui.comboBox->currentText() == "This Year") {
 		if (!query.exec("SELECT snack_name, COUNT(*) \
@@ -173,13 +206,46 @@ void ReportPage::on_pushButton_snack_sales_clicked() {
 			qDebug() << query.lastError();
 		}
 	}
-	while (query.next()) {
-		QPieSlice* slice = series->append(query.value(0).toString(), query.value(1).toInt());
-		slice->setColor(QColor(rand() % 256, rand() % 256, rand() % 256));
-		slice->setLabel(QString("%1: %2").arg(slice->label()).arg(slice->value()));
 
+	QPieSeries* series = new QPieSeries();
+	QBarSeries* barSeries = new QBarSeries();
+	if (ui.comboBox_chart->currentText() == "Piechart") {
+		while (query.next()) {
+			QPieSlice* slice = series->append(query.value(0).toString(), query.value(1).toInt());
+			slice->setColor(QColor(rand() % 256, rand() % 256, rand() % 256));
+			slice->setLabel(QString("%1: %2").arg(slice->label()).arg(slice->value()));
+
+		}
+		chart->addSeries(series);
 	}
-	chart->addSeries(series);
+	else {
+		while (query.next()) {
+			QBarSet* set = new QBarSet(query.value(0).toString());
+			set->setColor(QColor(rand() % 256, rand() % 256, rand() % 256));
+			*set << query.value(1).toInt();
+			set->setLabel(QString("%1: %2").arg(set->label()).arg(set->at(0)));
+			QBarSet* spacer = new QBarSet("");
+			barSeries->append(spacer);
+			barSeries->append(set);
+
+
+
+		}
+		QStringList categories;
+		categories << "";
+		chart->addSeries(barSeries);
+		QBarCategoryAxis* axis = new QBarCategoryAxis();
+		axis->setGridLineVisible(false);
+		axis->append(categories);
+		chart->createDefaultAxes();
+		chart->setAxisX(axis, barSeries);
+
+		foreach(QLegendMarker * marker, chart->legend()->markers()) {
+			if (marker->label().isEmpty()) {
+				marker->setVisible(false);
+			}
+		}
+	}
 	QChartView *chartView = new QChartView(chart);
 	chartView->setRenderHint(QPainter::Antialiasing);
 	chartView->setParent(ui.groupBox_chart);

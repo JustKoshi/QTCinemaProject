@@ -24,7 +24,7 @@ ScreeningManager::ScreeningManager(QWidget *parent)
 	while (query.next()) {
 		ui.comboBox_hall->addItem(query.value(0).toString());
 	}
-	//add screening ids to combobox
+
 	query.prepare("SELECT screening_id FROM Screenings");
 	if (!query.exec()) {
 		QMessageBox::critical(this, "Error", "Query error");

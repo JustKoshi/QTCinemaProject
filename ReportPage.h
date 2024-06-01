@@ -8,6 +8,10 @@
 #include <QtCharts\QChartView>
 #include <QtCharts\QPieSeries>
 #include <QtCharts\QPieSlice>
+#include <QtCharts\QBarSet>
+#include <QtCharts\QBarSeries>
+#include <QtCharts\QBarCategoryAxis>
+#include <QtCharts\QLegendMarker>
 
 
 
