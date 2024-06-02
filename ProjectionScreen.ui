@@ -45,12 +45,15 @@ background-color: rgb(200,200,200);
          </property>
          <property name="font">
           <font>
+           <family>Arial</family>
            <pointsize>20</pointsize>
           </font>
          </property>
          <property name="styleSheet">
           <string notr="true">QLabel{
-border: solid 2px black;
+border: 2px solid rgb(0,0,0);
+   border-radius: 5px;
+    padding: 5px 10px;
 }</string>
          </property>
          <property name="text">
@@ -377,7 +380,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
             </font>
            </property>
            <property name="text">
-            <string>1</string>
+            <string>  1</string>
            </property>
           </widget>
          </item>
@@ -929,12 +932,53 @@ text-align: center;
            <pointsize>9</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; /* pozcyja tytułu */
+    padding: 0 5px;
+    background-color: transparent;
+    color: black;
+}
+</string>
+         </property>
          <property name="title">
           <string>Cart</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QListWidget" name="listWidget"/>
+           <widget class="QListWidget" name="listWidget">
+            <property name="styleSheet">
+             <string notr="true">QListWidget {
+    background-color: rgb(80, 80, 80);
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+QListWidget::item {
+    padding: 5px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+QListWidget::item:selected {
+    background-color: rgb(120, 120, 120);
+    color: white;
+}
+
+QListWidget::item:hover {
+    background-color: rgb(100, 100, 100);
+    color: white;
+}</string>
+            </property>
+           </widget>
           </item>
           <item>
            <widget class="QListWidget" name="listWidget_total">
@@ -949,6 +993,29 @@ text-align: center;
               <pointsize>20</pointsize>
              </font>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QListWidget {
+    background-color: rgb(80, 80, 80);
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+QListWidget::item {
+    padding: 5px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+QListWidget::item:selected {
+    background-color: rgb(120, 120, 120);
+    color: white;
+}
+
+QListWidget::item:hover {
+    background-color: rgb(100, 100, 100);
+    color: white;
+}</string>
+            </property>
            </widget>
           </item>
          </layout>
@@ -961,6 +1028,28 @@ text-align: center;
            <width>300</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgb(100, 100, 100);
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+    background-color: rgb(120, 120, 120);
+}
+
+QPushButton:pressed {
+    background-color: rgb(80, 80, 80);
+}</string>
          </property>
          <property name="text">
           <string>Proceed</string>
