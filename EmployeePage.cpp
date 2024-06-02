@@ -47,7 +47,7 @@ void EmployeePage::setName(int new_name) {
 		if (query.next()) {
 			QString name = query.value(0).toString();
 			QString surname = query.value(1).toString();
-			label = "Employee: " + name + " " + surname;
+			label = "Employee:\n" + name + " " + surname;
 			ui.label_name->setText(label);
 		}
 	}
@@ -108,4 +108,30 @@ void EmployeePage::on_pushButton_cancel_reservation_clicked() {
 	this->hide();
 }
 
+void EmployeePage::on_pushButton_logout_clicked() {
+	this->hide();
+	emit return_To_loginPage();
+}
 
+void EmployeePage::on_pushButton_account_settings_clicked() {
+	QMessageBox msgBox;
+	msgBox.setWindowTitle("Change login or password");
+	msgBox.setText("Do you want to change login or password?");
+	QPushButton* loginButton = msgBox.addButton(tr("Login"), QMessageBox::ActionRole);
+	QPushButton* passwordButton = msgBox.addButton(tr("Password"), QMessageBox::ActionRole);
+	msgBox.addButton(QMessageBox::Cancel);
+	msgBox.exec();
+
+	if (msgBox.clickedButton() == loginButton) {
+		changeLogin(loginDatabase, id);
+	}
+	else if (msgBox.clickedButton() == passwordButton) {
+		changePassword(loginDatabase, id);
+	}
+}
+
+void EmployeePage::on_pushButton_reports_clicked() {
+	ReportPage * reportPage = new ReportPage(nullptr, loginDatabase);
+	connect(reportPage, &ReportPage::return_To_AdminPage, this, &EmployeePage::showEmployeePage);
+	reportPage->show();
+}

@@ -55,10 +55,12 @@ void LoginScreen::on_pushButton_Login_clicked() {
 	if (success_manager) {
 
 		adminpage->setName(id);
+		adminpage->setTodaysScreenings();
 		QMessageBox::information(this, "Login", "Username and password is correct");
 		this->hide();
 		adminpage->show();
 		employee_page->close();
+		connect(adminpage, &AdminPage::return_To_loginPage, this, &LoginScreen::showLoginPage);
 	}
 	else if(success_employee)
 	{
@@ -69,6 +71,7 @@ void LoginScreen::on_pushButton_Login_clicked() {
 		this->hide();
 		adminpage->close();
 		employee_page->show();
+		connect(employee_page, &EmployeePage::return_To_loginPage, this, &LoginScreen::showLoginPage);
 	}
 	else
 		QMessageBox::warning(this, "Login", "Username and password is not correct");
@@ -97,3 +100,13 @@ LoginScreen::~LoginScreen()
 	delete employee_page;
 }
 
+void LoginScreen::showLoginPage() {
+	
+	if(adminpage!=nullptr)
+		adminpage->close();
+	if(employee_page!=nullptr)
+		employee_page->close();
+	ui.lineEdit_Username->clear();
+	ui.lineEdit_Password->clear();
+	this->show();
+}

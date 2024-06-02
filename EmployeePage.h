@@ -5,7 +5,8 @@
 #include "CheckOutScreen.h"
 #include "ScreeningSelection.h"
 #include "CancelReservation.h"
-
+#include "AccountSetting.h"
+#include "ReportPage.h"
 
 class EmployeePage : public QMainWindow
 {
@@ -24,6 +25,12 @@ public slots:
 	void on_pushButton_ticket_sale_clicked();
 	void on_pushButton_snack_sale_clicked();
 	void on_pushButton_cancel_reservation_clicked();
+	void on_pushButton_logout_clicked();
+	void on_pushButton_account_settings_clicked();
+	void on_pushButton_reports_clicked();
+
+signals:
+	void return_To_loginPage();
 private:
 	Ui::EmployeePageClass ui;
 	CheckOutScreen* checkoutscreen;

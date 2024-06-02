@@ -1,5 +1,12 @@
 <RCC>
     <qresource prefix="/LoginScreen">
         <file>background-login-screen.jpg</file>
+        <file>Resource files/icons/1168582.png</file>
+        <file>Resource files/icons/2503508.png</file>
+        <file>Resource files/icons/2798007.png</file>
+        <file>Resource files/icons/app-icon-person.png</file>
+        <file>Resource files/icons/call-report-icon-3.png</file>
+        <file>Resource files/icons/gear.png</file>
+        <file>Resource files/icons/cashregister.png</file>
     </qresource>
 </RCC>

@@ -20,6 +20,7 @@ AdminPage::~AdminPage()
 delete checkoutscreen;
 delete moviemanager;
 delete screeningmanager;
+delete timer;
 
 }
 
@@ -38,7 +39,9 @@ void AdminPage::on_pushButton_movieManager_clicked() {
 }
 
 void AdminPage::showEmployeePage() {
+	setTodaysScreenings();
 	this->show();
+	
 }
 
 void AdminPage::connect_to_QTimer() {
@@ -64,7 +67,7 @@ void AdminPage::setName(int new_name) {
 		if (query.next()) {
 			QString name = query.value(0).toString();
 			QString surname = query.value(1).toString();
-			label = "Manager: " + name + " " + surname;
+			label = "Manager:\n" + name + " " + surname;
 			ui.label_name->setText(label);
 		}
 	}
@@ -89,4 +92,56 @@ void AdminPage::on_pushButton_cancel_reservation_clicked() {
 	CancelReservation* cancelreservation = new CancelReservation(nullptr, loginDatabase, id);
 	cancelreservation->show();
 	connect(cancelreservation, SIGNAL(return_To_AdminPage()), this, SLOT(showEmployeePage()));
+}
+
+void AdminPage::on_pushButton_logout_clicked() {
+	this->hide();
+	emit return_To_loginPage();
+}
+
+void AdminPage::on_pushButton_account_settings_clicked() {
+	QMessageBox msgBox;
+	msgBox.setWindowTitle("Change login or password");
+	msgBox.setText("Do you want to change login or password?");
+	QPushButton* loginButton = msgBox.addButton(tr("Login"), QMessageBox::ActionRole);
+	QPushButton* passwordButton = msgBox.addButton(tr("Password"), QMessageBox::ActionRole);
+	msgBox.addButton(QMessageBox::Cancel);
+	msgBox.exec();
+
+	if (msgBox.clickedButton() == loginButton) {
+		changeLogin(loginDatabase, id);
+	}
+	else if (msgBox.clickedButton() == passwordButton) {
+		changePassword(loginDatabase, id);
+	}
+}
+
+void AdminPage::on_pushButton_reports_clicked() {
+	ReportPage* reportpage = new ReportPage();
+	reportpage->show();
+	connect(reportpage, &ReportPage::return_To_AdminPage, this, &AdminPage::showEmployeePage);
+}
+
+void AdminPage::setTodaysScreenings() {
+	QSqlQueryModel* model = new QSqlQueryModel();
+	QSqlQuery query(loginDatabase);
+	query.prepare("SELECT Screenings.screening_id, Movies.title , Screenings.hall_id, Screenings.date_start "
+		"FROM Screenings, Movies "
+		"WHERE Screenings.movie_id = Movies.movie_id "
+		"AND DATE(Screenings.date_start) = DATE('now') "
+		"ORDER BY TIME(Screenings.date_start) ASC");
+	if (!query.exec()) {
+		QMessageBox::critical(this, "Error", "Query error");
+	}
+	model->setQuery(query);
+	ui.tableView->setModel(model);
+	ui.tableView->resizeColumnsToContents();
+	ui.tableView->show();
+}
+
+void AdminPage::on_pushButton_employee_manager_clicked() {
+	this->hide();
+	EmployeeManager* employeemanager = new EmployeeManager(nullptr, loginDatabase);
+	employeemanager->show();
+	connect(employeemanager, &EmployeeManager::return_to_admin_page, this, &AdminPage::showEmployeePage);
 }

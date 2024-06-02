@@ -74,7 +74,7 @@ border: solid 2px black;
            </property>
           </widget>
          </item>
-         <item row="4" column="2">
+         <item row="4" column="3">
           <widget class="QPushButton" name="A1">
            <property name="minimumSize">
             <size>
@@ -106,7 +106,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="2" column="3">
+         <item row="2" column="4">
           <widget class="QPushButton" name="C2">
            <property name="minimumSize">
             <size>
@@ -132,7 +132,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="3" column="2">
+         <item row="3" column="3">
           <widget class="QPushButton" name="B1">
            <property name="minimumSize">
             <size>
@@ -158,7 +158,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="0" column="2" alignment="Qt::AlignHCenter">
+         <item row="0" column="3" alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label_2">
            <property name="minimumSize">
             <size>
@@ -177,7 +177,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="1" column="6">
+         <item row="1" column="7">
           <widget class="QPushButton" name="D5">
            <property name="minimumSize">
             <size>
@@ -216,7 +216,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="0" column="6" alignment="Qt::AlignHCenter">
+         <item row="0" column="7" alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label_6">
            <property name="maximumSize">
             <size>
@@ -229,7 +229,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="3" column="3">
+         <item row="3" column="4">
           <widget class="QPushButton" name="B2">
            <property name="minimumSize">
             <size>
@@ -255,7 +255,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="0" column="3" alignment="Qt::AlignHCenter">
+         <item row="0" column="4" alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label_3">
            <property name="maximumSize">
             <size>
@@ -268,7 +268,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="3" column="6">
+         <item row="3" column="7">
           <widget class="QPushButton" name="B5">
            <property name="minimumSize">
             <size>
@@ -294,7 +294,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="1" column="4">
+         <item row="1" column="5">
           <widget class="QPushButton" name="D3">
            <property name="minimumSize">
             <size>
@@ -320,7 +320,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="4" column="6">
+         <item row="4" column="7">
           <widget class="QPushButton" name="A5">
            <property name="minimumSize">
             <size>
@@ -352,7 +352,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="2" column="4">
+         <item row="2" column="5">
           <widget class="QPushButton" name="C3">
            <property name="minimumSize">
             <size>
@@ -378,7 +378,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="0" column="5" alignment="Qt::AlignHCenter">
+         <item row="0" column="6" alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label_5">
            <property name="maximumSize">
             <size>
@@ -391,7 +391,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="2" column="6">
+         <item row="2" column="7">
           <widget class="QPushButton" name="C5">
            <property name="minimumSize">
             <size>
@@ -423,7 +423,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="3" column="5">
+         <item row="3" column="6">
           <widget class="QPushButton" name="B4">
            <property name="minimumSize">
             <size>
@@ -449,7 +449,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="2" column="7">
+         <item row="2" column="8">
           <spacer name="horizontalSpacer">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -472,7 +472,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="0" column="4" alignment="Qt::AlignHCenter">
+         <item row="0" column="5" alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label_4">
            <property name="maximumSize">
             <size>
@@ -498,7 +498,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="4" column="3">
+         <item row="4" column="4">
           <widget class="QPushButton" name="A2">
            <property name="minimumSize">
             <size>
@@ -530,7 +530,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="2" column="2">
+         <item row="2" column="3">
           <widget class="QPushButton" name="C1">
            <property name="minimumSize">
             <size>
@@ -556,7 +556,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="4" column="5">
+         <item row="4" column="6">
           <widget class="QPushButton" name="A4">
            <property name="minimumSize">
             <size>
@@ -588,7 +588,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="4" column="4">
+         <item row="4" column="5">
           <widget class="QPushButton" name="A3">
            <property name="minimumSize">
             <size>
@@ -620,7 +620,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="1" column="3">
+         <item row="1" column="4">
           <widget class="QPushButton" name="D2">
            <property name="minimumSize">
             <size>
@@ -659,7 +659,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="2" column="5">
+         <item row="2" column="6">
           <widget class="QPushButton" name="C4">
            <property name="minimumSize">
             <size>
@@ -685,7 +685,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="1" column="5">
+         <item row="1" column="6">
           <widget class="QPushButton" name="D4">
            <property name="minimumSize">
             <size>
@@ -711,7 +711,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="3" column="4">
+         <item row="3" column="5">
           <widget class="QPushButton" name="B3">
            <property name="enabled">
             <bool>true</bool>
@@ -743,7 +743,7 @@ border-image: url(:/ProjectionScreen/Resource files/seat3.png);
            </property>
           </widget>
          </item>
-         <item row="1" column="2">
+         <item row="1" column="3">
           <widget class="QPushButton" name="D1">
            <property name="minimumSize">
             <size>

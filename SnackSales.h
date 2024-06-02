@@ -7,11 +7,12 @@
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <vector>
-#include <QTextDocument>
 #include <QPrinter>
-#include <QPrintDialog>
 #include <QFileDialog>
-#include <QTextStream>
+
+#include <QPdfWriter>
+#include <QPainter>
+#include <QStandardPaths>
 
 class SnackSales : public QMainWindow
 {
@@ -44,7 +45,7 @@ private:
 	double total_price;
 	std::vector<std::pair<QString, int>> snack_ids_and_amouts;
 	int sale_id;
-	//void generateReceipt();
+	void generateReceipt();
 	void confirm_sale();
 	void update_total_price();
 };

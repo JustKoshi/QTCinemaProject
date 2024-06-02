@@ -93,6 +93,8 @@ void ProjectionScreen::handle_button_click() {
 			}
 			ui.listWidget->update();
 			total_price -= price.toDouble();
+			if(seats_ids.empty())
+			total_price = 0.;
 			QString price_text = "Total price: " + QString::number(total_price) + " zl";
 			QListWidgetItem* item = new QListWidgetItem(price_text);
 			
