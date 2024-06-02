@@ -7,5 +7,6 @@
         <file>Resource files/icons/app-icon-person.png</file>
         <file>Resource files/icons/call-report-icon-3.png</file>
         <file>Resource files/icons/gear.png</file>
+        <file>Resource files/icons/cashregister.png</file>
     </qresource>
 </RCC>
