@@ -39,7 +39,9 @@ void AdminPage::on_pushButton_movieManager_clicked() {
 }
 
 void AdminPage::showEmployeePage() {
+	setTodaysScreenings();
 	this->show();
+	
 }
 
 void AdminPage::connect_to_QTimer() {
@@ -65,7 +67,7 @@ void AdminPage::setName(int new_name) {
 		if (query.next()) {
 			QString name = query.value(0).toString();
 			QString surname = query.value(1).toString();
-			label = "Manager: " + name + " " + surname;
+			label = "Manager:\n" + name + " " + surname;
 			ui.label_name->setText(label);
 		}
 	}
