@@ -69,26 +69,7 @@ border: 1px solid white;
       </item>
       <item>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="4" column="1">
-         <widget class="QLabel" name="label_5">
-          <property name="minimumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
+        <item row="3" column="1">
          <widget class="QPushButton" name="pushButton_cancel_reservation">
           <property name="minimumSize">
            <size>
@@ -124,83 +105,43 @@ border: 1px solid white;
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
-         <widget class="QLabel" name="label_3">
-          <property name="minimumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="1">
-         <widget class="QLabel" name="label">
+         <widget class="QPushButton" name="pushButton_reports">
           <property name="minimumSize">
            <size>
-            <width>50</width>
-            <height>50</height>
+            <width>0</width>
+            <height>40</height>
            </size>
           </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">   QPushButton {
+            background-color: rgb(70, 70, 70);
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        QPushButton:hover {
+            background-color: rgb(90, 90, 90);
+            border: 2px solid rgb(120, 120, 120);
+        }
+        QPushButton:pressed {
+            background-color: rgb(50, 50, 50);
+            border: 2px solid rgb(150, 150, 150);
+        }</string>
           </property>
           <property name="text">
-           <string/>
+           <string>Raports</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
-         <widget class="QLabel" name="label_2">
-          <property name="minimumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QLabel" name="label_4">
-          <property name="minimumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
+        <item row="2" column="1">
          <widget class="QPushButton" name="pushButton_snack_sale">
           <property name="minimumSize">
            <size>
@@ -236,115 +177,7 @@ border: 1px solid white;
           </property>
          </widget>
         </item>
-        <item row="5" column="1">
-         <widget class="QPushButton" name="pushButton_logout">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>-1</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">   QPushButton {
-            background-color: rgb(70, 70, 70);
-            color: white;
-            border: 2px solid white;
-            border-radius: 10px;
-            padding: 10px;
-            font-size: 16px;
-        }
-        QPushButton:hover {
-            background-color: rgb(90, 90, 90);
-            border: 2px solid rgb(120, 120, 120);
-        }
-        QPushButton:pressed {
-            background-color: rgb(50, 50, 50);
-            border: 2px solid rgb(150, 150, 150);
-        }</string>
-          </property>
-          <property name="text">
-           <string>Log Out</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="pushButton_ticket_sale">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>-1</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">   QPushButton {
-            background-color: rgb(70, 70, 70);
-            color: white;
-            border: 2px solid white;
-            border-radius: 10px;
-            padding: 10px;
-            font-size: 16px;
-        }
-        QPushButton:hover {
-            background-color: rgb(90, 90, 90);
-            border: 2px solid rgb(120, 120, 120);
-        }
-        QPushButton:pressed {
-            background-color: rgb(50, 50, 50);
-            border: 2px solid rgb(150, 150, 150);
-        }</string>
-          </property>
-          <property name="text">
-           <string>Sale Ticket</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="0">
-         <widget class="QPushButton" name="pushButton_checkOut">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>-1</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">   QPushButton {
-            background-color: rgb(70, 70, 70);
-            color: white;
-            border: 2px solid white;
-            border-radius: 10px;
-            padding: 10px;
-            font-size: 16px;
-        }
-        QPushButton:hover {
-            background-color: rgb(90, 90, 90);
-            border: 2px solid rgb(120, 120, 120);
-        }
-        QPushButton:pressed {
-            background-color: rgb(50, 50, 50);
-            border: 2px solid rgb(150, 150, 150);
-        }</string>
-          </property>
-          <property name="text">
-           <string>Start / end shift</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
+        <item row="4" column="1">
          <widget class="QPushButton" name="pushButton_account_settings">
           <property name="minimumSize">
            <size>
@@ -380,8 +213,8 @@ border: 1px solid white;
           </property>
          </widget>
         </item>
-        <item row="0" column="0">
-         <widget class="QPushButton" name="pushButton_reports">
+        <item row="1" column="1">
+         <widget class="QPushButton" name="pushButton_ticket_sale">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -412,7 +245,174 @@ border: 1px solid white;
         }</string>
           </property>
           <property name="text">
-           <string>Raports</string>
+           <string>Sale Ticket</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QPushButton" name="pushButton_checkOut">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">   QPushButton {
+            background-color: rgb(70, 70, 70);
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        QPushButton:hover {
+            background-color: rgb(90, 90, 90);
+            border: 2px solid rgb(120, 120, 120);
+        }
+        QPushButton:pressed {
+            background-color: rgb(50, 50, 50);
+            border: 2px solid rgb(150, 150, 150);
+        }</string>
+          </property>
+          <property name="text">
+           <string>Start / end shift</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QPushButton" name="pushButton_logout">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">   QPushButton {
+            background-color: rgb(70, 70, 70);
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        QPushButton:hover {
+            background-color: rgb(90, 90, 90);
+            border: 2px solid rgb(120, 120, 120);
+        }
+        QPushButton:pressed {
+            background-color: rgb(50, 50, 50);
+            border: 2px solid rgb(150, 150, 150);
+        }</string>
+          </property>
+          <property name="text">
+           <string>Log Out</string>
           </property>
          </widget>
         </item>

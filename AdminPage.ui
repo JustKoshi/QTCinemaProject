@@ -72,8 +72,32 @@ border: 1px solid white;
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <layout class="QGridLayout" name="gridLayout">
-           <item row="4" column="0">
-            <widget class="QPushButton" name="pushButton_cancel_reservation">
+           <item row="7" column="1" alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="label">
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+	image: url(:/LoginScreen/Resource files/icons/gear.png);
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="2">
+            <widget class="QPushButton" name="pushButton_checkOut">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -105,35 +129,11 @@ border: 1px solid white;
         }</string>
              </property>
              <property name="text">
-              <string>Cancel Reservation</string>
+              <string>Start / end shift</string>
              </property>
             </widget>
            </item>
-           <item row="7" column="1">
-            <widget class="QLabel" name="label">
-             <property name="minimumSize">
-              <size>
-               <width>50</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>50</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLabel{
-	image: url(:/LoginScreen/Resource files/icons/gear.png);
-}</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="1">
+           <item row="4" column="1" alignment="Qt::AlignHCenter">
             <widget class="QLabel" name="label_3">
              <property name="minimumSize">
               <size>
@@ -157,7 +157,7 @@ border: 1px solid white;
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
+           <item row="0" column="1" alignment="Qt::AlignHCenter">
             <widget class="QLabel" name="label_5">
              <property name="minimumSize">
               <size>
@@ -181,35 +181,11 @@ border: 1px solid white;
              </property>
             </widget>
            </item>
-           <item row="3" column="1">
-            <widget class="QLabel" name="label_4">
-             <property name="minimumSize">
-              <size>
-               <width>50</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>50</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLabel{
-	image: url(:/LoginScreen/Resource files/icons/2798007.png)
-}</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
+           <item row="2" column="2">
             <widget class="QPushButton" name="pushButton_movieManager">
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>198</width>
                <height>40</height>
               </size>
              </property>
@@ -242,11 +218,35 @@ border: 1px solid white;
              </property>
             </widget>
            </item>
-           <item row="0" column="0">
-            <widget class="QPushButton" name="pushButton_reports">
+           <item row="3" column="1" alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="label_4">
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+	image: url(:/LoginScreen/Resource files/icons/2798007.png)
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="QPushButton" name="pushButton_cancel_reservation">
+             <property name="minimumSize">
+              <size>
+               <width>198</width>
                <height>40</height>
               </size>
              </property>
@@ -257,7 +257,7 @@ border: 1px solid white;
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">   QPushButton {
+              <string notr="true">QPushButton {
             background-color: rgb(70, 70, 70);
             color: white;
             border: 2px solid white;
@@ -275,7 +275,44 @@ border: 1px solid white;
         }</string>
              </property>
              <property name="text">
-              <string>Reports</string>
+              <string>Cancel Reservation</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="2">
+            <widget class="QPushButton" name="pushButton_account_settings">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+            background-color: rgb(70, 70, 70);
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        QPushButton:hover {
+            background-color: rgb(90, 90, 90);
+            border: 2px solid rgb(120, 120, 120);
+        }
+        QPushButton:pressed {
+            background-color: rgb(50, 50, 50);
+            border: 2px solid rgb(150, 150, 150);
+        }</string>
+             </property>
+             <property name="text">
+              <string>Account Settings</string>
              </property>
             </widget>
            </item>
@@ -316,109 +353,11 @@ border: 1px solid white;
              </property>
             </widget>
            </item>
-           <item row="7" column="0">
-            <widget class="QPushButton" name="pushButton_account_settings">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>40</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>-1</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-            background-color: rgb(70, 70, 70);
-            color: white;
-            border: 2px solid white;
-            border-radius: 10px;
-            padding: 10px;
-            font-size: 16px;
-        }
-        QPushButton:hover {
-            background-color: rgb(90, 90, 90);
-            border: 2px solid rgb(120, 120, 120);
-        }
-        QPushButton:pressed {
-            background-color: rgb(50, 50, 50);
-            border: 2px solid rgb(150, 150, 150);
-        }</string>
-             </property>
-             <property name="text">
-              <string>Account Settings</string>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="1">
-            <widget class="QLabel" name="label_2">
-             <property name="minimumSize">
-              <size>
-               <width>50</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>50</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLabel{
-	image: url(:/LoginScreen/Resource files/icons/app-icon-person.png);
-}</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="0">
-            <widget class="QPushButton" name="pushButton_checkOut">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>40</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>-1</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-            background-color: rgb(70, 70, 70);
-            color: white;
-            border: 2px solid white;
-            border-radius: 10px;
-            padding: 10px;
-            font-size: 16px;
-        }
-        QPushButton:hover {
-            background-color: rgb(90, 90, 90);
-            border: 2px solid rgb(120, 120, 120);
-        }
-        QPushButton:pressed {
-            background-color: rgb(50, 50, 50);
-            border: 2px solid rgb(150, 150, 150);
-        }</string>
-             </property>
-             <property name="text">
-              <string>Start / end shift</string>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="0">
+           <item row="6" column="2">
             <widget class="QPushButton" name="pushButton_employee_manager">
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>198</width>
                <height>40</height>
               </size>
              </property>
@@ -451,7 +390,31 @@ border: 1px solid white;
              </property>
             </widget>
            </item>
-           <item row="2" column="1">
+           <item row="6" column="1" alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="label_2">
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+	image: url(:/LoginScreen/Resource files/icons/app-icon-person.png);
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1" alignment="Qt::AlignHCenter">
             <widget class="QLabel" name="label_6">
              <property name="minimumSize">
               <size>
@@ -475,11 +438,11 @@ image:url(:/LoginScreen/Resource files/icons/2503508.png)
              </property>
             </widget>
            </item>
-           <item row="3" column="0">
+           <item row="3" column="2">
             <widget class="QPushButton" name="pushButton_screeningManager">
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>198</width>
                <height>40</height>
               </size>
              </property>
@@ -509,6 +472,43 @@ image:url(:/LoginScreen/Resource files/icons/2503508.png)
              </property>
              <property name="text">
               <string>Screenings Management</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="pushButton_reports">
+             <property name="minimumSize">
+              <size>
+               <width>198</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">   QPushButton {
+            background-color: rgb(70, 70, 70);
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        QPushButton:hover {
+            background-color: rgb(90, 90, 90);
+            border: 2px solid rgb(120, 120, 120);
+        }
+        QPushButton:pressed {
+            background-color: rgb(50, 50, 50);
+            border: 2px solid rgb(150, 150, 150);
+        }</string>
+             </property>
+             <property name="text">
+              <string>Reports</string>
              </property>
             </widget>
            </item>
