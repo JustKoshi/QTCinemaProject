@@ -55,6 +55,7 @@ void LoginScreen::on_pushButton_Login_clicked() {
 	if (success_manager) {
 
 		adminpage->setName(id);
+		adminpage->setTodaysScreenings();
 		QMessageBox::information(this, "Login", "Username and password is correct");
 		this->hide();
 		adminpage->show();

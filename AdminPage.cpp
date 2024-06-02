@@ -119,3 +119,27 @@ void AdminPage::on_pushButton_reports_clicked() {
 	reportpage->show();
 	connect(reportpage, &ReportPage::return_To_AdminPage, this, &AdminPage::showEmployeePage);
 }
+
+void AdminPage::setTodaysScreenings() {
+	QSqlQueryModel* model = new QSqlQueryModel();
+	QSqlQuery query(loginDatabase);
+	query.prepare("SELECT Screenings.screening_id, Movies.title , Screenings.hall_id, Screenings.date_start "
+		"FROM Screenings, Movies "
+		"WHERE Screenings.movie_id = Movies.movie_id "
+		"AND DATE(Screenings.date_start) = DATE('now') "
+		"ORDER BY TIME(Screenings.date_start) ASC");
+	if (!query.exec()) {
+		QMessageBox::critical(this, "Error", "Query error");
+	}
+	model->setQuery(query);
+	ui.tableView->setModel(model);
+	ui.tableView->resizeColumnsToContents();
+	ui.tableView->show();
+}
+
+void AdminPage::on_pushButton_employee_manager_clicked() {
+	this->hide();
+	EmployeeManager* employeemanager = new EmployeeManager(nullptr, loginDatabase);
+	employeemanager->show();
+	connect(employeemanager, &EmployeeManager::return_to_admin_page, this, &AdminPage::showEmployeePage);
+}

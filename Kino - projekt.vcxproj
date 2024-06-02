@@ -91,6 +91,7 @@
   <ItemGroup>
     <ClCompile Include="AccountSettings.cpp" />
     <ClCompile Include="CancelReservation.cpp" />
+    <ClCompile Include="EmployeeManager.cpp" />
     <ClCompile Include="MovieManager.cpp" />
     <ClCompile Include="ProjectionScreen.cpp" />
     <ClCompile Include="ReportPage.cpp" />
@@ -104,6 +105,7 @@
     <QtUic Include="AdminPage.ui" />
     <QtUic Include="CancelReservation.ui" />
     <QtUic Include="CheckOutScreen.ui" />
+    <QtUic Include="EmployeeManager.ui" />
     <QtUic Include="EmployeePage.ui" />
     <QtUic Include="LoginScreen.ui" />
     <QtMoc Include="LoginScreen.h" />
@@ -148,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AccountSetting.h" />
+    <QtMoc Include="EmployeeManager.h" />
     <QtMoc Include="ReportPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
