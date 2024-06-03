@@ -4,5 +4,7 @@
         <file>Resource files/seat2.png</file>
         <file>Resource files/seat3.png</file>
         <file>Resource files/icons/calendar.png</file>
+        <file>Resource files/icons/down2.png</file>
+        <file>Resource files/posters/cinemaposter.png</file>
     </qresource>
 </RCC>

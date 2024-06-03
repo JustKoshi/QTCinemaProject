@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>992</width>
-    <height>688</height>
+    <width>900</width>
+    <height>500</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>350</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>500</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>EmployeeManager</string>
@@ -18,6 +30,22 @@
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QGroupBox" name="groupBox_2">
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+    background-color: rgb(220, 220, 220); /* Kolor tła groupboxa */
+    border: 2px solid black; /* Obramowanie */
+    border-radius: 6px; /* Zaokrąglenie rogów */
+    padding: 10px; /* Odstępy wewnętrzne */
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; /* Pozycja tytułu */
+    padding: 0 5px; /* Odstępy */
+    background-color: transparent;
+    color: black; /* Kolor tekstu tytułu */
+}</string>
+       </property>
        <property name="title">
         <string>Note - Important!</string>
        </property>

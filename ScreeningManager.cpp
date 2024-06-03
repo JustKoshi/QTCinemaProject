@@ -39,24 +39,6 @@ ScreeningManager::ScreeningManager(QWidget *parent)
 	connect(ui.pushButton_21_00, SIGNAL(clicked()), this, SLOT(onButtonClicked()));
 	
 	QList<QPushButton*> buttons = findChildren<QPushButton*>();
-	
-	for (QPushButton* button : findChildren<QPushButton*>()) {
-		if(button->objectName() == "pushButton_calendar")
-			continue;
-		button->setStyleSheet("QPushButton {"
-			"background-color: none;"
-			"border: 1px solid #8f8f91;"
-			"border-radius: 6px;"
-			"padding: 6px;"
-			"}"
-			"QPushButton:hover {"
-			"background-color: #b8b8b8;"
-			"}"
-			"QPushButton:pressed {"
-			"background-color: #d0d0d0;"
-			"}");
-	}
-	this->setMinimumSize(830, 630);
 
 
 }
@@ -75,13 +57,13 @@ void ScreeningManager::onButtonClicked() {
 			if (otherButton->objectName() == "pushButton_calendar")
 				continue;
 			otherButton->setStyleSheet("QPushButton {"
-				"background-color: none;"
-				"border: 1px solid #8f8f91;"
+				"background-color: rgb(255, 255, 242);"
+				"border: 1px solid black;"
 				"border-radius: 6px;"
 				"padding: 6px;"
 				"}"
 				"QPushButton:hover {"
-				"background-color: #b8b8b8;"
+				"background-color: rgb(182, 178, 135);"
 				"}"
 				"QPushButton:pressed {"
 				"background-color: #d0d0d0;"
