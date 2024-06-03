@@ -59,7 +59,7 @@ background-color: #f0f0f0;
 }</string>
         </property>
         <property name="title">
-         <string>Notes</string>
+         <string/>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>

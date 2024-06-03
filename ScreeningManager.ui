@@ -41,7 +41,7 @@ background-color: rgb(253, 255, 220)
     <number>2</number>
    </property>
    <property name="bottomMargin">
-    <number>2</number>
+    <number>5</number>
    </property>
    <item>
     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0" columnstretch="0,0">
@@ -83,38 +83,6 @@ QPushButton:pressed {
        </property>
        <property name="text">
         <string>Return</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="minimumSize">
-        <size>
-         <width>385</width>
-         <height>523</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>385</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLabel{
-	border: 3px solid black;
-	image: url(:/ProjectionScreen/Resource files/posters/cinemaposter.png);
-	
-}</string>
-       </property>
-       <property name="lineWidth">
-        <number>0</number>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="margin">
-        <number>0</number>
        </property>
       </widget>
      </item>
@@ -238,6 +206,77 @@ QPushButton:pressed {
        </layout>
       </widget>
      </item>
+     <item row="0" column="1">
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; 
+    padding: 0 5px;
+    background-color: transparent;
+    color: black;
+}</string>
+       </property>
+       <property name="title">
+        <string>Screenings</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QTableView" name="screening_table">
+          <property name="minimumSize">
+           <size>
+            <width>280</width>
+            <height>300</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTableView {
+    background-color: rgb(253, 255, 220);
+    alternate-background-color: rgb(240, 248, 255);
+    gridline-color: rgb(220, 220, 220);
+    border: 1px solid black;
+}
+
+QHeaderView::section {
+    background-color: rgb(182, 178, 135);
+    color: black;
+    padding: 4px;
+    border: 1px solid rgb black;
+}
+
+QTableView::item {
+    border: none;
+    padding: 4px;
+}
+
+QTableView::item:selected {
+    background-color: rgb(200, 230, 255);
+    color: black;
+}
+
+QTableView QToolButton {
+    background-color: rgb(180, 178, 140); 
+    border: none; 
+    padding: 4px;
+    border-radius: 3px; 
+}
+
+QTableView QToolButton:hover {
+    background-color: rgb(182, 178, 135);
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
      <item row="1" column="0">
       <widget class="QGroupBox" name="groupBox_2">
        <property name="maximumSize">
@@ -285,7 +324,7 @@ QGroupBox::title {
            <widget class="QComboBox" name="comboBox_movies">
             <property name="minimumSize">
              <size>
-              <width>270</width>
+              <width>303</width>
               <height>30</height>
              </size>
             </property>
@@ -360,7 +399,7 @@ QComboBox::down-arrow:on {
            <widget class="QComboBox" name="comboBox_hall">
             <property name="minimumSize">
              <size>
-              <width>270</width>
+              <width>303</width>
               <height>30</height>
              </size>
             </property>
@@ -733,75 +772,36 @@ QPushButton:pressed {
        </layout>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QGroupBox" name="groupBox_4">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="minimumSize">
+        <size>
+         <width>385</width>
+         <height>523</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>385</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="styleSheet">
-        <string notr="true">QGroupBox {
-    border: 2px solid black;
-    border-radius: 5px;
-    margin-top: 20px;
-    padding: 10px;
-}
-
-QGroupBox::title {
-    subcontrol-origin: margin;
-    subcontrol-position: top center; 
-    padding: 0 5px;
-    background-color: transparent;
-    color: black;
+        <string notr="true">QLabel{
+	border: 3px solid black;
+	image: url(:/ProjectionScreen/Resource files/posters/cinemaposter.png);
+	
 }</string>
        </property>
-       <property name="title">
-        <string>Screenings</string>
+       <property name="lineWidth">
+        <number>0</number>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_6">
-        <item>
-         <widget class="QTableView" name="screening_table">
-          <property name="minimumSize">
-           <size>
-            <width>280</width>
-            <height>300</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QTableView {
-    background-color: rgb(253, 255, 220);
-    alternate-background-color: rgb(240, 248, 255);
-    gridline-color: rgb(220, 220, 220);
-    border: 1px solid black;
-}
-
-QHeaderView::section {
-    background-color: rgb(182, 178, 135);
-    color: black;
-    padding: 4px;
-    border: 1px solid rgb black;
-}
-
-QTableView::item {
-    border: none;
-    padding: 4px;
-}
-
-QTableView::item:selected {
-    background-color: rgb(200, 230, 255);
-    color: black;
-}
-
-QTableView QToolButton {
-    background-color: rgb(180, 178, 140); 
-    border: none; 
-    padding: 4px;
-    border-radius: 3px; 
-}
-
-QTableView QToolButton:hover {
-    background-color: rgb(182, 178, 135);
-}</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
       </widget>
      </item>
     </layout>

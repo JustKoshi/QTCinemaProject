@@ -6,13 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>563</width>
+    <width>644</width>
     <height>830</height>
    </rect>
   </property>
-  <property name="maximumSize">
+  <property name="minimumSize">
    <size>
     <width>600</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>644</width>
     <height>900</height>
    </size>
   </property>
@@ -20,6 +26,11 @@
    <string>SnackSales</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+background-color: rgb(210, 255, 242);
+}</string>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0">
     <property name="spacing">
      <number>5</number>
@@ -51,6 +62,23 @@
           <width>16777215</width>
           <height>16777215</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; 
+    padding: 0 5px;
+    background-color: transparent;
+    color: black;
+}
+</string>
         </property>
         <property name="title">
          <string>Popcorn</string>
@@ -84,10 +112,23 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_6">
            <item>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
             <widget class="QComboBox" name="comboBox_popcorn">
              <property name="minimumSize">
               <size>
-               <width>100</width>
+               <width>0</width>
                <height>25</height>
               </size>
              </property>
@@ -97,7 +138,56 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
                <height>25</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox {
+    background-color: white; 
+    border: 1px solid #ccc;
+    border-radius: 3px; 
+    padding: 1px 18px 1px 3px; 
+   
+}
+
+QComboBox:hover {
+    border: 1px solid #aaa; 
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right; 
+    width: 16px;
+    border-left-width: 1px;
+    border-left-color: #ccc; 
+    border-left-style: solid; 
+    border-top-right-radius: 3px; 
+    border-bottom-right-radius: 3px; 
+	background-color: rgb(67, 149, 131);
+}
+
+QComboBox::down-arrow {
+	image: url(:/SnacksSales/Resource files/icons/down2.png);
+    height:12px;
+	width: 12px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+    left: 1px;
+}</string>
+             </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
            </item>
            <item alignment="Qt::AlignVCenter">
             <widget class="QPushButton" name="pushButton_add_popcorn">
@@ -113,10 +203,49 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
                <height>20</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: white;
+    border: 1px solid black; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:hover {
+	background-color: rgb(67, 149, 131);
+	color: white;
+	border: 1px solid white; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:pressed {
+    background-color: rgb(67, 149, 131);
+	color: white;
+}</string>
+             </property>
              <property name="text">
               <string>Add</string>
              </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
            </item>
           </layout>
          </item>
@@ -136,6 +265,23 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
           <width>16777215</width>
           <height>16777215</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; 
+    padding: 0 5px;
+    background-color: transparent;
+    color: black;
+}
+</string>
         </property>
         <property name="title">
          <string>Soda</string>
@@ -168,6 +314,19 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_5">
            <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
             <widget class="QComboBox" name="comboBox_soda">
              <property name="minimumSize">
               <size>
@@ -181,14 +340,64 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
                <height>25</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox {
+    background-color: white; 
+    border: 1px solid #ccc;
+    border-radius: 3px; 
+    padding: 1px 18px 1px 3px; 
+   
+}
+
+QComboBox:hover {
+    border: 1px solid #aaa; 
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right; 
+    width: 16px;
+    border-left-width: 1px;
+    border-left-color: #ccc; 
+    border-left-style: solid; 
+    border-top-right-radius: 3px; 
+    border-bottom-right-radius: 3px; 
+background-color: rgb(67, 149, 131);
+ 
+}
+
+QComboBox::down-arrow {
+	image: url(:/SnacksSales/Resource files/icons/down2.png);
+    height:12px;
+	width: 12px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+    left: 1px;
+}</string>
+             </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
            </item>
            <item>
             <widget class="QPushButton" name="pushButton_add_soda">
              <property name="minimumSize">
               <size>
                <width>100</width>
-               <height>20</height>
+               <height>25</height>
               </size>
              </property>
              <property name="maximumSize">
@@ -197,10 +406,49 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
                <height>25</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: white;
+    border: 1px solid black; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:hover {
+	background-color: rgb(67, 149, 131);
+	color: white;
+	border: 1px solid white; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:pressed {
+    background-color: rgb(67, 149, 131);
+	color: white;
+}</string>
+             </property>
              <property name="text">
               <string>Add</string>
              </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
            </item>
           </layout>
          </item>
@@ -220,6 +468,23 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
           <width>16777215</width>
           <height>16777215</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; 
+    padding: 0 5px;
+    background-color: transparent;
+    color: black;
+}
+</string>
         </property>
         <property name="title">
          <string>Nachos</string>
@@ -252,6 +517,19 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
+            <spacer name="verticalSpacer_7">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
             <widget class="QComboBox" name="comboBox_nachos">
              <property name="minimumSize">
               <size>
@@ -265,7 +543,57 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
                <height>25</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox {
+    background-color: white; 
+    border: 1px solid #ccc;
+    border-radius: 3px; 
+    padding: 1px 18px 1px 3px; 
+   
+}
+
+QComboBox:hover {
+    border: 1px solid #aaa; 
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right; 
+    width: 16px;
+    border-left-width: 1px;
+    border-left-color: #ccc; 
+    border-left-style: solid; 
+    border-top-right-radius: 3px; 
+    border-bottom-right-radius: 3px; 
+background-color: rgb(67, 149, 131);
+ 
+}
+
+QComboBox::down-arrow {
+	image: url(:/SnacksSales/Resource files/icons/down2.png);
+    height:12px;
+	width: 12px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+    left: 1px;
+}</string>
+             </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_9">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
            </item>
            <item>
             <widget class="QPushButton" name="pushButton_add_nachos">
@@ -281,10 +609,49 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
                <height>25</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: white;
+    border: 1px solid black; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:hover {
+	background-color: rgb(67, 149, 131);
+	color: white;
+	border: 1px solid white; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:pressed {
+    background-color: rgb(67, 149, 131);
+	color: white;
+}</string>
+             </property>
              <property name="text">
               <string>Add</string>
              </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_8">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
            </item>
           </layout>
          </item>
@@ -304,6 +671,23 @@ image: url(:/SnacksSales/Resource files/Snacks/popcorn.png);
           <width>16777215</width>
           <height>16777215</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; 
+    padding: 0 5px;
+    background-color: transparent;
+    color: black;
+}
+</string>
         </property>
         <property name="title">
          <string>Slushy</string>
@@ -336,6 +720,19 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_7">
            <item>
+            <spacer name="verticalSpacer_10">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
             <widget class="QComboBox" name="comboBox_slushy">
              <property name="minimumSize">
               <size>
@@ -349,7 +746,57 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
                <height>25</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox {
+    background-color: white; 
+    border: 1px solid #ccc;
+    border-radius: 3px; 
+    padding: 1px 18px 1px 3px; 
+   
+}
+
+QComboBox:hover {
+    border: 1px solid #aaa; 
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right; 
+    width: 16px;
+    border-left-width: 1px;
+    border-left-color: #ccc; 
+    border-left-style: solid; 
+    border-top-right-radius: 3px; 
+    border-bottom-right-radius: 3px; 
+background-color: rgb(67, 149, 131);
+ 
+}
+
+QComboBox::down-arrow {
+	image: url(:/SnacksSales/Resource files/icons/down2.png);
+    height:12px;
+	width: 12px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+    left: 1px;
+}</string>
+             </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_11">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
            </item>
            <item>
             <widget class="QPushButton" name="pushButton_add_slushy">
@@ -365,10 +812,49 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
                <height>25</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: white;
+    border: 1px solid black; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:hover {
+	background-color: rgb(67, 149, 131);
+	color: white;
+	border: 1px solid white; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:pressed {
+    background-color: rgb(67, 149, 131);
+	color: white;
+}</string>
+             </property>
              <property name="text">
               <string>Add</string>
              </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_12">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
            </item>
           </layout>
          </item>
@@ -388,6 +874,23 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
           <width>16777215</width>
           <height>16777215</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; 
+    padding: 0 5px;
+    background-color: transparent;
+    color: black;
+}
+</string>
         </property>
         <property name="title">
          <string>Candies</string>
@@ -420,6 +923,19 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_8">
            <item>
+            <spacer name="verticalSpacer_13">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
             <widget class="QComboBox" name="comboBox_candy">
              <property name="minimumSize">
               <size>
@@ -433,7 +949,56 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
                <height>25</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox {
+    background-color: white; 
+    border: 1px solid #ccc;
+    border-radius: 3px; 
+    padding: 1px 18px 1px 3px; 
+   
+}
+
+QComboBox:hover {
+    border: 1px solid #aaa; 
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right; 
+    width: 16px;
+    border-left-width: 1px;
+    border-left-color: #ccc; 
+    border-left-style: solid; 
+    border-top-right-radius: 3px; 
+    border-bottom-right-radius: 3px; 
+ background-color: rgb(67, 149, 131);
+}
+
+QComboBox::down-arrow {
+	image: url(:/SnacksSales/Resource files/icons/down2.png);
+    height:12px;
+	width: 12px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+    left: 1px;
+}</string>
+             </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_14">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
            </item>
            <item>
             <widget class="QPushButton" name="pushButton_add_candy">
@@ -449,10 +1014,49 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
                <height>25</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: white;
+    border: 1px solid black; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:hover {
+	background-color: rgb(67, 149, 131);
+	color: white;
+	border: 1px solid white; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:pressed {
+    background-color: rgb(67, 149, 131);
+	color: white;
+}</string>
+             </property>
              <property name="text">
               <string>Add</string>
              </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_15">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
            </item>
           </layout>
          </item>
@@ -477,12 +1081,53 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
           <height>16777215</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; 
+    padding: 0 5px;
+    background-color: transparent;
+    color: black;
+}
+</string>
+        </property>
         <property name="title">
          <string>Cart</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QListWidget" name="listWidget"/>
+          <widget class="QListWidget" name="listWidget">
+           <property name="styleSheet">
+            <string notr="true">QListWidget {
+   background-color: rgb(67, 149, 131);
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+QListWidget::item {
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+
+QListWidget::item:selected {
+      background-color: rgb(42, 94, 82);
+    color: white;
+}
+
+QListWidget::item:hover {
+    background-color: rgb(42, 94, 82);
+    color: white;
+}</string>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QListWidget" name="listWidget_total">
@@ -497,6 +1142,34 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
              <pointsize>20</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">QListWidget {
+   background-color: rgb(67, 149, 131);
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+QListWidget::item {
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+
+QListWidget::item:selected {
+      background-color: rgb(67, 149, 131);
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+    
+}
+
+QListWidget::item:hover {
+    background-color: rgb(67, 149, 131);
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+}</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -505,6 +1178,7 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
             <widget class="QLabel" name="label_6">
              <property name="font">
               <font>
+               <family>Arial</family>
                <pointsize>10</pointsize>
               </font>
              </property>
@@ -520,6 +1194,28 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
                <width>120</width>
                <height>50</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    
+	background-color: rgb(67, 149, 131);
+	color: white;
+	border: 1px solid white; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:hover {
+background-color: white;
+    border: 1px solid black; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:pressed {
+    background-color: rgb(67, 149, 131);
+	color: white;
+}</string>
              </property>
              <property name="text">
               <string>Remove</string>
@@ -539,6 +1235,42 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
           <height>30</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px; 
+    padding: 1px 18px 1px 3px; 
+   
+}
+
+QComboBox:hover {
+    border: 1px solid #aaa; 
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right; 
+    width: 16px;
+    border-left-width: 1px;
+    border-left-color: #ccc; 
+    border-left-style: solid; 
+    border-top-right-radius: 3px; 
+    border-bottom-right-radius: 3px; 
+ 
+}
+
+QComboBox::down-arrow {
+	image: url(:/SnacksSales/Resource files/icons/down2.png);
+    height:12px;
+	width: 12px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+    left: 1px;
+}</string>
+        </property>
        </widget>
       </item>
       <item>
@@ -548,6 +1280,28 @@ image: url(:/SnacksSales/Resource files/Snacks/Slushy.png)
           <width>0</width>
           <height>30</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    
+	background-color: rgb(67, 149, 131);
+	color:white;
+	border: 1px solid white; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:hover {
+background-color: white;
+    border: 1px solid black; 
+    border-radius: 6px;
+    padding: 6px; 
+}
+
+QPushButton:pressed {
+    background-color: rgb(67, 149, 131);
+	color: white;
+}</string>
         </property>
         <property name="text">
          <string>Check Out</string>
