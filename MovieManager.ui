@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>828</width>
+    <width>829</width>
     <height>641</height>
    </rect>
   </property>
@@ -31,9 +31,29 @@ background-color: rgb(50,50,50);
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QTableView{
-background-color: rgb(80,80, 80);
-color: white;
+         <string notr="true">QTableView {
+    background-color: rgb(80, 80, 80);
+    color: white;
+    border: 1px solid rgb(100, 100, 100);
+    gridline-color: rgb(100, 100, 100);
+    selection-background-color: rgb(120, 120, 120);
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: rgb(100, 100, 100);
+    color: white;
+    padding: 5px;
+    border: 1px solid rgb(120, 120, 120);
+}
+
+QTableCornerButton::section {
+    background-color: rgb(100, 100, 100);
+    border: 1px solid rgb(120, 120, 120);
+}
+
+QTableView QTableView::item {
+    border: 1px solid rgb(100, 100, 100);
 }</string>
         </property>
        </widget>

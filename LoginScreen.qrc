@@ -8,5 +8,7 @@
         <file>Resource files/icons/call-report-icon-3.png</file>
         <file>Resource files/icons/gear.png</file>
         <file>Resource files/icons/cashregister.png</file>
+        <file>Resource files/icons/ticket.png</file>
+        <file>Resource files/icons/down.png</file>
     </qresource>
 </RCC>
