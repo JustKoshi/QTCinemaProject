@@ -6,5 +6,6 @@
         <file>Resource files/icons/calendar.png</file>
         <file>Resource files/icons/down2.png</file>
         <file>Resource files/posters/cinemaposter.png</file>
+        <file>Resource files/icons/enter-entrance-icon.png</file>
     </qresource>
 </RCC>

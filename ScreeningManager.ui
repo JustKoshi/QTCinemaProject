@@ -261,15 +261,10 @@ QTableView::item:selected {
     color: black;
 }
 
-QTableView QToolButton {
-    background-color: rgb(180, 178, 140); 
-    border: none; 
-    padding: 4px;
-    border-radius: 3px; 
-}
 
-QTableView QToolButton:hover {
-    background-color: rgb(182, 178, 135);
+QTableCornerButton::section {
+     background-color: rgb(182, 178, 135);
+       border: 1px solid rgb black;
 }</string>
           </property>
          </widget>

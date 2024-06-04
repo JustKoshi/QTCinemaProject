@@ -25,25 +25,30 @@
   <property name="windowTitle">
    <string>EmployeeManager</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="10,17">
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background-color: rgb(90,90,90);
+}</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,3">
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QGroupBox" name="groupBox_2">
        <property name="styleSheet">
         <string notr="true">QGroupBox {
-    background-color: rgb(220, 220, 220); /* Kolor tła groupboxa */
-    border: 2px solid black; /* Obramowanie */
-    border-radius: 6px; /* Zaokrąglenie rogów */
-    padding: 10px; /* Odstępy wewnętrzne */
+    background-color: rgb(220, 220, 220);
+    border: 2px solid black; 
+    border-radius: 6px; 
+    padding: 10px; 
 }
 
 QGroupBox::title {
     subcontrol-origin: margin;
-    subcontrol-position: top center; /* Pozycja tytułu */
-    padding: 0 5px; /* Odstępy */
+    subcontrol-position: top center;
+    padding: 0 5px; 
     background-color: transparent;
-    color: black; /* Kolor tekstu tytułu */
+    color: black; 
 }</string>
        </property>
        <property name="title">
@@ -52,8 +57,21 @@ QGroupBox::title {
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
          <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>12</pointsize>
+            <italic>true</italic>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+  background-color: rgb(220, 220, 220);
+}
+</string>
+          </property>
           <property name="text">
-           <string>New employee login is name+surname and their password is &quot;password&quot;</string>
+           <string>New employee login is name+surname and their password is &quot;password&quot;.</string>
           </property>
           <property name="wordWrap">
            <bool>true</bool>
@@ -69,8 +87,14 @@ QGroupBox::title {
         <widget class="QLabel" name="label">
          <property name="font">
           <font>
+           <family>Arial</family>
            <pointsize>20</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+color: white;
+}</string>
          </property>
          <property name="text">
           <string>Name:</string>
@@ -85,6 +109,18 @@ QGroupBox::title {
            <height>40</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit{
+border: none;
+border-bottom: 3px solid rbg(255,255,255);
+background-color: Transparent;
+color: white;
+padding:5px 5px 5px 5px;
+}
+QLineEdit:Focus{
+border:2px solid rgb(255,255,255);
+}</string>
+         </property>
          <property name="placeholderText">
           <string>Enter new employee name</string>
          </property>
@@ -98,8 +134,14 @@ QGroupBox::title {
         <widget class="QLabel" name="label_2">
          <property name="font">
           <font>
+           <family>Arial</family>
            <pointsize>20</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+color: white;
+}</string>
          </property>
          <property name="text">
           <string>Surname:</string>
@@ -113,6 +155,18 @@ QGroupBox::title {
            <width>0</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit{
+border: none;
+border-bottom: 3px solid rbg(255,255,255);
+background-color: Transparent;
+color: white;
+padding:5px 5px 5px 5px;
+}
+QLineEdit:Focus{
+border:2px solid rgb(255,255,255);
+}</string>
          </property>
          <property name="placeholderText">
           <string>Enter new employee surname.</string>
@@ -129,6 +183,43 @@ QGroupBox::title {
          <height>35</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+    background-color: white; 
+    border: 1px solid #ccc;
+    border-radius: 3px; 
+    padding: 1px 18px 1px 3px; 
+     background-color: rgb(220, 220, 220);
+}
+
+QComboBox:hover {
+    border: 1px solid #aaa; 
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right; 
+    width: 16px;
+    border-left-width: 1px;
+    border-left-color: #ccc; 
+    border-left-style: solid; 
+    border-top-right-radius: 3px; 
+    border-bottom-right-radius: 3px; 
+    background-color: white; 
+ 
+}
+
+QComboBox::down-arrow {
+	image: url(:/ProjectionScreen/Resource files/icons/down2.png);
+    height:12px;
+	width: 12px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+    left: 1px;
+}</string>
+       </property>
       </widget>
      </item>
      <item>
@@ -139,10 +230,66 @@ QGroupBox::title {
          <height>35</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+  background-color: rgb(220, 220, 220);
+    border: 1px solid #ccc;
+    border-radius: 3px; 
+    padding: 1px 18px 1px 3px; 
+   
+}
+
+QComboBox:hover {
+    border: 1px solid #aaa; 
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right; 
+    width: 16px;
+    border-left-width: 1px;
+    border-left-color: #ccc; 
+    border-left-style: solid; 
+    border-top-right-radius: 3px; 
+    border-bottom-right-radius: 3px; 
+
+    background-color: white; 
+ 
+}
+
+QComboBox::down-arrow {
+	image: url(:/ProjectionScreen/Resource files/icons/down2.png);
+    height:12px;
+	width: 12px;
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+    left: 1px;
+}</string>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_add_employee">
+       <property name="styleSheet">
+        <string notr="true">   QPushButton {
+            background-color: rgb(70, 70, 70);
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        QPushButton:hover {
+            background-color: rgb(90, 90, 90);
+            border: 2px solid rgb(120, 120, 120);
+        }
+        QPushButton:pressed {
+            background-color: rgb(50, 50, 50);
+            border: 2px solid rgb(150, 150, 150);
+        }</string>
+       </property>
        <property name="text">
         <string>Add Employee</string>
        </property>
@@ -151,34 +298,119 @@ QGroupBox::title {
     </layout>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string>Current Employees</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QTableView" name="tableView"/>
-      </item>
-      <item alignment="Qt::AlignHCenter">
-       <widget class="QPushButton" name="pushButton_delete_employee">
-        <property name="text">
-         <string>Delete Employee (select whole row)</string>
-        </property>
-       </widget>
-      </item>
-      <item alignment="Qt::AlignRight|Qt::AlignBottom">
-       <widget class="QPushButton" name="pushButton_return">
-        <property name="text">
-         <string>Return</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+    background-color: rgb(180, 180, 180);
+    border: 2px solid black; 
+    border-radius: 6px; 
+    padding: 10px; 
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0 5px; 
+    background-color: transparent;
+    color: black; 
+}</string>
+       </property>
+       <property name="title">
+        <string>Current Employees</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTableView" name="tableView">
+          <property name="styleSheet">
+           <string notr="true">QTableView {
+    background-color: rgb(50, 50, 50);
+    color: white;
+    border: 1px solid rgb(100, 100, 100);
+    gridline-color: rgb(70, 70, 70);
+    selection-background-color: rgb(90, 90, 90);
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: rgb(70, 70, 70);
+    color: white;
+    padding: 5px;
+    border: 1px solid rgb(100, 100, 100);
+}
+
+QTableCornerButton::section {
+    background-color: rgb(70, 70, 70);
+    border: 1px solid rgb(100, 100, 100);
+}
+
+QTableView QTableView::item {
+    border: 1px solid rgb(70, 70, 70);
+}</string>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QPushButton" name="pushButton_delete_employee">
+          <property name="styleSheet">
+           <string notr="true">   QPushButton {
+            background-color: rgb(70, 70, 70);
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        QPushButton:hover {
+            background-color: rgb(90, 90, 90);
+            border: 2px solid rgb(120, 120, 120);
+        }
+        QPushButton:pressed {
+            background-color: rgb(50, 50, 50);
+            border: 2px solid rgb(150, 150, 150);
+        }</string>
+          </property>
+          <property name="text">
+           <string>Delete Employee (select whole row)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+      <widget class="QPushButton" name="pushButton_return">
+       <property name="styleSheet">
+        <string notr="true">   QPushButton {
+            background-color: rgb(70, 70, 70);
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        QPushButton:hover {
+            background-color: rgb(90, 90, 90);
+            border: 2px solid rgb(120, 120, 120);
+        }
+        QPushButton:pressed {
+            background-color: rgb(50, 50, 50);
+            border: 2px solid rgb(150, 150, 150);
+        }</string>
+       </property>
+       <property name="text">
+        <string>Return</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="ProjectionScreen.qrc"/>
+ </resources>
  <connections/>
 </ui>

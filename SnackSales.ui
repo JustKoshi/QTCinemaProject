@@ -1206,15 +1206,16 @@ QListWidget::item:hover {
 }
 
 QPushButton:hover {
-background-color: white;
+background-color: rgb(103, 217, 183);
     border: 1px solid black; 
     border-radius: 6px;
     padding: 6px; 
+  
 }
 
 QPushButton:pressed {
-    background-color: rgb(67, 149, 131);
-	color: white;
+    background-color: rgb(103, 217, 183);
+	
 }</string>
              </property>
              <property name="text">
@@ -1292,15 +1293,16 @@ QComboBox::down-arrow:on {
 }
 
 QPushButton:hover {
-background-color: white;
+background-color: rgb(103, 217, 183);
     border: 1px solid black; 
     border-radius: 6px;
     padding: 6px; 
+  
 }
 
 QPushButton:pressed {
-    background-color: rgb(67, 149, 131);
-	color: white;
+    background-color: rgb(103, 217, 183);
+	
 }</string>
         </property>
         <property name="text">
