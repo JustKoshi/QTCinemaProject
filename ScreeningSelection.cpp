@@ -30,8 +30,8 @@ ScreeningSelection::ScreeningSelection(QWidget *parent)
 		"    AND datetime(date_start) >= datetime('now', '-30 minutes')"
 		")"
 	);
-	
-	
+
+
 	if (!query.exec()) {
 		QMessageBox::critical(this, "Error", "Query error");
 		qDebug() << query.lastError().text();
@@ -42,20 +42,7 @@ ScreeningSelection::ScreeningSelection(QWidget *parent)
 		QByteArray bytes = query.value(1).toByteArray();
 		QPixmap image;
 		image.loadFromData(bytes);
-		QSqlQuery screeningQuery(loginDb);
-		screeningQuery.prepare("SELECT COUNT(*) FROM Screenings WHERE movie_id = (SELECT movie_id FROM Movies WHERE title = :title) AND DATE(date_start) = DATE('now')");
-		screeningQuery.bindValue(":title", title);
-		if (!screeningQuery.exec()) {
-			QMessageBox::critical(this, "Error", "Query error");
-			qDebug() << screeningQuery.lastError().text();
-			continue;
-
-		}
-		if (screeningQuery.next()) {
-			int count = screeningQuery.value(0).toInt();
-			createPage(title, image);
-		}
-
+		createPage(title, image);
 	}
 	this->setMinimumSize(800, 600);
 	this->setStyleSheet(R"(
