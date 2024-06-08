@@ -1,5 +1,10 @@
 #include "AdminPage.h"
 
+/**
+ * @file AdminPage.cpp
+ * @brief This file contains the implementation of the functions to manage the admin page.
+ */
+
 AdminPage::AdminPage(QWidget *parent)
 	: QMainWindow(parent)
 {
@@ -24,11 +29,19 @@ delete timer;
 
 }
 
+
+/**
+ * @brief This function shows the checkout screen.
+ */
 void AdminPage::on_pushButton_checkOut_clicked() {
 	this->hide();
 	checkoutscreen->setName(label);
 	checkoutscreen->show();
 }
+
+/**
+ * @brief This function shows the movie manager page and transfers database to it.
+ */
 
 void AdminPage::on_pushButton_movieManager_clicked() {
 	this->hide();
@@ -38,17 +51,29 @@ void AdminPage::on_pushButton_movieManager_clicked() {
 	connect(moviemanager, SIGNAL(return_To_AdminPage()), this, SLOT(showEmployeePage()));
 }
 
+/**
+ * @brief This function shows the employee page. 
+*/
+
 void AdminPage::showEmployeePage() {
 	setTodaysScreenings();
 	this->show();
 	
 }
 
+/**
+ * @brief This function connects to QTimer.
+ */
+
 void AdminPage::connect_to_QTimer() {
 	QTime time = QTime::currentTime();
 	QString time_text = time.toString("hh : mm : ss");
 	ui.label_Time->setText(time_text);
 }
+
+/**
+ * @brief This function creates, transfers database and shows screening manager screeen 
+ */
 
 void AdminPage::on_pushButton_screeningManager_clicked() {
 	this->hide();
@@ -57,6 +82,11 @@ void AdminPage::on_pushButton_screeningManager_clicked() {
 	screeningmanager->show();
 	connect(screeningmanager, SIGNAL(return_To_AdminPage()), this, SLOT(showEmployeePage()));
 }
+
+/**
+ * @brief This function sets the name of the manager in the label.
+ * * @param new_name The name of the manager.
+ * */
 
 void AdminPage::setName(int new_name) {
 	id = new_name;
@@ -83,9 +113,18 @@ void AdminPage::setName(int new_name) {
 	}
 }
 
+/**
+ * @brief This function sets the database.
+ * * @param db The database object that we use in whole project.
+ * */
+
 void AdminPage::setLoginDatabase(QSqlDatabase db) {
 	loginDatabase = db;
 }
+
+/**
+ * @brief This function shows the cancel reservation page.
+ */
 
 void AdminPage::on_pushButton_cancel_reservation_clicked() {
 	this->hide();
@@ -94,10 +133,18 @@ void AdminPage::on_pushButton_cancel_reservation_clicked() {
 	connect(cancelreservation, SIGNAL(return_To_AdminPage()), this, SLOT(showEmployeePage()));
 }
 
+/**
+ * @brief This function logs out the user and returns to the login page.
+ */
+
 void AdminPage::on_pushButton_logout_clicked() {
 	this->hide();
 	emit return_To_loginPage();
 }
+
+/**
+ * @brief This function allows user to change login or password.
+ */
 
 void AdminPage::on_pushButton_account_settings_clicked() {
 	QMessageBox msgBox;
@@ -116,11 +163,19 @@ void AdminPage::on_pushButton_account_settings_clicked() {
 	}
 }
 
+/**
+ * @brief This function shows the report page and hides current one.
+ */
+
 void AdminPage::on_pushButton_reports_clicked() {
 	ReportPage* reportpage = new ReportPage();
 	reportpage->show();
 	connect(reportpage, &ReportPage::return_To_AdminPage, this, &AdminPage::showEmployeePage);
 }
+
+/**
+ * @brief This function sets the table view with today's screenings, gets data from database.
+ */
 
 void AdminPage::setTodaysScreenings() {
 	QSqlQueryModel* model = new QSqlQueryModel();
@@ -138,6 +193,10 @@ void AdminPage::setTodaysScreenings() {
 	ui.tableView->resizeColumnsToContents();
 	ui.tableView->show();
 }
+
+/**
+ * @brief This function shows the employee manager page.
+ */
 
 void AdminPage::on_pushButton_employee_manager_clicked() {
 	this->hide();

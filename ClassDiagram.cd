@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LoginScreen">
+    <Position X="18.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAQAAQgEAAAAAAAAAAAAAEAAAAAAAgAAAEAAQA=</HashCode>
+      <FileName>LoginScreen.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdminPage">
+    <Position X="9.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBQAACIAAAwgEBBAARAAgBAAAAAAAABKAAAAAAAAAgg=</HashCode>
+      <FileName>AdminPage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EmployeePage">
+    <Position X="20" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAACIAAgwgEBBAABAAgJAAAgAAAABCAAAAABAAAgA=</HashCode>
+      <FileName>EmployeePage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheckOutScreen">
+    <Position X="6" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUcAAAQAAAAAEEaCEAEAIAAAAAAEAABCABggAAAABAA=</HashCode>
+      <FileName>CheckOutScreen.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieManager">
+    <Position X="13" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAEUEAAAAAAAAEEAAAIAAAAAAQCAAgAAA=</HashCode>
+      <FileName>MovieManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectionScreen">
+    <Position X="14.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAEEAAAAAAAAAAAAAAAQAEBAAAAAAQAiA=</HashCode>
+      <FileName>ProjectionScreen.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScreeningManager">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEEDAAAAAQAAEEAAAAAAACAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>ScreeningManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScreeningSelection">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAAAQIAEEAAAAAEAAEAAAAAAAIAAAAAABAAAAA=</HashCode>
+      <FileName>ScreeningSelection.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SnackSales">
+    <Position X="7.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAmEAAAAQAIEEKAAAIAABAAQAAAAQBUBAAIQgAAABA=</HashCode>
+      <FileName>SnackSales.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CancelReservation">
+    <Position X="16.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAEAAEAABAAAAAAAAAAAAAAAAAAAAAAYQAgA=</HashCode>
+      <FileName>CancelReservation.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EmployeeManager">
+    <Position X="11.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACABIAEEAAAAAAAAgAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EmployeeManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportPage">
+    <Position X="0.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAQQEAAAAAAAAgAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReportPage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

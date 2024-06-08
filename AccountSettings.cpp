@@ -1,5 +1,15 @@
 #include "AccountSetting.h"
 
+/**
+ * @file AccountSetting.cpp
+ * @brief This file contains the implementation of the functions to change the password and login of the user.
+ */
+
+/**
+ * @brief This function changes the password of the user.
+ * * @param db The database object.
+ * * @param id The id of the user.
+ * */
 void changePassword(QSqlDatabase db, int id) {
     QScopedPointer<QDialog> dialog(new QDialog);
     QFormLayout layout(dialog.get());
@@ -68,6 +78,12 @@ void changePassword(QSqlDatabase db, int id) {
         });
     dialog->exec();
 }
+
+/**
+ * @brief This function changes the login of the user.
+ * * @param db The database object.
+ * * @param id The id of the user.
+ * */
 
 void changeLogin(QSqlDatabase db, int id) {
   

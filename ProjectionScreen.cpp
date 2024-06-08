@@ -1,5 +1,12 @@
 #include "ProjectionScreen.h"
 
+
+/**
+ * @file ProjectionScreen.cpp
+ * @brief This file contains the implementation of the functions to manage the projection screen.
+ */
+
+
 ProjectionScreen::ProjectionScreen(QWidget *parent, QString new_id, QSqlDatabase db)
 	: QWidget(parent), id(new_id), loginDb(db)
 {
@@ -65,6 +72,11 @@ ProjectionScreen::~ProjectionScreen()
 	delete snacksalespage;
 }
 
+/**
+*@brief this function handles the button click event for seats. It changes the seat color and adds the seat to the list of selected seats. Updates the cart.
+*/
+
+
 void ProjectionScreen::handle_button_click() {
 	QPushButton* button = qobject_cast<QPushButton*>(sender());
 	if (button) {
@@ -120,6 +132,11 @@ void ProjectionScreen::handle_button_click() {
 		}
 	}
 }
+
+
+/**
+* @brief This function proceeds to snack sale page.
+*/
 
 void ProjectionScreen::on_pushButton_proceed_clicked() {
 	if (seats_ids.empty()) {

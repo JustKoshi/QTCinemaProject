@@ -1,5 +1,11 @@
 #include "CancelReservation.h"
 
+/**
+ * @file CancelReservation.cpp
+ * * @brief This file contains the implementation of the functions to cancel a reservation. 
+ */
+
+
 CancelReservation::CancelReservation(QWidget *parent, QSqlDatabase db,int id)
 	: QMainWindow(parent) , Database(db), id(id)
 {
@@ -11,11 +17,21 @@ CancelReservation::CancelReservation(QWidget *parent, QSqlDatabase db,int id)
 CancelReservation::~CancelReservation()
 {}
 
+/**
+ * @brief This function returns to the employee menu page and closes this page.
+ */
+
 void CancelReservation::on_pushButton_return_clicked() {
 	emit return_To_AdminPage();
 	emit return_to_employee_page();
 	this->close();
 }
+
+
+/**
+ * @brief This function cancels the reservation selected in the table view and if employee is not a manager, asks for manager confirmation. Updates the table view after the operation. Updates database.
+
+ */
 
 void CancelReservation::on_pushButton_cancel_clicked() {
 	
@@ -94,6 +110,11 @@ void CancelReservation::on_pushButton_cancel_clicked() {
 
 	setTableView();
 }
+
+
+/**
+ * @brief This function sets the table view to show the reservations. 
+ */
 
 void CancelReservation::setTableView() {
 	QSqlQuery query(Database);
