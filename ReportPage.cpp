@@ -1,6 +1,10 @@
 #include "ReportPage.h"
 
 
+/**
+ * @file ReportPage.cpp
+ * @brief This file contains the implementation of the functions to manage the report page.
+ */
 
 ReportPage::ReportPage(QWidget *parent, QSqlDatabase db)
 	: QMainWindow(parent), db(db)
@@ -18,10 +22,18 @@ ReportPage::ReportPage(QWidget *parent, QSqlDatabase db)
 ReportPage::~ReportPage()
 {}
 
+/**
+ * @brief This function returns to the employee page and closes this page.
+ */
+
 void ReportPage::on_pushButton_return_clicked() {
 	this->close();
 	emit return_To_AdminPage();
 }
+
+/**
+ * @brief This function shows the seat sales report. Depending on the selected time period and diagram type, the report will show the total seat sales for the selected period.
+ */
 
 void ReportPage::on_pushButton_seat_sales_clicked() {
 	
@@ -137,6 +149,11 @@ void ReportPage::on_pushButton_seat_sales_clicked() {
 	ui.groupBox_chart->layout()->addWidget(chartView);
 	chartView->show();
 }
+
+/**
+ * @brief This function shows the snack sales report. Depending on the selected time period and diagram type, the report will show the total snack sales for the selected period.
+ */
+
 
 void ReportPage::on_pushButton_snack_sales_clicked() {
 

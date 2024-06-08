@@ -1,5 +1,11 @@
 #include "ScreeningSelection.h"
 
+/**
+ * @file ScreeningSelection.cpp
+ * @brief This file contains the implementation of the functions to manage the screening selection page.
+ */
+
+
 ScreeningSelection::ScreeningSelection(QWidget *parent)
 	: QMainWindow(parent)
 {
@@ -77,9 +83,18 @@ ScreeningSelection::ScreeningSelection(QWidget *parent)
 ScreeningSelection::~ScreeningSelection()
 {}
 
+/**
+ * @brief This function gets the database.
+ * @param db - the database to be loaded
+ */
+
 void ScreeningSelection::getDb(QSqlDatabase db) {
 	loginDb = db;
 }
+
+/**
+ * @brief This function creates a page with the movie title and the screening times depending on how many screenings is in the database.
+ */
 
 void ScreeningSelection::createPage(const QString& title, const QPixmap& image) {
 	
@@ -117,6 +132,11 @@ void ScreeningSelection::createPage(const QString& title, const QPixmap& image) 
 	scrolllayout->addWidget(groupbox);
 	scrollAreaWidgetContents->setLayout(scrolllayout);
 }
+
+/**
+ * @brief This function opens the projection screen. It is called when the button is clicked.
+ */
+
 
 void ScreeningSelection::onButtonClicked(QString id) {
 	ProjectionScreen* projectionScreen = new ProjectionScreen(nullptr, id, this->loginDb);

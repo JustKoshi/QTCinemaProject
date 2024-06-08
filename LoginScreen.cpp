@@ -1,5 +1,10 @@
 #include "LoginScreen.h"
 
+/**
+ * @file LoginScreen.cpp
+ * @brief This file contains the implementation of the functions to manage the login screen.
+ */
+
 LoginScreen::LoginScreen(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -27,6 +32,10 @@ LoginScreen::LoginScreen(QWidget *parent)
 	connect(timer, SIGNAL(timeout()), this, SLOT(connect_to_QTimer()));
 	timer->start(1000);
 }
+
+/**
+ * @brief This function checks the username and password entered by the user and logs in the user if the information is correct.
+ */
 
 void LoginScreen::on_pushButton_Login_clicked() {
 	QString username = ui.lineEdit_Username->text();
@@ -79,6 +88,10 @@ void LoginScreen::on_pushButton_Login_clicked() {
 
 }
 
+/**
+ * @brief This function quits the application if the user confirms the operation.
+ */
+
 void LoginScreen::on_pushButton_Quit_clicked() {
 	QMessageBox::StandardButton reply;
 	reply = QMessageBox::question(this, "Quit", "Are you sure you want to quit?",
@@ -87,6 +100,10 @@ void LoginScreen::on_pushButton_Quit_clicked() {
 		QApplication::quit();
 	}
 }
+
+/**
+ * @brief This function connects to the QTimer to update the current time.
+ */
 
 void LoginScreen::connect_to_QTimer() {
 	QTime time = QTime::currentTime(); 
@@ -99,6 +116,10 @@ LoginScreen::~LoginScreen()
 	delete adminpage;
 	delete employee_page;
 }
+
+/**
+ * @brief This function shows the login page.
+ */
 
 void LoginScreen::showLoginPage() {
 	

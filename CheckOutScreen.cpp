@@ -1,5 +1,10 @@
 #include "CheckOutScreen.h"
 
+/**
+ * @file CheckOutScreen.cpp
+ * @brief This file contains the implementation of the functions to manage the checkout screen that allows user to start and end/shifts and breaks.
+ */
+
 CheckOutScreen::CheckOutScreen(QWidget *parent)
 	: QMainWindow(parent)
 {
@@ -23,10 +28,18 @@ CheckOutScreen::CheckOutScreen(QWidget *parent)
 CheckOutScreen::~CheckOutScreen()
 {}
 
+/**
+ * @brief This function returns to the employee menu page and closes this page. 
+ */
+
 void CheckOutScreen::on_pushButton_return_clicked() {
 	this->hide();
 	emit return_To_EmployeePage();
 }
+
+/**
+ * @brief This function connects to the QTimer to update the current time.
+ */
 
 void CheckOutScreen::connect_to_QCurrent_Time() {
 	QTime time = QTime::currentTime();
@@ -34,11 +47,21 @@ void CheckOutScreen::connect_to_QCurrent_Time() {
 	ui.label_time_current->setText(time_text);
 }
 
+
+/**
+ * @brief This function updates the shift time.
+ */
+
 void CheckOutScreen::update_shift_time() {
 	elapsed_shift_time = elapsed_shift_time.addSecs(-1);
 	QString time_text = elapsed_shift_time.toString("hh:mm:ss");
 	ui.label_shift_time->setText(time_text);
 }
+
+
+/**
+ * @brief This function starts the shift timer.
+ */
 
 void CheckOutScreen::on_pushButton_shift_start_clicked() {
 	if (shift_timer_started) {
@@ -51,6 +74,11 @@ void CheckOutScreen::on_pushButton_shift_start_clicked() {
 	}
 
 }
+
+
+/**
+ * @brief This function ends the shift timer and checks if shift time has ended. 
+ */
 
 void CheckOutScreen::on_pushButton_shift_end_clicked() {
 	if (shift_timer_started) {
@@ -67,12 +95,19 @@ void CheckOutScreen::on_pushButton_shift_end_clicked() {
 	
 }
 
+/**
+ * @brief This function updates the break time.
+ */
 
 void CheckOutScreen::update_break_time() {
 	elapsed_break_time = elapsed_break_time.addSecs(1);
 	QString time_text = elapsed_break_time.toString("hh:mm:ss");
 	ui.label_break_time->setText(time_text);
 }
+
+/**
+ * @brief This function starts the break timer. 
+ */
 
 void CheckOutScreen::on_pushButton_break_start_clicked() {
 	if(shift_timer_started){
@@ -95,6 +130,10 @@ void CheckOutScreen::on_pushButton_break_start_clicked() {
 	}
 }
 
+/**
+ * @brief This function ends the break timer and checks if break time has ended.
+ */
+
 void CheckOutScreen::on_pushButton_break_end_clicked() {
 	if (timer_started) {
 		timer->stop();
@@ -115,14 +154,29 @@ void CheckOutScreen::on_pushButton_break_end_clicked() {
 	
 }
 
+/**
+ * @brief This function sets the login database.
+ * * @param db The database object.
+ */
+
 void CheckOutScreen::setLoginDatabase(QSqlDatabase db) {
 	loginDb = db;
 }
+
+/**
+ * @brief This function sets the name of the employee.
+ * * @param newname The name of the employee.
+ */
 
 void CheckOutScreen::setName(QString newname) {
 	name = newname;
 	ui.label_name->setText(name);
 }
+
+/**
+ * @brief This function sets the elapsed shift time.
+ * * @param time The time of the shift saved in database.
+ */
 
 void CheckOutScreen::set_elapsed_shift_time(int time) {
 	elapsed_shift_time = QTime(time,0,0);

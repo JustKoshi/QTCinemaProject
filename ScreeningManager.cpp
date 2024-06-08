@@ -1,5 +1,11 @@
 #include "ScreeningManager.h"
 
+/**
+ * @file ScreeningManager.cpp
+ * @brief This file contains the implementation of the functions to manage the screening manager page.
+ */
+
+
 ScreeningManager::ScreeningManager(QWidget *parent)
 	: QWidget(parent)
 {
@@ -50,6 +56,11 @@ ScreeningManager::~ScreeningManager()
 	}
 }
 
+
+/**
+* @brief This function changes the color of the button when clicked and sets the time of the screening.
+*/
+
 void ScreeningManager::onButtonClicked() {
 	QPushButton* button = qobject_cast<QPushButton*>(sender());
 	if (button) {
@@ -86,6 +97,12 @@ void ScreeningManager::onButtonClicked() {
 		
 	}
 }
+
+/**
+* @brief This function adds the screening to the database.
+* 
+*/
+
 
 void ScreeningManager::on_pushButton_add_screening_clicked() {
 	if (time == "") {
@@ -143,6 +160,10 @@ void ScreeningManager::on_pushButton_add_screening_clicked() {
 	ui.screening_table->show();
 }
 
+/**
+* @brief This function deletes the screening from the database after user confirmation.
+*/
+
 void ScreeningManager::on_pushButton_delete_screening_clicked() {
 	QSqlQuery query(loginDb);
 	if (ui.comboBox_screening_id->currentText() == "") {
@@ -182,6 +203,11 @@ void ScreeningManager::on_pushButton_delete_screening_clicked() {
 	}
 }
 
+/**
+* @brief This function gets the database and sets the table view to show the screenings.
+* @param db - database
+*/
+
 void ScreeningManager::getDb(QSqlDatabase db)
 {
 	loginDb = db;
@@ -203,10 +229,18 @@ void ScreeningManager::getDb(QSqlDatabase db)
 }
 
 
+/**
+* @brief This function returns to the admin page.
+*/
+
 void ScreeningManager::on_pushButton_return_clicked() {
 	this->close();
 	emit return_To_AdminPage();
 }
+
+/**
+* @brief This function shows the calendar to choose the date.
+*/
 
 void ScreeningManager::on_pushButton_calendar_clicked() {
 	QCalendarWidget* calendar = new QCalendarWidget();

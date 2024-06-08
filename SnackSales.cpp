@@ -1,5 +1,11 @@
 #include "SnackSales.h"
 
+/**
+ * @file SnackSales.cpp
+ * @brief This file contains the implementation of the functions to manage the snack sales page.
+ */
+
+
 SnackSales::SnackSales(QWidget *parent, QSqlDatabase db)
 	: QMainWindow(parent), loginDb(db)
 {
@@ -42,11 +48,24 @@ SnackSales::SnackSales(QWidget *parent, QSqlDatabase db)
 SnackSales::~SnackSales()
 {}
 
+/**
+ * @brief This function sets the seats vector.
+ * * @param seats Vector with seats selected in seat selection page.
+ * 
+*/
+
 void SnackSales::setSeats(std::vector<QString> seats)
 {
 	seats_ids = seats;
 	
 }
+
+/**
+ * @brief This function adds items to the widget list.
+ * * @param items List of items to be added to the widget list.
+ * 
+ */
+
 
 void SnackSales::addItemsToWidgetList(const QStringList& items) {
 	for (const QString& item : items) {
@@ -54,10 +73,24 @@ void SnackSales::addItemsToWidgetList(const QStringList& items) {
 	}
 }
 
+/**
+ * @brief This function sets the screening id.
+ * * @param id The id of the screening.
+ * 
+ */
+
+
 void SnackSales::setScreeningId(QString id)
 {
 	screening_id = id;
 }
+
+
+/**
+ * @brief This function sets the total price.
+ * * @param price The total price of the sale.
+ * 
+ */
 
 void SnackSales::setTotalPrice(double price)
 {
@@ -67,6 +100,10 @@ void SnackSales::setTotalPrice(double price)
 	ui.listWidget_total->addItem(item);
 	ui.listWidget_total->update();
 }
+
+/**
+ * @brief This function adds candy to the list widget with its price.
+ */
 
 void SnackSales::on_pushButton_add_candy_clicked() {
 	QString size = ui.comboBox_candy->currentText();
@@ -100,6 +137,11 @@ void SnackSales::on_pushButton_add_candy_clicked() {
 	update_total_price();
 }
 
+
+/**
+ * @brief This function adds nachos to the list widget with its price.
+ */
+
 void SnackSales::on_pushButton_add_nachos_clicked() {
 	QString size = ui.comboBox_nachos->currentText();
 	size = size.left(size.indexOf("-") - 1);
@@ -131,6 +173,11 @@ void SnackSales::on_pushButton_add_nachos_clicked() {
 	ui.listWidget->update();
 	update_total_price();
 }
+
+
+/**
+ * @brief This function adds popcorn to the list widget with its price.
+ */
 
 void SnackSales::on_pushButton_add_popcorn_clicked() {
 	QString size = ui.comboBox_popcorn->currentText();
@@ -164,6 +211,11 @@ void SnackSales::on_pushButton_add_popcorn_clicked() {
 	update_total_price();
 }
 
+/**
+ * @brief This function adds slushy to the list widget with its price.
+ */
+
+
 void SnackSales::on_pushButton_add_slushy_clicked() {
 	QString size = ui.comboBox_slushy->currentText();
 	size = size.left(size.indexOf("-") - 1);
@@ -195,6 +247,11 @@ void SnackSales::on_pushButton_add_slushy_clicked() {
 	ui.listWidget->update();
 	update_total_price();
 }
+
+
+/**
+ * @brief This function removes an item from the list widget.
+ */
 
 void SnackSales::on_pushButton_add_soda_clicked() {
 	QString size = ui.comboBox_soda->currentText();
@@ -228,6 +285,11 @@ void SnackSales::on_pushButton_add_soda_clicked() {
 	update_total_price();
 
 }
+
+
+/**
+ * @brief This function removes selected item from the list widget.
+ */
 
 void SnackSales::on_pushButton_remove_clicked() {
 
@@ -278,6 +340,10 @@ void SnackSales::on_pushButton_remove_clicked() {
 	
 }
 
+/**
+ * @brief This function checks if cart is empty, if so returs to employee page after users confirmation.
+ */
+
 void SnackSales::on_pushButton_check_out_clicked() {
 
 	
@@ -301,6 +367,11 @@ void SnackSales::on_pushButton_check_out_clicked() {
 		this->close();
 	}
 }
+
+
+/**
+ * @brief This function confirms the sale and adds it to the database.
+ */
 
 void SnackSales::confirm_sale() {
 	if (snack_ids_and_amouts.empty()&&seats_ids.empty()) {
@@ -432,12 +503,20 @@ void SnackSales::confirm_sale() {
 	generateReceipt();
 }
 
+/**
+ * @brief This function updates the total price.
+ */
+
 void SnackSales::update_total_price() {
 	ui.listWidget_total->clear();
 	QListWidgetItem* item = new QListWidgetItem("Total price: " + QString::number(total_price, 'f', 2) + " zl");
 	ui.listWidget_total->addItem(item);
 	ui.listWidget_total->update();
 }
+
+/**
+ * @brief This function generates a receipt in pdf format from cart and saves it to desktop.
+ */
 
 void SnackSales::generateReceipt() {
 	QString cinema_name = "QTCinema";

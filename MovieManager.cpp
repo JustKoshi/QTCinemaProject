@@ -1,5 +1,11 @@
 #include "MovieManager.h"
 
+/**
+ * @file MovieManager.cpp
+ * @brief This file contains the implementation of the functions to manage the movies in the database.
+ */
+
+
 MovieManager::MovieManager(QWidget *parent)
 	: QMainWindow(parent)
 {
@@ -39,6 +45,11 @@ MovieManager::MovieManager(QWidget *parent)
 MovieManager::~MovieManager()
 {}
 
+/**
+ * @brief This function gets the database, loads the movies from the database and displays them in the table.
+ * @param db - the database to be loaded
+ */
+
 void MovieManager::GetDb(QSqlDatabase db) {
 	loginDb = db;
 	QSqlQueryModel* model = new QSqlQueryModel();
@@ -55,6 +66,10 @@ void MovieManager::GetDb(QSqlDatabase db) {
 
 }
 
+/**
+ * @brief This function loads the image from the database and displays it in the QLabel.
+ */
+
 void MovieManager::on_pushButton_load_img_clicked() {
 	QString filename = QFileDialog::getOpenFileName(this, "Open Image", "C:/", "Image Files (*.png *.jpg *.bmp *.jpeg)");
 	image.load(filename);
@@ -62,11 +77,20 @@ void MovieManager::on_pushButton_load_img_clicked() {
 	ui.label_img->show();
 }
 
+/**
+ * @brief This function returns to the admin page.
+ */
+
 void MovieManager::on_pushButton_return_clicked() {
 	this->close();
 	emit return_To_AdminPage();
 
 }
+
+/**
+ * @brief This function loads the data from the database and displays it in the line edits and QLabel.
+ */
+
 
 void  MovieManager::on_pushButton_load_data_clicked() {
 	QSqlQuery query(loginDb);
@@ -111,6 +135,11 @@ void  MovieManager::on_pushButton_load_data_clicked() {
 	}
 	query.clear();
 }
+
+/**
+ * @brief This function loads data from lineedits and image and inserts it into the database after validation.
+ */
+
 
 void MovieManager::on_pushButton_add_movie_clicked() {
 	if (image.isNull()||ui.lineEdit_director->text().isEmpty()||ui.lineEdit_genre->text().isEmpty()||ui.lineEdit_length->text().isEmpty()||ui.lineEdit_title->text().isEmpty()) {
@@ -159,6 +188,10 @@ void MovieManager::on_pushButton_add_movie_clicked() {
 	ui.movie_table->show();
 }	
 
+/**
+ * @brief This function updates the movie in the database after validation.
+ */
+
 void MovieManager::on_pushButton_update_movie_clicked() {
 	if (image.isNull() || ui.lineEdit_director->text().isEmpty() || ui.lineEdit_genre->text().isEmpty() || ui.lineEdit_length->text().isEmpty() || ui.lineEdit_title->text().isEmpty()) {
 		QMessageBox::critical(this, "Error", "Fill all fields before updating");
@@ -204,6 +237,10 @@ void MovieManager::on_pushButton_update_movie_clicked() {
 	ui.movie_table->setModel(model);
 	ui.movie_table->show();
 }
+
+/**
+ * @brief This function deletes the movie from the database after user confirmation.
+ */
 
 void MovieManager::on_pushButton_delete_movie_clicked() {
 		QSqlQuery query(loginDb);

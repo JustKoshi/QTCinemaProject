@@ -1,5 +1,11 @@
 #include "EmployeeManager.h"
 
+/**
+ * @file EmployeeManager.cpp
+ * @brief This file contains the implementation of the functions to manage the employees and thier account settings.
+ */
+
+
 EmployeeManager::EmployeeManager(QWidget *parent, QSqlDatabase db)
 	: QWidget(parent), logindb(db)
 {
@@ -18,10 +24,18 @@ EmployeeManager::EmployeeManager(QWidget *parent, QSqlDatabase db)
 EmployeeManager::~EmployeeManager()
 {}
 
+/**
+ * @brief This function returns to the admin page and closes this page.
+ */
+
 void EmployeeManager::on_pushButton_return_clicked() {
 	this->close();
 	emit return_to_admin_page();
 }
+
+/**
+ * @brief This function adds an employee to the database and updates the table view.
+ */
 
 void EmployeeManager::on_pushButton_add_employee_clicked() {
 	QString name = ui.lineEdit_name->text();
@@ -67,6 +81,10 @@ void EmployeeManager::on_pushButton_add_employee_clicked() {
 
 }
 
+/**
+ * @brief This function updates the table view.
+ */
+
 void EmployeeManager::set_table_view() {
 	QSqlQuery query(logindb);
 	QSqlQueryModel* model = new QSqlQueryModel();
@@ -78,6 +96,9 @@ void EmployeeManager::set_table_view() {
 	ui.tableView->show();
 }
 
+/**
+ * @brief This function deletes the selected employee from the database. Updates the table view and database. 
+ */
 void EmployeeManager::on_pushButton_delete_employee_clicked() {
 
 	QMessageBox::StandardButton reply;
