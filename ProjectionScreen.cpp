@@ -4,6 +4,7 @@
 /**
  * @file ProjectionScreen.cpp
  * @brief This file contains the implementation of the functions to manage the projection screen.
+ * @class ProjectionScreen
  */
 
 
@@ -74,6 +75,9 @@ ProjectionScreen::~ProjectionScreen()
 
 /**
 *@brief this function handles the button click event for seats. It changes the seat color and adds the seat to the list of selected seats. Updates the cart.
+* @return void
+* @exception none
+* @see handle_button_click
 */
 
 
@@ -136,6 +140,7 @@ void ProjectionScreen::handle_button_click() {
 
 /**
 * @brief This function proceeds to snack sale page.
+* 
 */
 
 void ProjectionScreen::on_pushButton_proceed_clicked() {

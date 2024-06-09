@@ -3,6 +3,7 @@
 /**
  * @file SnackSales.cpp
  * @brief This file contains the implementation of the functions to manage the snack sales page.
+ * @class SnackSales
  */
 
 
@@ -103,6 +104,8 @@ void SnackSales::setTotalPrice(double price)
 
 /**
  * @brief This function adds candy to the list widget with its price.
+ * 
+ * This function adds candy to the list widget with its price. It first gets the size of the candy from the combo box. It then creates a query to get the price and the snack id of the candy. It then adds the candy to the list widget with its price. It then updates the total price.
  */
 
 void SnackSales::on_pushButton_add_candy_clicked() {
@@ -140,6 +143,8 @@ void SnackSales::on_pushButton_add_candy_clicked() {
 
 /**
  * @brief This function adds nachos to the list widget with its price.
+ * 
+ * This function adds nachos to the list widget with its price. It first gets the size of the nachos from the combo box. It then creates a query to get the price and the snack id of the nachos. It then adds the nachos to the list widget with its price. It then updates the total price.
  */
 
 void SnackSales::on_pushButton_add_nachos_clicked() {
@@ -177,6 +182,8 @@ void SnackSales::on_pushButton_add_nachos_clicked() {
 
 /**
  * @brief This function adds popcorn to the list widget with its price.
+ * 
+ * This function adds popcorn to the list widget with its price. It first gets the size of the popcorn from the combo box. It then creates a query to get the price and the snack id of the popcorn. It then adds the popcorn to the list widget with its price. It then updates the total price.
  */
 
 void SnackSales::on_pushButton_add_popcorn_clicked() {
@@ -213,6 +220,8 @@ void SnackSales::on_pushButton_add_popcorn_clicked() {
 
 /**
  * @brief This function adds slushy to the list widget with its price.
+ * 
+ * This function adds slushy to the list widget with its price. It first gets the size of the slushy from the combo box. It then creates a query to get the price and the snack id of the slushy. It then adds the slushy to the list widget with its price. It then updates the total price.
  */
 
 
@@ -250,7 +259,9 @@ void SnackSales::on_pushButton_add_slushy_clicked() {
 
 
 /**
- * @brief This function removes an item from the list widget.
+ * @brief This function adds soda to the list widget with its price.
+ * 
+ * This function adds soda to the list widget with its price. It first gets the size of the soda from the combo box. It then creates a query to get the price and the snack id of the soda. It then adds the soda to the list widget with its price. It then updates the total price. 
  */
 
 void SnackSales::on_pushButton_add_soda_clicked() {
@@ -289,6 +300,8 @@ void SnackSales::on_pushButton_add_soda_clicked() {
 
 /**
  * @brief This function removes selected item from the list widget.
+ * 
+ * This function removes selected item from the list widget. It first checks if the item is a ticket for a seat. If it is, it shows an error message. If it is not, it removes the item from the list widget and updates the total price.
  */
 
 void SnackSales::on_pushButton_remove_clicked() {
@@ -342,6 +355,8 @@ void SnackSales::on_pushButton_remove_clicked() {
 
 /**
  * @brief This function checks if cart is empty, if so returs to employee page after users confirmation.
+ * 
+ * This function checks if cart is empty, if so returs to employee page after users confirmation. If the cart is not empty, it asks the user if he wants to confirm the purchase. If the user confirms, it calls the confirm_sale function and returns to the employee page.
  */
 
 void SnackSales::on_pushButton_check_out_clicked() {
@@ -371,6 +386,8 @@ void SnackSales::on_pushButton_check_out_clicked() {
 
 /**
  * @brief This function confirms the sale and adds it to the database.
+ * 
+ * This function confirms the sale and adds it to the database. It first checks if the cart is empty. If it is, it returns. It then checks if the cart contains only snacks or only seats. If it does, it adds the sale to the database. If the cart contains both snacks and seats, it adds the sale to the database. It then generates a receipt.
  */
 
 void SnackSales::confirm_sale() {
@@ -505,6 +522,8 @@ void SnackSales::confirm_sale() {
 
 /**
  * @brief This function updates the total price.
+ * 
+ * This function updates the total price in the list widget.
  */
 
 void SnackSales::update_total_price() {
@@ -516,6 +535,8 @@ void SnackSales::update_total_price() {
 
 /**
  * @brief This function generates a receipt in pdf format from cart and saves it to desktop.
+ * 
+ * This function generates a receipt in pdf format from the cart and saves it to desktop. It creates a printer object and sets the output format to pdf. It then creates a painter object and sets the font and pen. It then draws the receipt with the cinema name, address, movie title, hall id, screening date, screening time, seats and snacks. It then saves the pdf to desktop and shows a message box with information that the receipt was generated successfully.
  */
 
 void SnackSales::generateReceipt() {

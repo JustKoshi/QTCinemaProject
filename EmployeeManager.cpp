@@ -3,6 +3,7 @@
 /**
  * @file EmployeeManager.cpp
  * @brief This file contains the implementation of the functions to manage the employees and thier account settings.
+ * @class EmployeeManager
  */
 
 
@@ -35,6 +36,8 @@ void EmployeeManager::on_pushButton_return_clicked() {
 
 /**
  * @brief This function adds an employee to the database and updates the table view.
+ * 
+ * The function gets the name, surname, position and shift time from the input fields. It then inserts the data into the EmployeeData table. It then gets the employee_id of the newly added employee and inserts the employee_id, login, password and access_level into the LoginData table.
  */
 
 void EmployeeManager::on_pushButton_add_employee_clicked() {
@@ -83,6 +86,8 @@ void EmployeeManager::on_pushButton_add_employee_clicked() {
 
 /**
  * @brief This function updates the table view.
+ * 
+ * This function updates the table view with the data from the database.
  */
 
 void EmployeeManager::set_table_view() {
@@ -98,6 +103,8 @@ void EmployeeManager::set_table_view() {
 
 /**
  * @brief This function deletes the selected employee from the database. Updates the table view and database. 
+ * 
+ * This function deletes the selected employee from the database. It first asks the user for confirmation. It then deletes the employee from the EmployeeData and LoginData tables.
  */
 void EmployeeManager::on_pushButton_delete_employee_clicked() {
 

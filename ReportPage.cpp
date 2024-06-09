@@ -4,6 +4,7 @@
 /**
  * @file ReportPage.cpp
  * @brief This file contains the implementation of the functions to manage the report page.
+ * @class ReportPage
  */
 
 ReportPage::ReportPage(QWidget *parent, QSqlDatabase db)
@@ -33,6 +34,7 @@ void ReportPage::on_pushButton_return_clicked() {
 
 /**
  * @brief This function shows the seat sales report. Depending on the selected time period and diagram type, the report will show the total seat sales for the selected period.
+ * 
  */
 
 void ReportPage::on_pushButton_seat_sales_clicked() {
@@ -152,6 +154,7 @@ void ReportPage::on_pushButton_seat_sales_clicked() {
 
 /**
  * @brief This function shows the snack sales report. Depending on the selected time period and diagram type, the report will show the total snack sales for the selected period.
+ * 
  */
 
 

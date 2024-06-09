@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Qt Cinema - Kacper Myszka: AdminPage Class Reference</title>
+<title>QtCinema - Kacper Myszka: AdminPage Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Qt Cinema - Kacper Myszka
+   <div id="projectname">QtCinema - Kacper Myszka
    </div>
+   <div id="projectbrief">The QT Cinema is an application designed to manage movie screenings, ticket sales, snack sales, and cinema staff. The system provides different functionalities and access levels for employees and managers.</div>
   </td>
  </tr>
  </tbody>
@@ -88,6 +89,7 @@ $(function(){ initResizable(false); });
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_admin_page-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">AdminPage Class Reference</div></div>
 </div><!--header-->
@@ -95,9 +97,13 @@ $(function(){ initResizable(false); });
 <div class="dynheader">
 Inheritance diagram for AdminPage:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_admin_page.png" alt=""/>
- </div></div>
+<div class="center"><img src="class_admin_page__inherit__graph.png" border="0" usemap="#a_admin_page_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for AdminPage:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_admin_page__coll__graph.png" border="0" usemap="#a_admin_page_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
@@ -129,9 +135,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>connect_to_QTimer</b>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>on_pushButton_logout_clicked</b> ()</td></tr>
 <tr class="memdesc:a9f9810837b659e637ab52d20c31e13bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function logs out the user and returns to the login page. <br /></td></tr>
 <tr class="separator:a9f9810837b659e637ab52d20c31e13bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9431d4d9a3ff5f84dc6db4f19f96e50" id="r_ac9431d4d9a3ff5f84dc6db4f19f96e50"><td class="memItemLeft" align="right" valign="top"><a id="ac9431d4d9a3ff5f84dc6db4f19f96e50" name="ac9431d4d9a3ff5f84dc6db4f19f96e50"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_pushButton_account_settings_clicked</b> ()</td></tr>
-<tr class="memdesc:ac9431d4d9a3ff5f84dc6db4f19f96e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function allows user to change login or password. <br /></td></tr>
+<tr class="memitem:ac9431d4d9a3ff5f84dc6db4f19f96e50" id="r_ac9431d4d9a3ff5f84dc6db4f19f96e50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9431d4d9a3ff5f84dc6db4f19f96e50">on_pushButton_account_settings_clicked</a> ()</td></tr>
+<tr class="memdesc:ac9431d4d9a3ff5f84dc6db4f19f96e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function allows user to change login or password.  <br /></td></tr>
 <tr class="separator:ac9431d4d9a3ff5f84dc6db4f19f96e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54f9d6a626f827b889edcf4e129002c3" id="r_a54f9d6a626f827b889edcf4e129002c3"><td class="memItemLeft" align="right" valign="top"><a id="a54f9d6a626f827b889edcf4e129002c3" name="a54f9d6a626f827b889edcf4e129002c3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>on_pushButton_reports_clicked</b> ()</td></tr>
@@ -159,12 +164,66 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1f9323ac0c55b8953811e2fa5f33f86c" id="r_a1f9323ac0c55b8953811e2fa5f33f86c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f9323ac0c55b8953811e2fa5f33f86c">setLoginDatabase</a> (QSqlDatabase db)</td></tr>
 <tr class="memdesc:a1f9323ac0c55b8953811e2fa5f33f86c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the database.  <br /></td></tr>
 <tr class="separator:a1f9323ac0c55b8953811e2fa5f33f86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29de17c2332aec425395b87ee5d10223" id="r_a29de17c2332aec425395b87ee5d10223"><td class="memItemLeft" align="right" valign="top"><a id="a29de17c2332aec425395b87ee5d10223" name="a29de17c2332aec425395b87ee5d10223"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTodaysScreenings</b> ()</td></tr>
-<tr class="memdesc:a29de17c2332aec425395b87ee5d10223"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the table view with today's screenings, gets data from database. <br /></td></tr>
+<tr class="memitem:a29de17c2332aec425395b87ee5d10223" id="r_a29de17c2332aec425395b87ee5d10223"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29de17c2332aec425395b87ee5d10223">setTodaysScreenings</a> ()</td></tr>
+<tr class="memdesc:a29de17c2332aec425395b87ee5d10223"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the table view with today's screenings, gets data from database.  <br /></td></tr>
 <tr class="separator:a29de17c2332aec425395b87ee5d10223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab8b63cf398a5a7bb6b60cd28ad64139e" id="r_ab8b63cf398a5a7bb6b60cd28ad64139e"><td class="memItemLeft" align="right" valign="top"><a id="ab8b63cf398a5a7bb6b60cd28ad64139e" name="ab8b63cf398a5a7bb6b60cd28ad64139e"></a>
+Ui::AdminPageClass&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></td></tr>
+<tr class="separator:ab8b63cf398a5a7bb6b60cd28ad64139e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabab58d57c72956ed41c96e6f8faa6cc" id="r_aabab58d57c72956ed41c96e6f8faa6cc"><td class="memItemLeft" align="right" valign="top"><a id="aabab58d57c72956ed41c96e6f8faa6cc" name="aabab58d57c72956ed41c96e6f8faa6cc"></a>
+<a class="el" href="class_check_out_screen.html">CheckOutScreen</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>checkoutscreen</b></td></tr>
+<tr class="separator:aabab58d57c72956ed41c96e6f8faa6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4470215993a348c7e5526474bbc55f54" id="r_a4470215993a348c7e5526474bbc55f54"><td class="memItemLeft" align="right" valign="top"><a id="a4470215993a348c7e5526474bbc55f54" name="a4470215993a348c7e5526474bbc55f54"></a>
+<a class="el" href="class_movie_manager.html">MovieManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>moviemanager</b></td></tr>
+<tr class="separator:a4470215993a348c7e5526474bbc55f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7da539dbb4b6b0a2095c1b9f64a84eb" id="r_ab7da539dbb4b6b0a2095c1b9f64a84eb"><td class="memItemLeft" align="right" valign="top"><a id="ab7da539dbb4b6b0a2095c1b9f64a84eb" name="ab7da539dbb4b6b0a2095c1b9f64a84eb"></a>
+<a class="el" href="class_screening_manager.html">ScreeningManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>screeningmanager</b></td></tr>
+<tr class="separator:ab7da539dbb4b6b0a2095c1b9f64a84eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70599f34563495bc7fc87fbde998d730" id="r_a70599f34563495bc7fc87fbde998d730"><td class="memItemLeft" align="right" valign="top"><a id="a70599f34563495bc7fc87fbde998d730" name="a70599f34563495bc7fc87fbde998d730"></a>
+QTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>timer</b></td></tr>
+<tr class="separator:a70599f34563495bc7fc87fbde998d730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a899640d557604429b46a3a0cfc70d5b2" id="r_a899640d557604429b46a3a0cfc70d5b2"><td class="memItemLeft" align="right" valign="top"><a id="a899640d557604429b46a3a0cfc70d5b2" name="a899640d557604429b46a3a0cfc70d5b2"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
+<tr class="separator:a899640d557604429b46a3a0cfc70d5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a701156b0a1247e740b002e463fc8173e" id="r_a701156b0a1247e740b002e463fc8173e"><td class="memItemLeft" align="right" valign="top"><a id="a701156b0a1247e740b002e463fc8173e" name="a701156b0a1247e740b002e463fc8173e"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>label</b></td></tr>
+<tr class="separator:a701156b0a1247e740b002e463fc8173e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68816ed67c545303c7a9795ec2725ee0" id="r_a68816ed67c545303c7a9795ec2725ee0"><td class="memItemLeft" align="right" valign="top"><a id="a68816ed67c545303c7a9795ec2725ee0" name="a68816ed67c545303c7a9795ec2725ee0"></a>
+QSqlDatabase&#160;</td><td class="memItemRight" valign="bottom"><b>loginDatabase</b></td></tr>
+<tr class="separator:a68816ed67c545303c7a9795ec2725ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac9431d4d9a3ff5f84dc6db4f19f96e50" name="ac9431d4d9a3ff5f84dc6db4f19f96e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9431d4d9a3ff5f84dc6db4f19f96e50">&#9670;&#160;</a></span>on_pushButton_account_settings_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdminPage::on_pushButton_account_settings_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function allows user to change login or password. </p>
+<p>This function asks the user if he wants to change login or password. If user chooses login, it calls changeLogin function. If user chooses password, it calls changePassword function. </p>
+
+</div>
+</div>
 <a id="a1f9323ac0c55b8953811e2fa5f33f86c" name="a1f9323ac0c55b8953811e2fa5f33f86c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f9323ac0c55b8953811e2fa5f33f86c">&#9670;&#160;</a></span>setLoginDatabase()</h2>
 
@@ -212,12 +271,47 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setTodaysScreenings</
 <ul>
 <li><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_name</td><td>The name of the manager. </td></tr>
+    <tr><td class="paramname">new_name</td><td>The name of the manager.</td></tr>
   </table>
   </dd>
 </dl>
-</li>
+This function sets the name of the manager in the label. It creates a query to get the name and surname of the manager from the database and sets the label with the name and surname. </li>
 </ul>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_admin_page_a3e4afd4c571e7789baa2f9ac518ae52a_cgraph.png" border="0" usemap="#aclass_admin_page_a3e4afd4c571e7789baa2f9ac518ae52a_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_admin_page_a3e4afd4c571e7789baa2f9ac518ae52a_icgraph.png" border="0" usemap="#aclass_admin_page_a3e4afd4c571e7789baa2f9ac518ae52a_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a29de17c2332aec425395b87ee5d10223" name="a29de17c2332aec425395b87ee5d10223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29de17c2332aec425395b87ee5d10223">&#9670;&#160;</a></span>setTodaysScreenings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdminPage::setTodaysScreenings </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function sets the table view with today's screenings, gets data from database. </p>
+<p>This function sets the table view with today's screenings. It creates a query to get the screenings that are today and orders them by time. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_admin_page_a29de17c2332aec425395b87ee5d10223_icgraph.png" border="0" usemap="#aclass_admin_page_a29de17c2332aec425395b87ee5d10223_icgraph" alt=""/></div>
+</div>
 
 </div>
 </div>

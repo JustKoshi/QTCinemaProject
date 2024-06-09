@@ -3,6 +3,7 @@
 /**
  * @file AdminPage.cpp
  * @brief This file contains the implementation of the functions to manage the admin page.
+ * @class AdminPage
  */
 
 AdminPage::AdminPage(QWidget *parent)
@@ -86,6 +87,8 @@ void AdminPage::on_pushButton_screeningManager_clicked() {
 /**
  * @brief This function sets the name of the manager in the label.
  * * @param new_name The name of the manager.
+ * 
+ * This function sets the name of the manager in the label. It creates a query to get the name and surname of the manager from the database and sets the label with the name and surname.
  * */
 
 void AdminPage::setName(int new_name) {
@@ -144,6 +147,8 @@ void AdminPage::on_pushButton_logout_clicked() {
 
 /**
  * @brief This function allows user to change login or password.
+ * 
+ * This function asks the user if he wants to change login or password. If user chooses login, it calls changeLogin function. If user chooses password, it calls changePassword function.
  */
 
 void AdminPage::on_pushButton_account_settings_clicked() {
@@ -175,6 +180,8 @@ void AdminPage::on_pushButton_reports_clicked() {
 
 /**
  * @brief This function sets the table view with today's screenings, gets data from database.
+ * 
+ * This function sets the table view with today's screenings. It creates a query to get the screenings that are today and orders them by time.
  */
 
 void AdminPage::setTodaysScreenings() {

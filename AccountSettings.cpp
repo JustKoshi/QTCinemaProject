@@ -9,6 +9,8 @@
  * @brief This function changes the password of the user.
  * * @param db The database object.
  * * @param id The id of the user.
+ * 
+ * * This function creates a dialog box with fields for the user to enter the login, old password, new password and confirm new password. It then checks if the old password is correct and if the new password and confirm new password match. If all the conditions are met, the password is changed in the database.
  * */
 void changePassword(QSqlDatabase db, int id) {
     QScopedPointer<QDialog> dialog(new QDialog);
@@ -83,6 +85,8 @@ void changePassword(QSqlDatabase db, int id) {
  * @brief This function changes the login of the user.
  * * @param db The database object.
  * * @param id The id of the user.
+ * 
+ * * This function creates a dialog box with fields for the user to enter the old login, old password and new login. It then checks if the old login and password are correct. If the conditions are met, the login is changed in the database.
  * */
 
 void changeLogin(QSqlDatabase db, int id) {

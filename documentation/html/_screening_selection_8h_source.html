@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Qt Cinema - Kacper Myszka: ScreeningSelection.h Source File</title>
+<title>QtCinema - Kacper Myszka: ScreeningSelection.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Qt Cinema - Kacper Myszka
+   <div id="projectname">QtCinema - Kacper Myszka
    </div>
+   <div id="projectbrief">The QT Cinema is an application designed to manage movie screenings, ticket sales, snack sales, and cinema staff. The system provides different functionalities and access levels for employees and managers.</div>
   </td>
  </tr>
  </tbody>
@@ -117,15 +118,17 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    QVBoxLayout* scrolllayout;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    QScrollArea *scrollArea;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    QWidget *scrollAreaWidgetContents;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> createPage(<span class="keyword">const</span> QString&amp; title, <span class="keyword">const</span> QPixmap&amp; image);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_screening_selection.html#a68555b314831b78657733f22ee58b0e5">createPage</a>(<span class="keyword">const</span> QString&amp; title, <span class="keyword">const</span> QPixmap&amp; image);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> onButtonClicked(QString <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_screening_selection.html#ae1b131b06c6910fdaf214c1aefff77c5">onButtonClicked</a>(QString <span class="keywordtype">id</span>);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>signals:</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> return_to_employee_page();</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
 </div>
 <div class="ttc" id="aclass_screening_selection_html"><div class="ttname"><a href="class_screening_selection.html">ScreeningSelection</a></div><div class="ttdef"><b>Definition</b> ScreeningSelection.h:16</div></div>
-<div class="ttc" id="aclass_screening_selection_html_a4c08eacf65ef36db838371a96f2d02cf"><div class="ttname"><a href="class_screening_selection.html#a4c08eacf65ef36db838371a96f2d02cf">ScreeningSelection::getDb</a></div><div class="ttdeci">void getDb(QSqlDatabase db)</div><div class="ttdoc">This function gets the database.</div><div class="ttdef"><b>Definition</b> ScreeningSelection.cpp:91</div></div>
+<div class="ttc" id="aclass_screening_selection_html_a4c08eacf65ef36db838371a96f2d02cf"><div class="ttname"><a href="class_screening_selection.html#a4c08eacf65ef36db838371a96f2d02cf">ScreeningSelection::getDb</a></div><div class="ttdeci">void getDb(QSqlDatabase db)</div><div class="ttdoc">This function gets the database.</div><div class="ttdef"><b>Definition</b> ScreeningSelection.cpp:93</div></div>
+<div class="ttc" id="aclass_screening_selection_html_a68555b314831b78657733f22ee58b0e5"><div class="ttname"><a href="class_screening_selection.html#a68555b314831b78657733f22ee58b0e5">ScreeningSelection::createPage</a></div><div class="ttdeci">void createPage(const QString &amp;title, const QPixmap &amp;image)</div><div class="ttdoc">This function creates a page with the movie title and the screening times depending on how many scree...</div><div class="ttdef"><b>Definition</b> ScreeningSelection.cpp:107</div></div>
+<div class="ttc" id="aclass_screening_selection_html_ae1b131b06c6910fdaf214c1aefff77c5"><div class="ttname"><a href="class_screening_selection.html#ae1b131b06c6910fdaf214c1aefff77c5">ScreeningSelection::onButtonClicked</a></div><div class="ttdeci">void onButtonClicked(QString id)</div><div class="ttdoc">This function opens the projection screen. It is called when the button is clicked.</div><div class="ttdef"><b>Definition</b> ScreeningSelection.cpp:149</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

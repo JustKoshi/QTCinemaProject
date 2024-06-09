@@ -3,6 +3,7 @@
 /**
  * @file LoginScreen.cpp
  * @brief This file contains the implementation of the functions to manage the login screen.
+ * @class LoginScreen
  */
 
 LoginScreen::LoginScreen(QWidget *parent)
@@ -35,6 +36,7 @@ LoginScreen::LoginScreen(QWidget *parent)
 
 /**
  * @brief This function checks the username and password entered by the user and logs in the user if the information is correct.
+ * If the information is incorrect, a warning message is displayed.
  */
 
 void LoginScreen::on_pushButton_Login_clicked() {
@@ -90,6 +92,8 @@ void LoginScreen::on_pushButton_Login_clicked() {
 
 /**
  * @brief This function quits the application if the user confirms the operation.
+ * @exception none
+ * 
  */
 
 void LoginScreen::on_pushButton_Quit_clicked() {
@@ -103,6 +107,8 @@ void LoginScreen::on_pushButton_Quit_clicked() {
 
 /**
  * @brief This function connects to the QTimer to update the current time.
+ * 
+ * This function connects to the QTimer to update the current time in the QLabel.
  */
 
 void LoginScreen::connect_to_QTimer() {

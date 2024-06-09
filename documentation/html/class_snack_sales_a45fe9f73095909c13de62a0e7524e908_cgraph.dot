@@ -1,0 +1,11 @@
+digraph "SnackSales::on_pushButton_add_popcorn_clicked"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="SnackSales::on_pushButton\l_add_popcorn_clicked",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="This function adds popcorn to the list widget with its price."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="SnackSales::update\l_total_price",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_snack_sales.html#aaf232016a261028f5da000842b26ade6",tooltip="This function updates the total price."];
+}

@@ -3,6 +3,8 @@
 /**
  * @file ScreeningSelection.cpp
  * @brief This file contains the implementation of the functions to manage the screening selection page.
+ * @class ScreeningSelection
+ * 
  */
 
 
@@ -94,6 +96,12 @@ void ScreeningSelection::getDb(QSqlDatabase db) {
 
 /**
  * @brief This function creates a page with the movie title and the screening times depending on how many screenings is in the database.
+ * @param title - the title of the movie
+ * @param image - the image of the movie
+ * @return void
+ * @exception none
+ * 
+ * This function creates a groupbox with the title of the movie and the image of the movie. It then creates a query to get the screening times of the movie. It then creates a button for each screening time and connects the button to the onButtonClicked function.
  */
 
 void ScreeningSelection::createPage(const QString& title, const QPixmap& image) {

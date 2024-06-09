@@ -3,6 +3,7 @@
 /**
  * @file MovieManager.cpp
  * @brief This file contains the implementation of the functions to manage the movies in the database.
+ * @class MovieManager
  */
 
 
@@ -89,6 +90,8 @@ void MovieManager::on_pushButton_return_clicked() {
 
 /**
  * @brief This function loads the data from the database and displays it in the line edits and QLabel.
+ * 
+ * This function creates a query to get the data from the database and displays it in the line edits and QLabel. If the image is not available, it displays a message box.
  */
 
 
@@ -138,6 +141,8 @@ void  MovieManager::on_pushButton_load_data_clicked() {
 
 /**
  * @brief This function loads data from lineedits and image and inserts it into the database after validation.
+ * 
+ * This function loads data from lineedits and image and inserts it into the database after validation. If the image is not available, it displays a message box.
  */
 
 
@@ -190,6 +195,8 @@ void MovieManager::on_pushButton_add_movie_clicked() {
 
 /**
  * @brief This function updates the movie in the database after validation.
+ * 
+ * This function updates the movie in the database after validation. If the image is not available, it displays a message box.
  */
 
 void MovieManager::on_pushButton_update_movie_clicked() {
@@ -240,6 +247,8 @@ void MovieManager::on_pushButton_update_movie_clicked() {
 
 /**
  * @brief This function deletes the movie from the database after user confirmation.
+ * 
+ * This function deletes the movie from the database after user confirmation. If the movie is not found, it displays a message box.
  */
 
 void MovieManager::on_pushButton_delete_movie_clicked() {

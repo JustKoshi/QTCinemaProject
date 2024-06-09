@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Qt Cinema - Kacper Myszka: CancelReservation Class Reference</title>
+<title>QtCinema - Kacper Myszka: CancelReservation Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Qt Cinema - Kacper Myszka
+   <div id="projectname">QtCinema - Kacper Myszka
    </div>
+   <div id="projectbrief">The QT Cinema is an application designed to manage movie screenings, ticket sales, snack sales, and cinema staff. The system provides different functionalities and access levels for employees and managers.</div>
   </td>
  </tr>
  </tbody>
@@ -88,6 +89,8 @@ $(function(){ initResizable(false); });
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_cancel_reservation-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">CancelReservation Class Reference</div></div>
 </div><!--header-->
@@ -95,19 +98,21 @@ $(function(){ initResizable(false); });
 <div class="dynheader">
 Inheritance diagram for CancelReservation:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_cancel_reservation.png" alt=""/>
- </div></div>
+<div class="center"><img src="class_cancel_reservation__inherit__graph.png" border="0" usemap="#a_cancel_reservation_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for CancelReservation:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_cancel_reservation__coll__graph.png" border="0" usemap="#a_cancel_reservation_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a9fc50135901be90ce697db8bf17b67ac" id="r_a9fc50135901be90ce697db8bf17b67ac"><td class="memItemLeft" align="right" valign="top"><a id="a9fc50135901be90ce697db8bf17b67ac" name="a9fc50135901be90ce697db8bf17b67ac"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_pushButton_return_clicked</b> ()</td></tr>
-<tr class="memdesc:a9fc50135901be90ce697db8bf17b67ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns to the employee menu page and closes this page. <br /></td></tr>
+<tr class="memitem:a9fc50135901be90ce697db8bf17b67ac" id="r_a9fc50135901be90ce697db8bf17b67ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fc50135901be90ce697db8bf17b67ac">on_pushButton_return_clicked</a> ()</td></tr>
+<tr class="memdesc:a9fc50135901be90ce697db8bf17b67ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns to the employee menu page and closes this page.  <br /></td></tr>
 <tr class="separator:a9fc50135901be90ce697db8bf17b67ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab7d9dd605a624f1abbf41d0020b84f9" id="r_aab7d9dd605a624f1abbf41d0020b84f9"><td class="memItemLeft" align="right" valign="top"><a id="aab7d9dd605a624f1abbf41d0020b84f9" name="aab7d9dd605a624f1abbf41d0020b84f9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_pushButton_cancel_clicked</b> ()</td></tr>
-<tr class="memdesc:aab7d9dd605a624f1abbf41d0020b84f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function cancels the reservation selected in the table view and if employee is not a manager, asks for manager confirmation. Updates the table view after the operation. Updates database. <br /></td></tr>
+<tr class="memitem:aab7d9dd605a624f1abbf41d0020b84f9" id="r_aab7d9dd605a624f1abbf41d0020b84f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab7d9dd605a624f1abbf41d0020b84f9">on_pushButton_cancel_clicked</a> ()</td></tr>
+<tr class="memdesc:aab7d9dd605a624f1abbf41d0020b84f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function cancels the reservation.  <br /></td></tr>
 <tr class="separator:aab7d9dd605a624f1abbf41d0020b84f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
@@ -124,7 +129,120 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7683af5e2545d6163301231fdf2fb4fd" id="r_a7683af5e2545d6163301231fdf2fb4fd"><td class="memItemLeft" align="right" valign="top"><a id="a7683af5e2545d6163301231fdf2fb4fd" name="a7683af5e2545d6163301231fdf2fb4fd"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>CancelReservation</b> (QWidget *parent=nullptr, QSqlDatabase db=QSqlDatabase(), int id=0)</td></tr>
 <tr class="separator:a7683af5e2545d6163301231fdf2fb4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a85a9d6c85c6c75d978cef886385ff340" id="r_a85a9d6c85c6c75d978cef886385ff340"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85a9d6c85c6c75d978cef886385ff340">setTableView</a> ()</td></tr>
+<tr class="memdesc:a85a9d6c85c6c75d978cef886385ff340"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets the table view to show the reservations.  <br /></td></tr>
+<tr class="separator:a85a9d6c85c6c75d978cef886385ff340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a444655d341e8b4d407190fc0a61824a2" id="r_a444655d341e8b4d407190fc0a61824a2"><td class="memItemLeft" align="right" valign="top"><a id="a444655d341e8b4d407190fc0a61824a2" name="a444655d341e8b4d407190fc0a61824a2"></a>
+Ui::CancelReservationClass&#160;</td><td class="memItemRight" valign="bottom"><b>ui</b></td></tr>
+<tr class="separator:a444655d341e8b4d407190fc0a61824a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12609e83c564803a121b6b7f54966b7b" id="r_a12609e83c564803a121b6b7f54966b7b"><td class="memItemLeft" align="right" valign="top"><a id="a12609e83c564803a121b6b7f54966b7b" name="a12609e83c564803a121b6b7f54966b7b"></a>
+QSqlDatabase&#160;</td><td class="memItemRight" valign="bottom"><b>Database</b></td></tr>
+<tr class="separator:a12609e83c564803a121b6b7f54966b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8d5e99cab40d3972a90f4b1e77e7920" id="r_af8d5e99cab40d3972a90f4b1e77e7920"><td class="memItemLeft" align="right" valign="top"><a id="af8d5e99cab40d3972a90f4b1e77e7920" name="af8d5e99cab40d3972a90f4b1e77e7920"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
+<tr class="separator:af8d5e99cab40d3972a90f4b1e77e7920"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aab7d9dd605a624f1abbf41d0020b84f9" name="aab7d9dd605a624f1abbf41d0020b84f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab7d9dd605a624f1abbf41d0020b84f9">&#9670;&#160;</a></span>on_pushButton_cancel_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CancelReservation::on_pushButton_cancel_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function cancels the reservation. </p>
+<p>This function cancels the reservation selected in the table view and if employee is not a manager, asks for manager confirmation. Updates the table view after the operation. Updates database. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_cancel_reservation_aab7d9dd605a624f1abbf41d0020b84f9_cgraph.png" border="0" usemap="#aclass_cancel_reservation_aab7d9dd605a624f1abbf41d0020b84f9_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a9fc50135901be90ce697db8bf17b67ac" name="a9fc50135901be90ce697db8bf17b67ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fc50135901be90ce697db8bf17b67ac">&#9670;&#160;</a></span>on_pushButton_return_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CancelReservation::on_pushButton_return_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function returns to the employee menu page and closes this page. </p>
+<p>This function emits the return_to_employee_page signal. </p>
+
+</div>
+</div>
+<a id="a85a9d6c85c6c75d978cef886385ff340" name="a85a9d6c85c6c75d978cef886385ff340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85a9d6c85c6c75d978cef886385ff340">&#9670;&#160;</a></span>setTableView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CancelReservation::setTableView </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function sets the table view to show the reservations. </p>
+<p>This function gets the database and sets the table view to show the reservations. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_cancel_reservation_a85a9d6c85c6c75d978cef886385ff340_icgraph.png" border="0" usemap="#aclass_cancel_reservation_a85a9d6c85c6c75d978cef886385ff340_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_cancel_reservation_8h_source.html">CancelReservation.h</a></li>
 <li><a class="el" href="_cancel_reservation_8cpp.html">CancelReservation.cpp</a></li>

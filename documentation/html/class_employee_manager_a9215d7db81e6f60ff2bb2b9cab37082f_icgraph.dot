@@ -1,0 +1,13 @@
+digraph "EmployeeManager::set_table_view"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="EmployeeManager::set\l_table_view",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="This function updates the table view."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="EmployeeManager::on\l_pushButton_add_employee\l_clicked",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_employee_manager.html#ad41489f8ea70591de07483cf550ba9f4",tooltip="This function adds an employee to the database and updates the table view."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="EmployeeManager::on\l_pushButton_delete_employee\l_clicked",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_employee_manager.html#ae793331f6fd782a5767fca022dd5c3e0",tooltip="This function deletes the selected employee from the database. Updates the table view and database."];
+}

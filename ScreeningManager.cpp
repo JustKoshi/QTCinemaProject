@@ -3,6 +3,7 @@
 /**
  * @file ScreeningManager.cpp
  * @brief This file contains the implementation of the functions to manage the screening manager page.
+ * @class ScreeningManager
  */
 
 
@@ -206,6 +207,8 @@ void ScreeningManager::on_pushButton_delete_screening_clicked() {
 /**
 * @brief This function gets the database and sets the table view to show the screenings.
 * @param db - database
+* 
+* This function gets the database and sets the table view to show the screenings. It creates a query to get the screenings that are in the future and orders them by time.
 */
 
 void ScreeningManager::getDb(QSqlDatabase db)
@@ -240,6 +243,8 @@ void ScreeningManager::on_pushButton_return_clicked() {
 
 /**
 * @brief This function shows the calendar to choose the date.
+* 
+* This function creates a calendar widget and shows it when the button is clicked. It then sets the date in the dateEdit to the selected date.
 */
 
 void ScreeningManager::on_pushButton_calendar_clicked() {

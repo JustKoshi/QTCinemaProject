@@ -3,6 +3,7 @@
 /**
  * @file EmployeePage.cpp
  * @brief This file contains the implementation of the functions to manage the employee page.
+ * @class EmployeePage
  */
 
 
@@ -60,6 +61,7 @@ void EmployeePage::connect_to_QTimer() {
 
 /**
  * @brief This function sets the name of the employee and updates the label.
+ * @param new_name The new name of the employee.
  */
 
 void EmployeePage::setName(int new_name) {

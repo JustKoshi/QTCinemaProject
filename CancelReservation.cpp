@@ -2,7 +2,8 @@
 
 /**
  * @file CancelReservation.cpp
- * * @brief This file contains the implementation of the functions to cancel a reservation. 
+ * @brief This file contains the implementation of the functions to cancel a reservation.
+ * @class CancelReservation
  */
 
 
@@ -19,6 +20,8 @@ CancelReservation::~CancelReservation()
 
 /**
  * @brief This function returns to the employee menu page and closes this page.
+ * 
+ * This function emits the return_to_employee_page signal.
  */
 
 void CancelReservation::on_pushButton_return_clicked() {
@@ -29,8 +32,9 @@ void CancelReservation::on_pushButton_return_clicked() {
 
 
 /**
- * @brief This function cancels the reservation selected in the table view and if employee is not a manager, asks for manager confirmation. Updates the table view after the operation. Updates database.
-
+ * @brief This function cancels the reservation.
+ * 
+ * This function cancels the reservation selected in the table view and if employee is not a manager, asks for manager confirmation. Updates the table view after the operation. Updates database.
  */
 
 void CancelReservation::on_pushButton_cancel_clicked() {
@@ -114,6 +118,8 @@ void CancelReservation::on_pushButton_cancel_clicked() {
 
 /**
  * @brief This function sets the table view to show the reservations. 
+ * 
+ * This function gets the database and sets the table view to show the reservations.
  */
 
 void CancelReservation::setTableView() {

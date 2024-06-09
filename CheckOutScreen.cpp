@@ -30,6 +30,8 @@ CheckOutScreen::~CheckOutScreen()
 
 /**
  * @brief This function returns to the employee menu page and closes this page. 
+ * 
+ * This function emits the return_To_EmployeePage signal.
  */
 
 void CheckOutScreen::on_pushButton_return_clicked() {
@@ -39,6 +41,8 @@ void CheckOutScreen::on_pushButton_return_clicked() {
 
 /**
  * @brief This function connects to the QTimer to update the current time.
+ * 
+ * This function connects to the QTimer to update the current time. It then displays the updated current time in the QLabel.
  */
 
 void CheckOutScreen::connect_to_QCurrent_Time() {
@@ -50,6 +54,8 @@ void CheckOutScreen::connect_to_QCurrent_Time() {
 
 /**
  * @brief This function updates the shift time.
+ * 
+ * This function updates the shift time by subtracting one second from the elapsed shift time. It then displays the updated shift time in the QLabel.
  */
 
 void CheckOutScreen::update_shift_time() {
@@ -61,6 +67,8 @@ void CheckOutScreen::update_shift_time() {
 
 /**
  * @brief This function starts the shift timer.
+ * 
+ * This function starts the shift timer and checks if the shift timer has already been started. If the shift timer has already been started, it displays a message box.
  */
 
 void CheckOutScreen::on_pushButton_shift_start_clicked() {
@@ -78,6 +86,8 @@ void CheckOutScreen::on_pushButton_shift_start_clicked() {
 
 /**
  * @brief This function ends the shift timer and checks if shift time has ended. 
+ * 
+ * This function stops the shift timer and checks if the shift time has ended. If the shift time has not ended, it displays a message box.
  */
 
 void CheckOutScreen::on_pushButton_shift_end_clicked() {
@@ -97,6 +107,7 @@ void CheckOutScreen::on_pushButton_shift_end_clicked() {
 
 /**
  * @brief This function updates the break time.
+ * 
  */
 
 void CheckOutScreen::update_break_time() {
@@ -107,6 +118,8 @@ void CheckOutScreen::update_break_time() {
 
 /**
  * @brief This function starts the break timer. 
+ * 
+ * This function starts the break timer and stops the shift timer.
  */
 
 void CheckOutScreen::on_pushButton_break_start_clicked() {
